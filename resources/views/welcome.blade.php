@@ -1,132 +1,2545 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!Doctype html>
+<html lang="en">
 
-        <title>Laravel</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{{ asset('assets/images/favicon-32x32.png') }}" type="image/png" />
+    <link href="{{ asset('assets/plugins/OwlCarousel/css/owl.carousel.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/pace.min.css') }}" rel="stylesheet" />
+    <script src="{{ asset('assets/js/pace.min.js') }}"></script>
+    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet">
+    <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
+    <link href="../../../../unpkg.com/boxicons%402.1.2/css/boxicons.min.css" rel="stylesheet">
+    <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet">
+    <title>Shopingo - eCommerce HTML Template</title>
+</head>
 
-        <!-- Fonts -->
-        <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.dark\:text-gray-500{--tw-text-opacity:1;color:#6b7280;color:rgba(107,114,128,var(--tw-text-opacity))}}
-        </style>
-
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
+<body>
+    <div class="wrapper">
+        <div class="header-wrapper">
+            <div class="top-menu">
+                <div class="container">
+                    <nav class="navbar navbar-expand">
+                        <div class="shiping-title d-none d-sm-flex">Welcome to our Shopingo store!</div>
+                        <ul class="navbar-nav ms-auto d-none d-lg-flex">
+                            <li class="nav-item"><a class="nav-link" href="order-tracking.html">Track Order</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="about-us.html">About</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="shop-categories.html">Our Stores</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="blog-post.html">Blog</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="javascript:;">Help & FAQs</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#"
+                                    data-bs-toggle="dropdown">USD</a>
+                                <ul class="dropdown-menu dropdown-menu-lg-end">
+                                    <li><a class="dropdown-item" href="#">USD</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">EUR</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#"
+                                    data-bs-toggle="dropdown">
+                                    <div class="lang d-flex gap-1">
+                                        <div><i class="flag-icon flag-icon-um"></i>
+                                        </div>
+                                        <div><span>ENG</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-lg-end">
+                                    <a class="dropdown-item d-flex allign-items-center" href="javascript:;"> <i
+                                            class="flag-icon flag-icon-de me-2"></i><span>German</span>
+                                    </a> <a class="dropdown-item d-flex allign-items-center" href="javascript:;"><i
+                                            class="flag-icon flag-icon-fr me-2"></i><span>French</span></a>
+                                    <a class="dropdown-item d-flex allign-items-center" href="javascript:;"><i
+                                            class="flag-icon flag-icon-um me-2"></i><span>English</span></a>
+                                    <a class="dropdown-item d-flex allign-items-center" href="javascript:;"><i
+                                            class="flag-icon flag-icon-in me-2"></i><span>Hindi</span></a>
+                                    <a class="dropdown-item d-flex allign-items-center" href="javascript:;"><i
+                                            class="flag-icon flag-icon-cn me-2"></i><span>Chinese</span></a>
+                                    <a class="dropdown-item d-flex allign-items-center" href="javascript:;"><i
+                                            class="flag-icon flag-icon-ae me-2"></i><span>Arabic</span></a>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav social-link ms-lg-2 ms-auto">
+                            <li class="nav-item"> <a class="nav-link" href="javascript:;"><i
+                                        class='bx bxl-facebook'></i></a>
+                            </li>
+                            <li class="nav-item"> <a class="nav-link" href="javascript:;"><i
+                                        class='bx bxl-twitter'></i></a>
+                            </li>
+                            <li class="nav-item"> <a class="nav-link" href="javascript:;"><i
+                                        class='bx bxl-linkedin'></i></a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-            @endif
+            </div>
+            <div class="header-content bg-warning">
+                <div class="container">
+                    <div class="row align-items-center gx-4">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="mobile-toggle-menu d-inline d-xl-none" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasNavbar">
+                                    <i class="bx bx-menu"></i>
+                                </div>
+                                <div class="logo">
+                                    <a href="index.html">
+                                        <img src="{{ asset('assets/images/logo-icon.png') }}" class="logo-icon"
+                                            alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-xl order-4 order-xl-0">
+                            <div class="input-group flex-nowrap pb-3 pb-xl-0">
+                                <input type="text" class="form-control w-100 border-dark border border-3"
+                                    placeholder="Search for Products">
+                                <button class="btn btn-dark btn-ecomm border-3" type="button">Search</button>
+                            </div>
+                        </div>
+                        <div class="col-auto d-none d-xl-flex">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="fs-1 text-content"><i class='bx bx-headphone'></i></div>
+                                <div class="">
+                                    <p class="mb-0 text-content">CALL US NOW</p>
+                                    <h5 class="mb-0">+011 5827918</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto ms-auto">
+                            <div class="top-cart-icons">
+                                <nav class="navbar navbar-expand">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item"><a href="account-dashboard.html"
+                                                class="nav-link cart-link"><i class='bx bx-user'></i></a>
+                                        </li>
+                                        <li class="nav-item"><a href="wishlist.html" class="nav-link cart-link"><i
+                                                    class='bx bx-heart'></i></a>
+                                        </li>
+                                        <li class="nav-item dropdown dropdown-large">
+                                            <a href="#"
+                                                class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative cart-link"
+                                                data-bs-toggle="dropdown"> <span class="alert-count">8</span>
+                                                <i class='bx bx-shopping-bag'></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-end">
+                                                <a href="javascript:;">
+                                                    <div class="cart-header">
+                                                        <p class="cart-header-title mb-0">8 ITEMS</p>
+                                                        <p class="cart-header-clear ms-auto mb-0">VIEW CART</p>
+                                                    </div>
+                                                </a>
+                                                <div class="cart-list">
+                                                    <a class="dropdown-item" href="javascript:;">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <h6 class="cart-product-title">Men White T-Shirt</h6>
+                                                                <p class="cart-product-price">1 X $29.00</p>
+                                                            </div>
+                                                            <div class="position-relative">
+                                                                <div class="cart-product-cancel position-absolute"><i
+                                                                        class='bx bx-x'></i>
+                                                                </div>
+                                                                <div class="cart-product">
+                                                                    <img src="{{ asset('assets/images/products/01.png') }}"
+                                                                        class="" alt="product image">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a class="dropdown-item" href="javascript:;">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <h6 class="cart-product-title">Puma Sports Shoes</h6>
+                                                                <p class="cart-product-price">1 X $29.00</p>
+                                                            </div>
+                                                            <div class="position-relative">
+                                                                <div class="cart-product-cancel position-absolute"><i
+                                                                        class='bx bx-x'></i>
+                                                                </div>
+                                                                <div class="cart-product">
+                                                                    <img src="{{ asset('assets/images/products/05.png') }}"
+                                                                        class="" alt="product image">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a class="dropdown-item" href="javascript:;">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <h6 class="cart-product-title">Women Red Sneakers</h6>
+                                                                <p class="cart-product-price">1 X $29.00</p>
+                                                            </div>
+                                                            <div class="position-relative">
+                                                                <div class="cart-product-cancel position-absolute"><i
+                                                                        class='bx bx-x'></i>
+                                                                </div>
+                                                                <div class="cart-product">
+                                                                    <img src="{{ asset('assets/images/products/17.png') }}"
+                                                                        class="" alt="product image">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a class="dropdown-item" href="javascript:;">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <h6 class="cart-product-title">Black Headphone</h6>
+                                                                <p class="cart-product-price">1 X $29.00</p>
+                                                            </div>
+                                                            <div class="position-relative">
+                                                                <div class="cart-product-cancel position-absolute"><i
+                                                                        class='bx bx-x'></i>
+                                                                </div>
+                                                                <div class="cart-product">
+                                                                    <img src="{{ asset('assets/images/products/10.png') }}"
+                                                                        class="" alt="product image">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a class="dropdown-item" href="javascript:;">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <h6 class="cart-product-title">Blue Girl Shoes</h6>
+                                                                <p class="cart-product-price">1 X $29.00</p>
+                                                            </div>
+                                                            <div class="position-relative">
+                                                                <div class="cart-product-cancel position-absolute"><i
+                                                                        class='bx bx-x'></i>
+                                                                </div>
+                                                                <div class="cart-product">
+                                                                    <img src="{{ asset('assets/images/products/08.png') }}"
+                                                                        class="" alt="product image">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a class="dropdown-item" href="javascript:;">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <h6 class="cart-product-title">Men Leather Belt</h6>
+                                                                <p class="cart-product-price">1 X $29.00</p>
+                                                            </div>
+                                                            <div class="position-relative">
+                                                                <div class="cart-product-cancel position-absolute"><i
+                                                                        class='bx bx-x'></i>
+                                                                </div>
+                                                                <div class="cart-product">
+                                                                    <img src="{{ asset('assets/images/products/18.png') }}"
+                                                                        class="" alt="product image">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a class="dropdown-item" href="javascript:;">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <h6 class="cart-product-title">Men Yellow T-Shirt</h6>
+                                                                <p class="cart-product-price">1 X $29.00</p>
+                                                            </div>
+                                                            <div class="position-relative">
+                                                                <div class="cart-product-cancel position-absolute"><i
+                                                                        class='bx bx-x'></i>
+                                                                </div>
+                                                                <div class="cart-product">
+                                                                    <img src="{{ asset('assets/images/products/04.png') }}"
+                                                                        class="" alt="product image">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a class="dropdown-item" href="javascript:;">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <h6 class="cart-product-title">Pool Charir</h6>
+                                                                <p class="cart-product-price">1 X $29.00</p>
+                                                            </div>
+                                                            <div class="position-relative">
+                                                                <div class="cart-product-cancel position-absolute"><i
+                                                                        class='bx bx-x'></i>
+                                                                </div>
+                                                                <div class="cart-product">
+                                                                    <img src="{{ asset('assets/images/products/16.png') }}"
+                                                                        class="" alt="product image">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <a href="javascript:;">
+                                                    <div class="text-center cart-footer d-flex align-items-center">
+                                                        <h5 class="mb-0">TOTAL</h5>
+                                                        <h5 class="mb-0 ms-auto">$189.00</h5>
+                                                    </div>
+                                                </a>
+                                                <div class="d-grid p-3 border-top"> <a href="javascript:;"
+                                                        class="btn btn-dark btn-ecomm">CHECKOUT</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="primary-menu">
+                <nav class="navbar navbar-expand-xl w-100 navbar-dark container mb-0 p-0">
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
+                        <div class="offcanvas-header">
+                            <div class="offcanvas-logo"><img src="{{ asset('assets/images/logo-icon.png') }}"
+                                    width="100" alt="">
+                            </div>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body primary-menu">
+                            <ul class="navbar-nav justify-content-start flex-grow-1 gap-1">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="tv-shows.html"
+                                        data-bs-toggle="dropdown">
+                                        Categories
+                                    </a>
+                                    <div class="dropdown-menu dropdown-large-menu">
+                                        <div class="row">
+                                            <div class="col-12 col-xl-4">
+                                                <h6 class="large-menu-title">Fashion</h6>
+                                                <ul class="list-unstyled">
+                                                    <li><a href="javascript:;">Casual T-Shirts</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Formal Shirts</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Jackets</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Jeans</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Dresses</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Sneakers</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Belts</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Sports Shoes</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-12 col-xl-4">
+                                                <h6 class="large-menu-title">Electronics</h6>
+                                                <ul class="list-unstyled">
+                                                    <li><a href="javascript:;">Mobiles</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Laptops</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Macbook</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Televisions</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Lighting</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Smart Watch</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Galaxy Phones</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">PC Monitors</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- end col-3 -->
+                                            <div class="col-12 col-xl-4 d-none d-xl-block">
+                                                <div class="pramotion-banner1">
+                                                    <img src="{{ asset('assets/images/gallery/menu-img.jpg') }}"
+                                                        class="img-fluid" alt="" />
+                                                </div>
+                                            </div>
+                                            <!-- end col-3 -->
+                                        </div>
+                                        <!-- end row -->
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"
+                                        data-bs-toggle="dropdown">
+                                        Shop <i class='bx bx-chevron-down ms-1'></i>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item dropdown"><a
+                                                class="dropdown-item dropdown-toggle dropdown-toggle-nocaret"
+                                                href="#">Shop Layouts <i
+                                                    class='bx bx-chevron-right float-end'></i></a>
+                                            <ul class="submenu dropdown-menu">
+                                                <li><a class="dropdown-item" href="shop-grid-left-sidebar.html">Shop
+                                                        Grid - Left Sidebar</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="shop-grid-right-sidebar.html">Shop
+                                                        Grid - Right Sidebar</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="shop-list-left-sidebar.html">Shop
+                                                        List - Left Sidebar</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="shop-list-right-sidebar.html">Shop
+                                                        List - Right Sidebar</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="shop-grid-filter-on-top.html">Shop
+                                                        Grid - Top Filter</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="shop-list-filter-on-top.html">Shop
+                                                        List - Top Filter</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="dropdown-item" href="product-details.html">Product Details</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="shop-cart.html">Shop Cart</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="shop-categories.html">Shop Categories</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="checkout-details.html">Billing Details</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="checkout-shipping.html">Checkout
+                                                Shipping</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="checkout-payment.html">Payment Method</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="checkout-review.html">Order Review</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="checkout-complete.html">Checkout
+                                                Complete</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="order-tracking.html">Order Tracking</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="product-comparison.html">Product
+                                                Comparison</a>
+                                        </li>
+                                    </ul>
+                                </li>
 
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="about-us.html">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact-us.html">Contact</a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link" href="shop-categories.html">Our Store</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"
+                                        data-bs-toggle="dropdown">
+                                        Account
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="account-dashboard.html">Dashboard</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="account-downloads.html">Downloads</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="account-orders.html">My Orders</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="account-user-details.html">User Details</a>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="authentication-login.html">Login</a></li>
+                                        <li><a class="dropdown-item" href="authentication-register.html">Register</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="authentication-reset-password.html">Password</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"
+                                        data-bs-toggle="dropdown">
+                                        Blog
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="blog-post.html">Blog Post</a></li>
+                                        <li><a class="dropdown-item" href="blog-read.html">Blog Read</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <section class="slider-section mb-4">
+            <div class="first-slider p-0">
+
+                <div class="banner-slider owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="position-relative">
+                            <div class="position-absolute top-50 slider-content translate-middle">
+                                <h3 class="h3 fw-bold d-none d-md-block">New Trending</h3>
+                                <h1 class="h1 fw-bold">Women Fashion</h1>
+                                <p class="fw-bold text-dark d-none d-md-block"><i>Last call for upto 15%</i></p>
+                                <div class=""><a class="btn btn-dark btn-ecomm px-4" href="shop-grid.html">Shop
+                                        Now</a>
+                                </div>
+                            </div>
+                            <a href="javascript:;">
+                                <img src="{{ asset('assets/images/banners/01.png') }}" class="img-fluid"
+                                    alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="position-relative">
+                            <div class="position-absolute top-50 slider-content translate-middle">
+                                <h3 class="h3 fw-bold d-none d-md-block">New Trending</h3>
+                                <h1 class="h1 fw-bold">Men Fashion</h1>
+                                <p class="fw-bold text-dark d-none d-md-block"><i>Last call for upto 15%</i></p>
+                                <div class=""><a class="btn btn-dark btn-ecomm px-4" href="shop-grid.html">Shop
+                                        Now</a>
+                                </div>
+                            </div>
+                            <a href="javascript:;">
+                                <img src="{{ asset('assets/images/banners/02.png') }}" class="img-fluid"
+                                    alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="position-relative">
+                            <div class="position-absolute top-50 slider-content translate-middle">
+                                <h3 class="h3 fw-bold d-none d-md-block">New Trending</h3>
+                                <h1 class="h1 fw-bold">Kids Fashion</h1>
+                                <p class="fw-bold text-dark d-none d-md-block"><i>Last call for upto 15%</i></p>
+                                <div class=""><a class="btn btn-dark btn-ecomm px-4" href="shop-grid.html">Shop
+                                        Now</a>
+                                </div>
+                            </div>
+                            <a href="javascript:;">
+                                <img src="{{ asset('assets/images/banners/04.png') }}" class="img-fluid"
+                                    alt="...">
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
+            </div>
+        </section>
+        <div class="page-wrapper">
+            <div class="page-content">
+                <section class="py-4">
+                    <div class="container">
+
+                        <div class="row row-cols-1 row-cols-lg-3 g-4">
+                            <div class="col">
+                                <div class="d-flex align-items-center justify-content-center p-3 border">
+                                    <div class="fs-1 text-content"><i class='bx bx-taxi'></i>
+                                    </div>
+                                    <div class="info-box-content ps-3">
+                                        <h6 class="mb-0 fw-bold">FREE SHIPPING &amp; RETURN</h6>
+                                        <p class="mb-0">Free shipping on all orders over $49</p>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
+                            <div class="col">
+                                <div class="d-flex align-items-center justify-content-center p-3 border">
+                                    <div class="fs-1 text-content"><i class='bx bx-dollar-circle'></i>
+                                    </div>
+                                    <div class="info-box-content ps-3">
+                                        <h6 class="mb-0 fw-bold">MONEY BACK GUARANTEE</h6>
+                                        <p class="mb-0">100% money back guarantee</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="d-flex align-items-center justify-content-center p-3 border">
+                                    <div class="fs-1 text-content"><i class='bx bx-support'></i>
+                                    </div>
+                                    <div class="info-box-content ps-3">
+                                        <h6 class="mb-0 fw-bold">ONLINE SUPPORT 24/7</h6>
+                                        <p class="mb-0">Awesome Support for 24/7 Days</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
+                    </div>
+                </section>
+                <section class="py-4">
+                    <div class="container">
+                        <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-4">
+                            <div class="col">
+                                <div class="card rounded-0 shadow-none bg-info bg-opacity-25">
+                                    <div class="row g-0 align-items-center">
+                                        <div class="col">
+                                            <img src="{{ asset('assets/images/promo/01.png') }}" class="img-fluid"
+                                                alt="" />
+                                        </div>
+                                        <div class="col">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-uppercase fw-bold">Men Wear</h5>
+                                                <p class="card-text text-uppercase">Starting at $9</p>
+                                                <a href="javascript:;" class="btn btn-outline-dark btn-ecomm">SHOP
+                                                    NOW</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
+                            <div class="col">
+                                <div class="card rounded-0 shadow-none bg-danger bg-opacity-25">
+                                    <div class="row g-0 align-items-center">
+                                        <div class="col">
+                                            <img src="{{ asset('assets/images/promo/02.png') }}" class="img-fluid"
+                                                alt="" />
+                                        </div>
+                                        <div class="col">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-uppercase fw-bold">Women Wear</h5>
+                                                <p class="card-text text-uppercase">Starting at $9</p> <a
+                                                    href="javascript:;" class="btn btn-outline-dark btn-ecomm">SHOP
+                                                    NOW</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card rounded-0 shadow-none bg-warning bg-opacity-25">
+                                    <div class="row g-0 align-items-center">
+                                        <div class="col">
+                                            <img src="{{ asset('assets/images/promo/03.png') }}" class="img-fluid"
+                                                alt="" />
+                                        </div>
+                                        <div class="col">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-uppercase fw-bold">Kids Wear</h5>
+                                                <p class="card-text text-uppercase">Starting at $9</p><a
+                                                    href="javascript:;" class="btn btn-outline-dark btn-ecomm">SHOP
+                                                    NOW</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
+                    </div>
+                </section>
+                <section class="py-4">
+                    <div class="container">
+                        <div class="separator pb-4">
+                            <div class="line"></div>
+                            <h5 class="mb-0 fw-bold separator-title">FEATURED PRODUCTS</h5>
+                            <div class="line"></div>
+                        </div>
+                        <div class="product-grid">
+                            <div
+                                class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-5 g-3 g-sm-4">
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="position-relative overflow-hidden">
+                                            <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                                                <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
+                                            </div>
+                                            <div class="quick-view position-absolute start-0 bottom-0 end-0">
+                                                <a href="javascript:;" data-bs-toggle="modal"
+                                                    data-bs-target="#QuickViewProduct">Quick View</a>
+                                            </div>
+                                            <a href="javascript:;">
+                                                <img src="{{ asset('assets/images/products/01.png') }}"
+                                                    class="img-fluid" alt="...">
+                                            </a>
+                                        </div>
+                                        <div class="card-body px-0">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="">
+                                                    <p class="mb-1 product-short-name">Topwear</p>
+                                                    <h6 class="mb-0 fw-bold product-short-title">White Polo Shirt</h6>
+                                                </div>
+                                                <div class="icon-wishlist">
+                                                    <a href="javascript:;"><i class="bx bx-heart"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="cursor-pointer rating mt-2">
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <div
+                                                class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
+                                                <div
+                                                    class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
+                                                    $59.00</div>
+                                                <div class="h6 fw-bold">$48.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="position-relative overflow-hidden">
+                                            <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                                                <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
+                                            </div>
+                                            <div class="quick-view position-absolute start-0 bottom-0 end-0">
+                                                <a href="javascript:;" data-bs-toggle="modal"
+                                                    data-bs-target="#QuickViewProduct">Quick View</a>
+                                            </div>
+                                            <a href="javascript:;">
+                                                <img src="{{ asset('assets/images/products/02.png') }}"
+                                                    class="img-fluid" alt="...">
+                                            </a>
+                                        </div>
+                                        <div class="card-body px-0">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="">
+                                                    <p class="mb-1 product-short-name">Topwear</p>
+                                                    <h6 class="mb-0 fw-bold product-short-title">White Polo Shirt</h6>
+                                                </div>
+                                                <div class="icon-wishlist">
+                                                    <a href="javascript:;"><i class="bx bx-heart"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="cursor-pointer rating mt-2">
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <div
+                                                class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
+                                                <div
+                                                    class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
+                                                    $59.00</div>
+                                                <div class="h6 fw-bold">$48.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="position-relative overflow-hidden">
+                                            <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                                                <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
+                                            </div>
+                                            <div class="quick-view position-absolute start-0 bottom-0 end-0">
+                                                <a href="javascript:;" data-bs-toggle="modal"
+                                                    data-bs-target="#QuickViewProduct">Quick View</a>
+                                            </div>
+                                            <a href="javascript:;">
+                                                <img src="{{ asset('assets/images/products/03.png') }}"
+                                                    class="img-fluid" alt="...">
+                                            </a>
+                                        </div>
+                                        <div class="card-body px-0">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="">
+                                                    <p class="mb-1 product-short-name">Topwear</p>
+                                                    <h6 class="mb-0 fw-bold product-short-title">White Polo Shirt</h6>
+                                                </div>
+                                                <div class="icon-wishlist">
+                                                    <a href="javascript:;"><i class="bx bx-heart"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="cursor-pointer rating mt-2">
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <div
+                                                class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
+                                                <div
+                                                    class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
+                                                    $59.00</div>
+                                                <div class="h6 fw-bold">$48.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="position-relative overflow-hidden">
+                                            <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                                                <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
+                                            </div>
+                                            <div class="quick-view position-absolute start-0 bottom-0 end-0">
+                                                <a href="javascript:;" data-bs-toggle="modal"
+                                                    data-bs-target="#QuickViewProduct">Quick View</a>
+                                            </div>
+                                            <a href="javascript:;">
+                                                <img src="{{ asset('assets/images/products/04.png') }}"
+                                                    class="img-fluid" alt="...">
+                                            </a>
+                                        </div>
+                                        <div class="card-body px-0">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="">
+                                                    <p class="mb-1 product-short-name">Topwear</p>
+                                                    <h6 class="mb-0 fw-bold product-short-title">White Polo Shirt</h6>
+                                                </div>
+                                                <div class="icon-wishlist">
+                                                    <a href="javascript:;"><i class="bx bx-heart"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="cursor-pointer rating mt-2">
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <div
+                                                class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
+                                                <div
+                                                    class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
+                                                    $59.00</div>
+                                                <div class="h6 fw-bold">$48.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="position-relative overflow-hidden">
+                                            <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                                                <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
+                                            </div>
+                                            <div class="quick-view position-absolute start-0 bottom-0 end-0">
+                                                <a href="javascript:;" data-bs-toggle="modal"
+                                                    data-bs-target="#QuickViewProduct">Quick View</a>
+                                            </div>
+                                            <a href="javascript:;">
+                                                <img src="{{ asset('assets/images/products/05.png') }}"
+                                                    class="img-fluid" alt="...">
+                                            </a>
+                                        </div>
+                                        <div class="card-body px-0">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="">
+                                                    <p class="mb-1 product-short-name">Topwear</p>
+                                                    <h6 class="mb-0 fw-bold product-short-title">White Polo Shirt</h6>
+                                                </div>
+                                                <div class="icon-wishlist">
+                                                    <a href="javascript:;"><i class="bx bx-heart"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="cursor-pointer rating mt-2">
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <div
+                                                class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
+                                                <div
+                                                    class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
+                                                    $59.00</div>
+                                                <div class="h6 fw-bold">$48.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="position-relative overflow-hidden">
+                                            <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                                                <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
+                                            </div>
+                                            <div class="quick-view position-absolute start-0 bottom-0 end-0">
+                                                <a href="javascript:;" data-bs-toggle="modal"
+                                                    data-bs-target="#QuickViewProduct">Quick View</a>
+                                            </div>
+                                            <a href="javascript:;">
+                                                <img src="{{ asset('assets/images/products/06.png') }}"
+                                                    class="img-fluid" alt="...">
+                                            </a>
+                                        </div>
+                                        <div class="card-body px-0">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="">
+                                                    <p class="mb-1 product-short-name">Topwear</p>
+                                                    <h6 class="mb-0 fw-bold product-short-title">White Polo Shirt</h6>
+                                                </div>
+                                                <div class="icon-wishlist">
+                                                    <a href="javascript:;"><i class="bx bx-heart"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="cursor-pointer rating mt-2">
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <div
+                                                class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
+                                                <div
+                                                    class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
+                                                    $59.00</div>
+                                                <div class="h6 fw-bold">$48.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="position-relative overflow-hidden">
+                                            <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                                                <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
+                                            </div>
+                                            <div class="quick-view position-absolute start-0 bottom-0 end-0">
+                                                <a href="javascript:;" data-bs-toggle="modal"
+                                                    data-bs-target="#QuickViewProduct">Quick View</a>
+                                            </div>
+                                            <a href="javascript:;">
+                                                <img src="{{ asset('assets/images/products/07.png') }}"
+                                                    class="img-fluid" alt="...">
+                                            </a>
+                                        </div>
+                                        <div class="card-body px-0">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="">
+                                                    <p class="mb-1 product-short-name">Topwear</p>
+                                                    <h6 class="mb-0 fw-bold product-short-title">White Polo Shirt</h6>
+                                                </div>
+                                                <div class="icon-wishlist">
+                                                    <a href="javascript:;"><i class="bx bx-heart"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="cursor-pointer rating mt-2">
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <div
+                                                class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
+                                                <div
+                                                    class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
+                                                    $59.00</div>
+                                                <div class="h6 fw-bold">$48.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="position-relative overflow-hidden">
+                                            <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                                                <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
+                                            </div>
+                                            <div class="quick-view position-absolute start-0 bottom-0 end-0">
+                                                <a href="javascript:;" data-bs-toggle="modal"
+                                                    data-bs-target="#QuickViewProduct">Quick View</a>
+                                            </div>
+                                            <a href="javascript:;">
+                                                <img src="{{ asset('assets/images/products/08.png') }}"
+                                                    class="img-fluid" alt="...">
+                                            </a>
+                                        </div>
+                                        <div class="card-body px-0">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="">
+                                                    <p class="mb-1 product-short-name">Topwear</p>
+                                                    <h6 class="mb-0 fw-bold product-short-title">White Polo Shirt</h6>
+                                                </div>
+                                                <div class="icon-wishlist">
+                                                    <a href="javascript:;"><i class="bx bx-heart"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="cursor-pointer rating mt-2">
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <div
+                                                class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
+                                                <div
+                                                    class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
+                                                    $59.00</div>
+                                                <div class="h6 fw-bold">$48.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="position-relative overflow-hidden">
+                                            <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                                                <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
+                                            </div>
+                                            <div class="quick-view position-absolute start-0 bottom-0 end-0">
+                                                <a href="javascript:;" data-bs-toggle="modal"
+                                                    data-bs-target="#QuickViewProduct">Quick View</a>
+                                            </div>
+                                            <a href="javascript:;">
+                                                <img src="{{ asset('assets/images/products/09.png') }}"
+                                                    class="img-fluid" alt="...">
+                                            </a>
+                                        </div>
+                                        <div class="card-body px-0">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="">
+                                                    <p class="mb-1 product-short-name">Topwear</p>
+                                                    <h6 class="mb-0 fw-bold product-short-title">White Polo Shirt</h6>
+                                                </div>
+                                                <div class="icon-wishlist">
+                                                    <a href="javascript:;"><i class="bx bx-heart"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="cursor-pointer rating mt-2">
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <div
+                                                class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
+                                                <div
+                                                    class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
+                                                    $59.00</div>
+                                                <div class="h6 fw-bold">$48.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="position-relative overflow-hidden">
+                                            <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                                                <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
+                                            </div>
+                                            <div class="quick-view position-absolute start-0 bottom-0 end-0">
+                                                <a href="javascript:;" data-bs-toggle="modal"
+                                                    data-bs-target="#QuickViewProduct">Quick View</a>
+                                            </div>
+                                            <a href="javascript:;">
+                                                <img src="{{ asset('assets/images/products/10.png') }}"
+                                                    class="img-fluid" alt="...">
+                                            </a>
+                                        </div>
+                                        <div class="card-body px-0">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="">
+                                                    <p class="mb-1 product-short-name">Topwear</p>
+                                                    <h6 class="mb-0 fw-bold product-short-title">White Polo Shirt</h6>
+                                                </div>
+                                                <div class="icon-wishlist">
+                                                    <a href="javascript:;"><i class="bx bx-heart"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="cursor-pointer rating mt-2">
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <div
+                                                class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
+                                                <div
+                                                    class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
+                                                    $59.00</div>
+                                                <div class="h6 fw-bold">$48.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
+                    </div>
+                </section>
+                <section class="py-4">
+                    <div class="container">
+                        <div class="separator pb-4">
+                            <div class="line"></div>
+                            <h5 class="mb-0 fw-bold separator-title">New Arrivals</h5>
+                            <div class="line"></div>
+                        </div>
+                        <div class="product-grid">
+                            <div class="new-arrivals owl-carousel owl-theme position-relative">
+                                <div class="item">
+                                    <div class="card">
+                                        <div class="position-relative overflow-hidden">
+                                            <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                                                <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
+                                            </div>
+                                            <div class="quick-view position-absolute start-0 bottom-0 end-0">
+                                                <a href="javascript:;" data-bs-toggle="modal"
+                                                    data-bs-target="#QuickViewProduct">Quick View</a>
+                                            </div>
+                                            <a href="javascript:;">
+                                                <img src="{{ asset('assets/images/products/11.png') }}"
+                                                    class="img-fluid" alt="...">
+                                            </a>
+                                        </div>
+                                        <div class="card-body px-0">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="">
+                                                    <p class="mb-1 product-short-name">Topwear</p>
+                                                    <h6 class="mb-0 fw-bold product-short-title">White Polo Shirt</h6>
+                                                </div>
+                                                <div class="icon-wishlist">
+                                                    <a href="javascript:;"><i class="bx bx-heart"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="cursor-pointer rating mt-2">
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <div
+                                                class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
+                                                <div
+                                                    class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
+                                                    $59.00</div>
+                                                <div class="h6 fw-bold">$48.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card">
+                                        <div class="position-relative overflow-hidden">
+                                            <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                                                <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
+                                            </div>
+                                            <div class="quick-view position-absolute start-0 bottom-0 end-0">
+                                                <a href="javascript:;" data-bs-toggle="modal"
+                                                    data-bs-target="#QuickViewProduct">Quick View</a>
+                                            </div>
+                                            <a href="javascript:;">
+                                                <img src="{{ asset('assets/images/products/12.png') }}"
+                                                    class="img-fluid" alt="...">
+                                            </a>
+                                        </div>
+                                        <div class="card-body px-0">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="">
+                                                    <p class="mb-1 product-short-name">Topwear</p>
+                                                    <h6 class="mb-0 fw-bold product-short-title">White Polo Shirt</h6>
+                                                </div>
+                                                <div class="icon-wishlist">
+                                                    <a href="javascript:;"><i class="bx bx-heart"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="cursor-pointer rating mt-2">
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <div
+                                                class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
+                                                <div
+                                                    class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
+                                                    $59.00</div>
+                                                <div class="h6 fw-bold">$48.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card">
+                                        <div class="position-relative overflow-hidden">
+                                            <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                                                <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
+                                            </div>
+                                            <div class="quick-view position-absolute start-0 bottom-0 end-0">
+                                                <a href="javascript:;" data-bs-toggle="modal"
+                                                    data-bs-target="#QuickViewProduct">Quick View</a>
+                                            </div>
+                                            <a href="javascript:;">
+                                                <img src="{{ asset('assets/images/products/13.png') }}"
+                                                    class="img-fluid" alt="...">
+                                            </a>
+                                        </div>
+                                        <div class="card-body px-0">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="">
+                                                    <p class="mb-1 product-short-name">Topwear</p>
+                                                    <h6 class="mb-0 fw-bold product-short-title">White Polo Shirt</h6>
+                                                </div>
+                                                <div class="icon-wishlist">
+                                                    <a href="javascript:;"><i class="bx bx-heart"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="cursor-pointer rating mt-2">
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <div
+                                                class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
+                                                <div
+                                                    class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
+                                                    $59.00</div>
+                                                <div class="h6 fw-bold">$48.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card">
+                                        <div class="position-relative overflow-hidden">
+                                            <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                                                <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
+                                            </div>
+                                            <div class="quick-view position-absolute start-0 bottom-0 end-0">
+                                                <a href="javascript:;" data-bs-toggle="modal"
+                                                    data-bs-target="#QuickViewProduct">Quick View</a>
+                                            </div>
+                                            <a href="javascript:;">
+                                                <img src="{{ asset('assets/images/products/14.png') }}"
+                                                    class="img-fluid" alt="...">
+                                            </a>
+                                        </div>
+                                        <div class="card-body px-0">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="">
+                                                    <p class="mb-1 product-short-name">Topwear</p>
+                                                    <h6 class="mb-0 fw-bold product-short-title">White Polo Shirt</h6>
+                                                </div>
+                                                <div class="icon-wishlist">
+                                                    <a href="javascript:;"><i class="bx bx-heart"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="cursor-pointer rating mt-2">
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <div
+                                                class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
+                                                <div
+                                                    class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
+                                                    $59.00</div>
+                                                <div class="h6 fw-bold">$48.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card">
+                                        <div class="position-relative overflow-hidden">
+                                            <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                                                <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
+                                            </div>
+                                            <div class="quick-view position-absolute start-0 bottom-0 end-0">
+                                                <a href="javascript:;" data-bs-toggle="modal"
+                                                    data-bs-target="#QuickViewProduct">Quick View</a>
+                                            </div>
+                                            <a href="javascript:;">
+                                                <img src="{{ asset('assets/images/products/15.png') }}"
+                                                    class="img-fluid" alt="...">
+                                            </a>
+                                        </div>
+                                        <div class="card-body px-0">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="">
+                                                    <p class="mb-1 product-short-name">Topwear</p>
+                                                    <h6 class="mb-0 fw-bold product-short-title">White Polo Shirt</h6>
+                                                </div>
+                                                <div class="icon-wishlist">
+                                                    <a href="javascript:;"><i class="bx bx-heart"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="cursor-pointer rating mt-2">
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <div
+                                                class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
+                                                <div
+                                                    class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
+                                                    $59.00</div>
+                                                <div class="h6 fw-bold">$48.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card">
+                                        <div class="position-relative overflow-hidden">
+                                            <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                                                <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
+                                            </div>
+                                            <div class="quick-view position-absolute start-0 bottom-0 end-0">
+                                                <a href="javascript:;" data-bs-toggle="modal"
+                                                    data-bs-target="#QuickViewProduct">Quick View</a>
+                                            </div>
+                                            <a href="javascript:;">
+                                                <img src="{{ asset('assets/images/products/16.png') }}"
+                                                    class="img-fluid" alt="...">
+                                            </a>
+                                        </div>
+                                        <div class="card-body px-0">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="">
+                                                    <p class="mb-1 product-short-name">Topwear</p>
+                                                    <h6 class="mb-0 fw-bold product-short-title">White Polo Shirt</h6>
+                                                </div>
+                                                <div class="icon-wishlist">
+                                                    <a href="javascript:;"><i class="bx bx-heart"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="cursor-pointer rating mt-2">
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <div
+                                                class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
+                                                <div
+                                                    class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
+                                                    $59.00</div>
+                                                <div class="h6 fw-bold">$48.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card">
+                                        <div class="position-relative overflow-hidden">
+                                            <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                                                <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
+                                            </div>
+                                            <div class="quick-view position-absolute start-0 bottom-0 end-0">
+                                                <a href="javascript:;" data-bs-toggle="modal"
+                                                    data-bs-target="#QuickViewProduct">Quick View</a>
+                                            </div>
+                                            <a href="javascript:;">
+                                                <img src="{{ asset('assets/images/products/17.png') }}"
+                                                    class="img-fluid" alt="...">
+                                            </a>
+                                        </div>
+                                        <div class="card-body px-0">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="">
+                                                    <p class="mb-1 product-short-name">Topwear</p>
+                                                    <h6 class="mb-0 fw-bold product-short-title">White Polo Shirt</h6>
+                                                </div>
+                                                <div class="icon-wishlist">
+                                                    <a href="javascript:;"><i class="bx bx-heart"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="cursor-pointer rating mt-2">
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <div
+                                                class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
+                                                <div
+                                                    class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
+                                                    $59.00</div>
+                                                <div class="h6 fw-bold">$48.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card">
+                                        <div class="position-relative overflow-hidden">
+                                            <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                                                <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
+                                            </div>
+                                            <div class="quick-view position-absolute start-0 bottom-0 end-0">
+                                                <a href="javascript:;" data-bs-toggle="modal"
+                                                    data-bs-target="#QuickViewProduct">Quick View</a>
+                                            </div>
+                                            <a href="javascript:;">
+                                                <img src="{{ asset('assets/images/products/18.png') }}"
+                                                    class="img-fluid" alt="...">
+                                            </a>
+                                        </div>
+                                        <div class="card-body px-0">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="">
+                                                    <p class="mb-1 product-short-name">Topwear</p>
+                                                    <h6 class="mb-0 fw-bold product-short-title">White Polo Shirt</h6>
+                                                </div>
+                                                <div class="icon-wishlist">
+                                                    <a href="javascript:;"><i class="bx bx-heart"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="cursor-pointer rating mt-2">
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <div
+                                                class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
+                                                <div
+                                                    class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
+                                                    $59.00</div>
+                                                <div class="h6 fw-bold">$48.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-4 bg-dark">
+                    <div class="container">
+                        <div class="add-banner">
+                            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-4 g-4">
+                                <div class="col d-flex">
+                                    <div class="card rounded-0 w-100 border-0 shadow-none">
+                                        <img src="{{ asset('assets/images/promo/04') }}.png" class="img-fluid"
+                                            alt="...">
+                                        <div class="position-absolute top-0 end-0 m-3 product-discount"><span
+                                                class="">-10%</span>
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Sunglasses Sale</h5>
+                                            <p class="card-text">See all Sunglasses and get 10% off at all Sunglasses
+                                            </p> <a href="javascript:;" class="btn btn-dark btn-ecomm">SHOP BY
+                                                GLASSES</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col d-flex">
+                                    <div class="card rounded-0 w-100 border-0 shadow-none">
+                                        <img src="{{ asset('assets/images/promo/08.png') }}" class="img-fluid"
+                                            alt="...">
+                                        <div class="position-absolute top-0 end-0 m-3 product-discount"><span
+                                                class="">-80%</span>
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Cosmetics Sales</h5>
+                                            <p class="card-text">Buy Cosmetics products and get 30% off at all
+                                                Cosmetics</p> <a href="javascript:;"
+                                                class="btn btn-dark btn-ecomm">SHOP BY COSMETICS</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col d-flex">
+                                    <div class="card rounded-0 w-100 border-0 shadow-none">
+                                        <img src="{{ asset('assets/images/promo/06.png') }}"
+                                            class="img-fluid h-100" alt="...">
+                                        <div class="card-img-overlay text-center top-20">
+                                            <div class="border border-white border-2 py-3 bg-dark-3">
+                                                <h5 class="card-title text-white">Fashion Summer Sale</h5>
+                                                <p class="card-text text-uppercase fs-1 lh-1 mt-3 mb-2 text-white">Up
+                                                    to 80% off</p>
+                                                <p class="card-text fs-5 text-white">On Top Fashion Brands</p> <a
+                                                    href="javascript:;" class="btn btn-white btn-ecomm">SHOP BY
+                                                    FASHION</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col d-flex">
+                                    <div class="card rounded-0 w-100 border-0 shadow-none">
+                                        <div class="position-absolute top-0 end-0 m-3 product-discount"><span
+                                                class="">-50%</span>
+                                        </div>
+                                        <img src="{{ asset('assets/images/promo/07.png') }}" class="img-fluid"
+                                            alt="...">
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title fs-2 fw-bold text-uppercase">Super Sale</h5>
+                                            <p class="card-text text-uppercase fs-5 lh-1 mb-2">Up to 50% off</p>
+                                            <p class="card-text">On All Electronic</p> <a href="javascript:;"
+                                                class="btn btn-dark btn-ecomm">HURRY UP!</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end row-->
+                        </div>
+                    </div>
+                </section>
+                <!--end Advertise banners-->
+                <!--start categories-->
+                <section class="py-4">
+                    <div class="container">
+                        <div class="separator pb-4">
+                            <div class="line"></div>
+                            <h5 class="mb-0 fw-bold separator-title">Browse Catergory</h5>
+                            <div class="line"></div>
+                        </div>
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
+                        <div class="product-grid">
+                            <div class="browse-category owl-carousel owl-theme">
+                                <div class="item">
+                                    <div class="card rounded-0">
+                                        <div class="card-body p-0">
+                                            <img src="{{ asset('assets/images/categories/01.png') }}"
+                                                class="img-fluid" alt="...">
+                                        </div>
+                                        <div class="card-footer text-center bg-transparent border">
+                                            <h6 class="mb-0 text-uppercase fw-bold">Fashion</h6>
+                                            <p class="mb-0 font-12 text-uppercase">10 Products</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card rounded-0">
+                                        <div class="card-body p-0">
+                                            <img src="{{ asset('assets/images/categories/02.png') }}"
+                                                class="img-fluid" alt="...">
+                                        </div>
+                                        <div class="card-footer text-center bg-transparent border">
+                                            <h6 class="mb-1 text-uppercase fw-bold">Watches</h6>
+                                            <p class="mb-0 font-12 text-uppercase">8 Products</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card rounded-0">
+                                        <div class="card-body p-0">
+                                            <img src="{{ asset('assets/images/categories/03.png') }}"
+                                                class="img-fluid" alt="...">
+                                        </div>
+                                        <div class="card-footer text-center bg-transparent border">
+                                            <h6 class="mb-1 text-uppercase fw-bold">Shoes</h6>
+                                            <p class="mb-0 font-12 text-uppercase">14 Products</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card rounded-0">
+                                        <div class="card-body p-0">
+                                            <img src="{{ asset('assets/images/categories/04.png') }}"
+                                                class="img-fluid" alt="...">
+                                        </div>
+                                        <div class="card-footer text-center bg-transparent border">
+                                            <h6 class="mb-1 text-uppercase fw-bold">Bags</h6>
+                                            <p class="mb-0 font-12 text-uppercase">6 Products</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card rounded-0">
+                                        <div class="card-body p-0">
+                                            <img src="{{ asset('assets/images/categories/05.png') }}"
+                                                class="img-fluid" alt="...">
+                                        </div>
+                                        <div class="card-footer text-center bg-transparent border">
+                                            <h6 class="mb-1 text-uppercase fw-bold">Electronis</h6>
+                                            <p class="mb-0 font-12 text-uppercase">6 Products</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card rounded-0">
+                                        <div class="card-body p-0">
+                                            <img src="{{ asset('assets/images/categories/06.png') }}"
+                                                class="img-fluid" alt="...">
+                                        </div>
+                                        <div class="card-footer text-center bg-transparent border">
+                                            <h6 class="mb-1 text-uppercase fw-bold">Headphones</h6>
+                                            <p class="mb-0 font-12 text-uppercase">5 Products</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card rounded-0">
+                                        <div class="card-body p-0">
+                                            <img src="{{ asset('assets/images/categories/07.png') }}"
+                                                class="img-fluid" alt="...">
+                                        </div>
+                                        <div class="card-footer text-center bg-transparent border">
+                                            <h6 class="mb-1 text-uppercase fw-bold">Furniture</h6>
+                                            <p class="mb-0 font-12 text-uppercase">20 Products</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card rounded-0">
+                                        <div class="card-body p-0">
+                                            <img src="{{ asset('assets/images/categories/08.png') }}"
+                                                class="img-fluid" alt="...">
+                                        </div>
+                                        <div class="card-footer text-center bg-transparent border">
+                                            <h6 class="mb-1 text-uppercase fw-bold">Jewelry</h6>
+                                            <p class="mb-0 font-12 text-uppercase">16 Products</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card rounded-0">
+                                        <div class="card-body p-0">
+                                            <img src="{{ asset('assets/images/categories/09.png') }}"
+                                                class="img-fluid" alt="...">
+                                        </div>
+                                        <div class="card-footer text-center bg-transparent border">
+                                            <h6 class="mb-1 text-uppercase fw-bold">Sports</h6>
+                                            <p class="mb-0 font-12 text-uppercase">28 Products</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card rounded-0">
+                                        <div class="card-body p-0">
+                                            <img src="{{ asset('assets/images/categories/10.png') }}"
+                                                class="img-fluid" alt="...">
+                                        </div>
+                                        <div class="card-footer text-center bg-transparent border">
+                                            <h6 class="mb-1 text-uppercase fw-bold">Vegetable</h6>
+                                            <p class="mb-0 font-12 text-uppercase">15 Products</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card rounded-0">
+                                        <div class="card-body p-0">
+                                            <img src="{{ asset('assets/images/categories/11.png') }}"
+                                                class="img-fluid" alt="...">
+                                        </div>
+                                        <div class="card-footer text-center bg-transparent border">
+                                            <h6 class="mb-1 text-uppercase fw-bold">Medical</h6>
+                                            <p class="mb-0 font-12 text-uppercase">24 Products</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card rounded-0">
+                                        <div class="card-body p-0">
+                                            <img src="{{ asset('assets/images/categories/12.png') }}"
+                                                class="img-fluid" alt="...">
+                                        </div>
+                                        <div class="card-footer text-center bg-transparent border">
+                                            <h6 class="mb-1 text-uppercase fw-bold">Sunglasses</h6>
+                                            <p class="mb-0 font-12 text-uppercase">18 Products</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-5 bg-light">
+                    <div class="container">
+                        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
+                            <div class="col">
+                                <div class="text-center border p-3 bg-white">
+                                    <div class="font-50 text-dark"><i class='bx bx-cart-add'></i>
+                                    </div>
+                                    <h5 class="fs-5 text-uppercase mb-0 fw-bold">Free delivery</h5>
+                                    <p class="text-capitalize">Free delivery over $199</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec vestibulum
+                                        magna, et dapib.</p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="text-center border p-3 bg-white">
+                                    <div class="font-50 text-dark"><i class='bx bx-credit-card'></i>
+                                    </div>
+                                    <h5 class="fs-5 text-uppercase mb-0 fw-bold">Secure payment</h5>
+                                    <p class="text-capitalize">We possess SSL / Secure сertificate</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec vestibulum
+                                        magna, et dapib.</p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="text-center border p-3 bg-white">
+                                    <div class="font-50 text-dark"> <i class='bx bx-dollar-circle'></i>
+                                    </div>
+                                    <h5 class="fs-5 text-uppercase mb-0 fw-bold">Free returns</h5>
+                                    <p class="text-capitalize">We return money within 30 days</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec vestibulum
+                                        magna, et dapib.</p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="text-center border p-3 bg-white">
+                                    <div class="font-50 text-dark"> <i class='bx bx-support'></i>
+                                    </div>
+                                    <h5 class="fs-5 text-uppercase mb-0 fw-bold">Customer Support</h5>
+                                    <p class="text-capitalize">Friendly 24/7 customer support</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec vestibulum
+                                        magna, et dapib.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-4">
+                    <div class="container">
+                        <div class="pb-4 text-center">
+                            <h5 class="mb-0 fw-bold text-uppercase">Latest News</h5>
+                        </div>
+                        <div class="product-grid">
+                            <div class="latest-news owl-carousel owl-theme">
+                                <div class="item">
+                                    <div class="card rounded-0 product-card border">
+                                        <div class="news-date">
+                                            <div class="date-number">24</div>
+                                            <div class="date-month">FEB</div>
+                                        </div>
+                                        <a href="javascript:;">
+                                            <img src="{{ asset('assets/images/blogs/01.png') }}"
+                                                class="card-img-top border-bottom" alt="...">
+                                        </a>
+                                        <div class="card-body">
+                                            <div class="news-title">
+                                                <a href="javascript:;">
+                                                    <h5 class="mb-3 text-capitalize">Blog Short Title</h5>
+                                                </a>
+                                            </div>
+                                            <p class="news-content mb-0">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing elit. Cras non placerat mi. Etiam non tellus sem. Aenean...
+                                            </p>
+                                        </div>
+                                        <div class="card-footer border-top bg-transparent">
+                                            <a href="javascript:;" class="link-dark">0 Comments</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card rounded-0 product-card border">
+                                        <div class="news-date">
+                                            <div class="date-number">24</div>
+                                            <div class="date-month">FEB</div>
+                                        </div>
+                                        <a href="javascript:;">
+                                            <img src="{{ asset('assets/images/blogs/02.png') }}"
+                                                class="card-img-top border-bottom" alt="...">
+                                        </a>
+                                        <div class="card-body">
+                                            <div class="news-title">
+                                                <a href="javascript:;">
+                                                    <h5 class="mb-3 text-capitalize">Blog Short Title</h5>
+                                                </a>
+                                            </div>
+                                            <p class="news-content mb-0">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing elit. Cras non placerat mi. Etiam non tellus sem. Aenean...
+                                            </p>
+                                        </div>
+                                        <div class="card-footer border-top bg-transparent">
+                                            <a href="javascript:;" class="link-dark">0 Comments</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card rounded-0 product-card border">
+                                        <div class="news-date">
+                                            <div class="date-number">24</div>
+                                            <div class="date-month">FEB</div>
+                                        </div>
+                                        <a href="javascript:;">
+                                            <img src="{{ asset('assets/images/blogs/03.png') }}"
+                                                class="card-img-top border-bottom" alt="...">
+                                        </a>
+                                        <div class="card-body">
+                                            <div class="news-title">
+                                                <a href="javascript:;">
+                                                    <h5 class="mb-3 text-capitalize">Blog Short Title</h5>
+                                                </a>
+                                            </div>
+                                            <p class="news-content mb-0">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing elit. Cras non placerat mi. Etiam non tellus sem. Aenean...
+                                            </p>
+                                        </div>
+                                        <div class="card-footer border-top bg-transparent">
+                                            <a href="javascript:;" class="link-dark">0 Comments</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card rounded-0 product-card border">
+                                        <div class="news-date">
+                                            <div class="date-number">24</div>
+                                            <div class="date-month">FEB</div>
+                                        </div>
+                                        <a href="javascript:;">
+                                            <img src="{{ asset('assets/images/blogs/04.png') }}"
+                                                class="card-img-top border-bottom" alt="...">
+                                        </a>
+                                        <div class="card-body">
+                                            <div class="news-title">
+                                                <a href="javascript:;">
+                                                    <h5 class="mb-3 text-capitalize">Blog Short Title</h5>
+                                                </a>
+                                            </div>
+                                            <p class="news-content mb-0">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing elit. Cras non placerat mi. Etiam non tellus sem. Aenean...
+                                            </p>
+                                        </div>
+                                        <div class="card-footer border-top bg-transparent">
+                                            <a href="javascript:;" class="link-dark">0 Comments</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card rounded-0 product-card border">
+                                        <div class="news-date">
+                                            <div class="date-number">24</div>
+                                            <div class="date-month">FEB</div>
+                                        </div>
+                                        <a href="javascript:;">
+                                            <img src="{{ asset('assets/images/blogs/05.png') }}"
+                                                class="card-img-top border-bottom" alt="...">
+                                        </a>
+                                        <div class="card-body">
+                                            <div class="news-title">
+                                                <a href="javascript:;">
+                                                    <h5 class="mb-3 text-capitalize">Blog Short Title</h5>
+                                                </a>
+                                            </div>
+                                            <p class="news-content mb-0">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing elit. Cras non placerat mi. Etiam non tellus sem. Aenean...
+                                            </p>
+                                        </div>
+                                        <div class="card-footer border-top bg-transparent">
+                                            <a href="javascript:;" class="link-dark">0 Comments</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="card rounded-0 product-card border">
+                                        <div class="news-date">
+                                            <div class="date-number">24</div>
+                                            <div class="date-month">FEB</div>
+                                        </div>
+                                        <a href="javascript:;">
+                                            <img src="{{ asset('assets/images/blogs/06.png') }}"
+                                                class="card-img-top border-bottom" alt="...">
+                                        </a>
+                                        <div class="card-body">
+                                            <div class="news-title">
+                                                <a href="javascript:;">
+                                                    <h5 class="mb-3 text-capitalize">Blog Short Title</h5>
+                                                </a>
+                                            </div>
+                                            <p class="news-content mb-0">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing elit. Cras non placerat mi. Etiam non tellus sem. Aenean...
+                                            </p>
+                                        </div>
+                                        <div class="card-footer border-top bg-transparent">
+                                            <a href="javascript:;" class="link-dark">0 Comments</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-4">
+                    <div class="container">
+                        <h3 class="d-none">Brands</h3>
+                        <div class="brand-grid">
+                            <div class="brands-shops owl-carousel owl-theme border">
+                                <div class="item border-end">
+                                    <div class="p-4">
+                                        <a href="javascript:;">
+                                            <img src="{{ asset('assets/images/brands/01.png') }}" class="img-fluid"
+                                                alt="...">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="item border-end">
+                                    <div class="p-4">
+                                        <a href="javascript:;">
+                                            <img src="{{ asset('assets/images/brands/02.png') }}" class="img-fluid"
+                                                alt="...">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="item border-end">
+                                    <div class="p-4">
+                                        <a href="javascript:;">
+                                            <img src="{{ asset('assets/images/brands/03.png') }}" class="img-fluid"
+                                                alt="...">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="item border-end">
+                                    <div class="p-4">
+                                        <a href="javascript:;">
+                                            <img src="{{ asset('assets/images/brands/04.png') }}" class="img-fluid"
+                                                alt="...">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="item border-end">
+                                    <div class="p-4">
+                                        <a href="javascript:;">
+                                            <img src="{{ asset('assets/images/brands/05.png') }}" class="img-fluid"
+                                                alt="...">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="item border-end">
+                                    <div class="p-4">
+                                        <a href="javascript:;">
+                                            <img src="{{ asset('assets/images/brands/06.png') }}" class="img-fluid"
+                                                alt="...">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="item border-end">
+                                    <div class="p-4">
+                                        <a href="javascript:;">
+                                            <img src="{{ asset('assets/images/brands/07.png') }}" class="img-fluid"
+                                                alt="...">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-4 border-top">
+                    <div class="container">
+                        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4">
+                            <div class="col">
+                                <div class="bestseller-list mb-3">
+                                    <h6 class="mb-3 text-uppercase fw-bold">Best Selling Products</h6>
+                                    <hr>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="bottom-product-img">
+                                            <a href="product-details.html">
+                                                <img src="{{ asset('assets/images/products/01.png') }}"
+                                                    width="80" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="">
+                                            <h6 class="mb-0 fw-light mb-1 fw-bold">Men Casual Shirts</h6>
+                                            <div class="rating"> <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="bottom-product-img">
+                                            <a href="product-details.html">
+                                                <img src="{{ asset('assets/images/products/02.png') }}"
+                                                    width="80" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="ms-0">
+                                            <h6 class="mb-0 fw-light mb-1 fw-bold">Formal Coat Pant</h6>
+                                            <div class="rating"> <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="bottom-product-img">
+                                            <a href="product-details.html">
+                                                <img src="{{ asset('assets/images/products/03.png') }}"
+                                                    width="80" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="ms-0">
+                                            <h6 class="mb-0 fw-light mb-1 fw-bold">Women Blue Jeans</h6>
+                                            <div class="rating"> <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="bottom-product-img">
+                                            <a href="product-details.html">
+                                                <img src="{{ asset('assets/images/products/04.png') }}"
+                                                    width="80" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="ms-0">
+                                            <h6 class="mb-0 fw-light mb-1 fw-bold">Yellow Track Suit</h6>
+                                            <div class="rating"> <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="featured-list mb-3">
+                                    <h6 class="mb-3 text-uppercase fw-bold">Featured Products</h6>
+                                    <hr>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="bottom-product-img">
+                                            <a href="product-details.html">
+                                                <img src="{{ asset('assets/images/products/05.png') }}"
+                                                    width="80" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="ms-0">
+                                            <h6 class="mb-0 fw-light mb-1 fw-bold">Men Sports Shoes</h6>
+                                            <div class="rating"> <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="bottom-product-img">
+                                            <a href="product-details.html">
+                                                <img src="{{ asset('assets/images/products/06.png') }}"
+                                                    width="80" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="ms-0">
+                                            <h6 class="mb-0 fw-light mb-1 fw-bold">Black Sofa Set</h6>
+                                            <div class="rating"> <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="bottom-product-img">
+                                            <a href="product-details.html">
+                                                <img src="{{ asset('assets/images/products/07.png') }}"
+                                                    width="80" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="ms-0">
+                                            <h6 class="mb-0 fw-light mb-1 fw-bold">Sports Watch</h6>
+                                            <div class="rating"> <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="bottom-product-img">
+                                            <a href="product-details.html">
+                                                <img src="{{ asset('assets/images/products/08.png') }}"
+                                                    width="80" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="ms-0">
+                                            <h6 class="mb-0 fw-light mb-1 fw-bold">Women Blue Heels</h6>
+                                            <div class="rating"> <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="new-arrivals-list mb-3">
+                                    <h6 class="mb-3 text-uppercase fw-bold">New arrivals</h6>
+                                    <hr>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="bottom-product-img">
+                                            <a href="jproduct-details.html">
+                                                <img src="{{ asset('assets/images/products/09.png') }}"
+                                                    width="80" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="ms-0">
+                                            <h6 class="mb-0 fw-light mb-1 fw-bold">Men Black Cap</h6>
+                                            <div class="rating"> <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="bottom-product-img">
+                                            <a href="product-details.html">
+                                                <img src="{{ asset('assets/images/products/10.png') }}"
+                                                    width="80" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="ms-0">
+                                            <h6 class="mb-0 fw-light mb-1 fw-bold">Orange Headphone</h6>
+                                            <div class="rating"> <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="bottom-product-img">
+                                            <a href="product-details.html">
+                                                <img src="{{ asset('assets/images/products/11.png') }}"
+                                                    width="80" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="ms-0">
+                                            <h6 class="mb-0 fw-light mb-1 fw-bold">Samsung Mobile</h6>
+                                            <div class="rating"> <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="bottom-product-img">
+                                            <a href="product-details.html">
+                                                <img src="{{ asset('assets/images/products/12.png') }}"
+                                                    width="80" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="ms-0">
+                                            <h6 class="mb-0 fw-light mb-1 fw-bold">Apple Notebook</h6>
+                                            <div class="rating"> <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="top-rated-products-list mb-3">
+                                    <h6 class="mb-3 text-uppercase fw-bold">Top rated Products</h6>
+                                    <hr>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="bottom-product-img">
+                                            <a href="product-details.html">
+                                                <img src="{{ asset('assets/images/products/13.png') }}"
+                                                    width="80" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="ms-0">
+                                            <h6 class="mb-0 fw-light mb-1 fw-bold">Ronaldo Football</h6>
+                                            <div class="rating"> <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="bottom-product-img">
+                                            <a href="product-details.html">
+                                                <img src="{{ asset('assets/images/products/14.png') }}"
+                                                    width="80" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="ms-0">
+                                            <h6 class="mb-0 fw-light mb-1 fw-bold">Red Fancy Sofa</h6>
+                                            <div class="rating"> <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="bottom-product-img">
+                                            <a href="product-details.html">
+                                                <img src="{{ asset('assets/images/products/15.png') }}"
+                                                    width="80" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="ms-0">
+                                            <h6 class="mb-0 fw-light mb-1 fw-bold">Sports Cycle</h6>
+                                            <div class="rating"> <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="bottom-product-img">
+                                            <a href="product-details.html">
+                                                <img src="{{ asset('assets/images/products/16.png') }}"
+                                                    width="80" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="ms-0">
+                                            <h6 class="mb-0 fw-light mb-1 fw-bold">Circular Table</h6>
+                                            <div class="rating"> <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                                <i class="bx bxs-star text-warning"></i>
+                                            </div>
+                                            <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <footer>
+            <section class="py-5 border-top bg-light">
+                <div class="container">
+                    <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-4">
+                        <div class="col">
+                            <div class="footer-section1">
+                                <h5 class="mb-4 text-uppercase fw-bold">Contact Info</h5>
+                                <div class="address mb-3">
+                                    <h6 class="mb-0 text-uppercase fw-bold">Address</h6>
+                                    <p class="mb-0">123 Street Name, City, Australia</p>
+                                </div>
+                                <div class="phone mb-3">
+                                    <h6 class="mb-0 text-uppercase fw-bold">Phone</h6>
+                                    <p class="mb-0">Toll Free (123) 472-796</p>
+                                    <p class="mb-0">Mobile : +91-9910XXXX</p>
+                                </div>
+                                <div class="email mb-3">
+                                    <h6 class="mb-0 text-uppercase fw-bold">Email</h6>
+                                    <p class="mb-0">mail@example.com</p>
+                                </div>
+                                <div class="working-days mb-3">
+                                    <h6 class="mb-0 text-uppercase fw-bold">WORKING DAYS</h6>
+                                    <p class="mb-0">Mon - FRI / 9:30 AM - 6:30 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="footer-section2">
+                                <h5 class="mb-4 text-uppercase fw-bold">Categories</h5>
+                                <ul class="list-unstyled">
+                                    <li class="mb-1"><a href="javascript:;"><i class='bx bx-chevron-right'></i>
+                                            Jeans</a>
+                                    </li>
+                                    <li class="mb-1"><a href="javascript:;"><i class='bx bx-chevron-right'></i>
+                                            T-Shirts</a>
+                                    </li>
+                                    <li class="mb-1"><a href="javascript:;"><i class='bx bx-chevron-right'></i>
+                                            Sports</a>
+                                    </li>
+                                    <li class="mb-1"><a href="javascript:;"><i class='bx bx-chevron-right'></i>
+                                            Shirts & Tops</a>
+                                    </li>
+                                    <li class="mb-1"><a href="javascript:;"><i class='bx bx-chevron-right'></i>
+                                            Clogs & Mules</a>
+                                    </li>
+                                    <li class="mb-1"><a href="javascript:;"><i class='bx bx-chevron-right'></i>
+                                            Sunglasses</a>
+                                    </li>
+                                    <li class="mb-1"><a href="javascript:;"><i class='bx bx-chevron-right'></i>
+                                            Bags & Wallets</a>
+                                    </li>
+                                    <li class="mb-1"><a href="javascript:;"><i class='bx bx-chevron-right'></i>
+                                            Sneakers & Athletic</a>
+                                    </li>
+                                    <li class="mb-1"><a href="javascript:;"><i class='bx bx-chevron-right'></i>
+                                            Electronis</a>
+                                    </li>
+                                    <li class="mb-1"><a href="javascript:;"><i class='bx bx-chevron-right'></i>
+                                            Furniture</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="footer-section3">
+                                <h5 class="mb-4 text-uppercase fw-bold">Popular Tags</h5>
+                                <div class="tags-box d-flex flex-wrap gap-2">
+                                    <a href="javascript:;" class="btn btn-ecomm btn-outline-dark">Cloths</a>
+                                    <a href="javascript:;" class="btn btn-ecomm btn-outline-dark">Electronis</a>
+                                    <a href="javascript:;" class="btn btn-ecomm btn-outline-dark">Furniture</a>
+                                    <a href="javascript:;" class="btn btn-ecomm btn-outline-dark">Sports</a>
+                                    <a href="javascript:;" class="btn btn-ecomm btn-outline-dark">Men Wear</a>
+                                    <a href="javascript:;" class="btn btn-ecomm btn-outline-dark">Women Wear</a>
+                                    <a href="javascript:;" class="btn btn-ecomm btn-outline-dark">Laptops</a>
+                                    <a href="javascript:;" class="btn btn-ecomm btn-outline-dark">Formal Shirts</a>
+                                    <a href="javascript:;" class="btn btn-ecomm btn-outline-dark">Topwear</a>
+                                    <a href="javascript:;" class="btn btn-ecomm btn-outline-dark">Headphones</a>
+                                    <a href="javascript:;" class="btn btn-ecomm btn-outline-dark">Bottom Wear</a>
+                                    <a href="javascript:;" class="btn btn-ecomm btn-outline-dark">Bags</a>
+                                    <a href="javascript:;" class="btn btn-ecomm btn-outline-dark">Sofa</a>
+                                    <a href="javascript:;" class="btn btn-ecomm btn-outline-dark">Shoes</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="footer-section4">
+                                <h5 class="mb-4 text-uppercase fw-bold">Stay informed</h5>
+                                <div class="subscribe">
+                                    <input type="text" class="form-control" placeholder="Enter Your Email" />
+                                    <div class="mt-3 d-grid">
+                                        <a href="javascript:;" class="btn btn-dark btn-ecomm">Subscribe</a>
+                                    </div>
+                                    <p class="mt-3 mb-0">Subscribe to our newsletter to receive early discount offers,
+                                        updates and new products info.</p>
+                                </div>
+                                <div class="download-app mt-3">
+                                    <h6 class="mb-3 text-uppercase fw-bold">Download our app</h6>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <a href="javascript:;">
+                                            <img src="{{ asset('assets/images/icons/apple-store.png') }}"
+                                                class="" width="140" alt="" />
+                                        </a>
+                                        <a href="javascript:;">
+                                            <img src="{{ asset('assets/images/icons/play-store.png') }}"
+                                                class="" width="140" alt="" />
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
-
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
+            </section>
+            <section class="footer-strip text-center py-3 border-top positon-absolute bottom-0">
+                <div class="container">
+                    <div class="d-flex flex-column flex-lg-row align-items-center gap-3 justify-content-between">
+                        <p class="mb-0">Copyright © 2022. All right reserved.</p>
+                        <div class="payment-icon">
+                            <div class="row row-cols-auto g-2 justify-content-end">
+                                <div class="col">
+                                    <img src="{{ asset('assets/images/icons/visa.png') }}" alt="" />
+                                </div>
+                                <div class="col">
+                                    <img src="{{ asset('assets/images/icons/paypal.png') }}" alt="" />
+                                </div>
+                                <div class="col">
+                                    <img src="{{ asset('assets/images/icons/mastercard.png') }}" alt="" />
+                                </div>
+                                <div class="col">
+                                    <img src="{{ asset('assets/images/icons/american-express.png') }}"
+                                        alt="" />
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                </div>
+            </section>
+        </footer>
+        <div class="modal fade" id="QuickViewProduct">
+            <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-xl-down">
+                <div class="modal-content rounded-0 border-0">
+                    <div class="modal-body">
+                        <button type="button" class="btn-close float-end" data-bs-dismiss="modal"></button>
+                        <div class="row g-0">
+                            <div class="col-12 col-lg-6">
+                                <div class="image-zoom-section">
+                                    <div class="product-gallery owl-carousel owl-theme border mb-3 p-3"
+                                        data-slider-id="1">
+                                        <div class="item">
+                                            <img src="{{ asset('assets/images/product-gallery/01.png') }}"
+                                                class="img-fluid" alt="">
+                                        </div>
+                                        <div class="item">
+                                            <img src="{{ asset('assets/images/product-gallery/02.png') }}"
+                                                class="img-fluid" alt="">
+                                        </div>
+                                        <div class="item">
+                                            <img src="{{ asset('assets/images/product-gallery/03.png') }}"
+                                                class="img-fluid" alt="">
+                                        </div>
+                                        <div class="item">
+                                            <img src="{{ asset('assets/images/product-gallery/04.png') }}"
+                                                class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="owl-thumbs d-flex justify-content-center" data-slider-id="1">
+                                        <button class="owl-thumb-item">
+                                            <img src="{{ asset('assets/images/product-gallery/01.png') }}"
+                                                class="" alt="">
+                                        </button>
+                                        <button class="owl-thumb-item">
+                                            <img src="{{ asset('assets/images/product-gallery/02.png') }}"
+                                                class="" alt="">
+                                        </button>
+                                        <button class="owl-thumb-item">
+                                            <img src="{{ asset('assets/images/product-gallery/03.png') }}"
+                                                class="" alt="">
+                                        </button>
+                                        <button class="owl-thumb-item">
+                                            <img src="{{ asset('assets/images/product-gallery/04.png') }}"
+                                                class="" alt="">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="product-info-section p-3">
+                                    <h3 class="mt-3 mt-lg-0 mb-0">Allen Solly Men's Polo T-Shirt</h3>
+                                    <div class="product-rating d-flex align-items-center mt-2">
+                                        <div class="rates cursor-pointer font-13"> <i
+                                                class="bx bxs-star text-warning"></i>
+                                            <i class="bx bxs-star text-warning"></i>
+                                            <i class="bx bxs-star text-warning"></i>
+                                            <i class="bx bxs-star text-warning"></i>
+                                            <i class="bx bxs-star text-warning"></i>
+                                        </div>
+                                        <div class="ms-1">
+                                            <p class="mb-0">(24 Ratings)</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center mt-3 gap-2">
+                                        <h5 class="mb-0 text-decoration-line-through text-light-3">$98.00</h5>
+                                        <h4 class="mb-0">$49.00</h4>
+                                    </div>
+                                    <div class="mt-3">
+                                        <h6>Discription :</h6>
+                                        <p class="mb-0">Virgil Abloh’s Off-White is a streetwear-inspired collection
+                                            that continues to break away from the conventions of mainstream fashion.
+                                            Made in Italy, these black and brown Odsy-1000 low-top sneakers.</p>
+                                    </div>
+                                    <dl class="row mt-3">
+                                        <dt class="col-sm-3">Product id</dt>
+                                        <dd class="col-sm-9">#BHU5879</dd>
+                                        <dt class="col-sm-3">Delivery</dt>
+                                        <dd class="col-sm-9">Russia, USA, and Europe</dd>
+                                    </dl>
+                                    <div class="row row-cols-auto align-items-center mt-3">
+                                        <div class="col">
+                                            <label class="form-label">Quantity</label>
+                                            <select class="form-select form-select-sm">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Size</label>
+                                            <select class="form-select form-select-sm">
+                                                <option>S</option>
+                                                <option>M</option>
+                                                <option>L</option>
+                                                <option>XS</option>
+                                                <option>XL</option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Colors</label>
+                                            <div class="color-indigators d-flex align-items-center gap-2">
+                                                <div class="color-indigator-item bg-primary"></div>
+                                                <div class="color-indigator-item bg-danger"></div>
+                                                <div class="color-indigator-item bg-success"></div>
+                                                <div class="color-indigator-item bg-warning"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex gap-2 mt-3">
+                                        <a href="javascript:;" class="btn btn-dark btn-ecomm"> <i
+                                                class="bx bxs-cart-add"></i>Add to Cart</a> <a href="javascript:;"
+                                            class="btn btn-light btn-ecomm"><i class="bx bx-heart"></i>Add to
+                                            Wishlist</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </body>
+        <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+    </div>
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/OwlCarousel/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/OwlCarousel/js/owl.carousel2.thumbs.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js') }}"></script>
+    <script src="{{ asset('assets/js/app.js') }}"></script>
+    <script src="{{ asset('assets/js/index.js') }}"></script>
+</body>
+
 </html>
