@@ -1,57 +1,84 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('auth.auth_layout.app')
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
-
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-
-            <!-- Email Address -->
-            <div>
-                <x-input-label for="email" :value="__('Email')" />
-
-                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-
-                <x-input-error :messages="$errors->get('email')" class="mt-2" />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-input-label for="password" :value="__('Password')" />
-
-                <x-text-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
-
-                <x-input-error :messages="$errors->get('password')" class="mt-2" />
-            </div>
-
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-primary-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-primary-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+@section('content')
+    <div class="page-wrapper">
+        <div class="page-content">
+            <section class="py-3 border-bottom border-top d-none d-md-flex bg-light">
+                <div class="container">
+                    <div class="page-breadcrumb d-flex align-items-center">
+                        <h3 class="breadcrumb-title pe-3">Sign in</h3>
+                        <div class="ms-auto">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb mb-0 p-0">
+                                    <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i>
+                                            Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item"><a href="javascript:;">Authentication</a>
+                                    </li>
+                                    <li class="breadcrumb-item active" aria-current="page">Sign In</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="">
+                <div class="container">
+                    <div class="section-authentication-signin d-flex align-items-center justify-content-center my-5">
+                        <div class="row row-cols-1 row-cols-xl-2">
+                            <div class="col mx-auto">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="border p-4 rounded">
+                                            <div class="text-center">
+                                                <h3 class="">Sign in</h3>
+                                                <p>Don't have an account yet? <a href="{{ route('register') }}">Sign up
+                                                        here</a>
+                                                </p>
+                                            </div>
+                                            <div class="form-body">
+                                                <form class="row g-3">
+                                                    <div class="col-12">
+                                                        <label for="inputEmailAddress" class="form-label">Email
+                                                            Address</label>
+                                                        <input type="email" class="form-control" id="inputEmailAddress"
+                                                            placeholder="Email Address">
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <label for="inputChoosePassword" class="form-label">Enter
+                                                            Password</label>
+                                                        <div class="input-group" id="show_hide_password">
+                                                            <input type="password" class="form-control border-end-0"
+                                                                id="inputChoosePassword" value="12345678"
+                                                                placeholder="Enter Password"> <a href="javascript:;"
+                                                                class="input-group-text bg-transparent"><i
+                                                                    class='bx bx-hide'></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-check form-switch">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="flexSwitchCheckChecked" checked>
+                                                            <label class="form-check-label"
+                                                                for="flexSwitchCheckChecked">Remember Me</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="d-grid">
+                                                            <button type="submit" class="btn btn-dark"><i
+                                                                    class="bx bxs-lock-open"></i>Sign in</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+@endsection
