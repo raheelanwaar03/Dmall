@@ -41,34 +41,35 @@
                                                     @csrf
                                                     <div class="col-sm-12">
                                                         <label for="inputFirstName" class="form-label">Username</label>
-                                                        <input type="email" name="name" class="form-control" id="inputFirstName"
+                                                        <input type="text" name="name" class="form-control"
                                                             placeholder="Jhon">
                                                     </div>
                                                     <div class="col-12">
                                                         <label for="inputEmailAddress" class="form-label">Email
                                                             Address</label>
-                                                        <input type="email" name="email" class="form-control" id="inputEmailAddress"
+                                                        <input type="email" name="email" class="form-control"
                                                             placeholder="example@user.com">
                                                     </div>
                                                     <div class="col-12">
                                                         <label for="inputChoosePassword" class="form-label">Password</label>
                                                         <div class="input-group" id="show_hide_password">
-                                                            <input type="password" name="password" class="form-control border-end-0"
-                                                                id="inputChoosePassword" placeholder="Enter Password">
+                                                            <input type="password" name="password"
+                                                                class="form-control border-end-0"
+                                                                placeholder="Enter Password">
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
                                                         <label for="inputChoosePassword" class="form-label">Confirm
                                                             Password</label>
                                                         <div class="input-group" id="show_hide_password">
-                                                            <input type="password" name="confirmation_password" class="form-control border-end-0"
-                                                                id="inputChoosePassword" placeholder="Confirm Password">
+                                                            <input type="password" name="password_confirmation"
+                                                                class="form-control border-end-0"
+                                                                placeholder="Confirm Password">
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="form-check form-switch">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                id="flexSwitchCheckChecked">
+                                                            <input class="form-check-input" type="checkbox">
                                                             <label class="form-check-label" for="flexSwitchCheckChecked">I
                                                                 read and agree to Terms & Conditions</label>
                                                         </div>
