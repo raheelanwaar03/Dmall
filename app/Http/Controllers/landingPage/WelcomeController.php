@@ -11,4 +11,14 @@ class WelcomeController extends Controller
     {
         return view('LandingPage.welcome');
     }
+
+    public function aboutUs()
+    {
+        return view('LandingPage.aboutUs');
+    }
+
+    public function contactUs()
+    {
+        return view('LandingPage.contactUs');
+    }
 }
