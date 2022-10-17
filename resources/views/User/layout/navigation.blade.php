@@ -18,7 +18,7 @@
 <body id="page-top">
     <div id="wrapper">
         <ul class="navbar-nav bg-gradient-warning sidebar sidebar-dark accordion" id="accordionSidebar">
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('User.index') }}">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -35,10 +35,15 @@
                 Main
             </div>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="{{ route('User.WidthrawalReq.view') }}">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Request for Widthraw</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('User.Widthrawal.Transcation.Details') }}">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Transcation Details</span>
                 </a>
             </li>
             <li class="nav-item">

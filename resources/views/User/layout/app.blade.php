@@ -2,4 +2,6 @@
 
 @yield('content')
 
+<x-alert />
+
 @include('User.layout.footer')
