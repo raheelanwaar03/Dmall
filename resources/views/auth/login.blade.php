@@ -42,14 +42,14 @@
                                                     <div class="col-12">
                                                         <label for="inputEmailAddress" class="form-label">Email
                                                             Address</label>
-                                                        <input type="email" class="form-control" id="inputEmailAddress"
+                                                        <input type="email" name="email" class="form-control" id="inputEmailAddress"
                                                             placeholder="Email Address">
                                                     </div>
                                                     <div class="col-12">
                                                         <label for="inputChoosePassword" class="form-label">Enter
                                                             Password</label>
                                                         <div class="input-group" id="show_hide_password">
-                                                            <input type="password" class="form-control border-end-0"
+                                                            <input type="password" name="password" class="form-control border-end-0"
                                                                 placeholder="Enter Password">
                                                         </div>
                                                     </div>

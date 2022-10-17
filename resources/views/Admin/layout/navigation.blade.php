@@ -35,17 +35,21 @@
                 Main
             </div>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="{{ route('Admin.Widthrawal.User.Request') }}">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>User Widthrawal Request</span>
+                    <span>User All Transcation</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="{{ route('Admin.User.Transcation.Pending') }}">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
+                    <span>User Pending Request</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('Admin.User.Transcation.Approved') }}">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Approved Requests</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">

@@ -24,6 +24,7 @@ class WidthrawalReqController extends Controller
 
         $widthrawal = new WidthrawlAmount();
         $widthrawal->widthrawal_Amount = $validated['widthrawal_Amount'];
+        $widthrawal->user_id = auth()->user()->id;
         $widthrawal->widthrawal_bank = $validated['widthrawal_bank'];
         $widthrawal->widthrawal_bank_Account = $validated['widthrawal_bank_Account'];
         $widthrawal->user_bank_Name = $validated['user_bank_Name'];
@@ -35,7 +36,7 @@ class WidthrawalReqController extends Controller
 
     public function transcationDetails()
     {
-        $widthrawals = WidthrawlAmount::get();
+        $widthrawals = WidthrawlAmount::where('user_id',auth()->user()->id)->get();
         return view('User.Transcations.transcationDetails',compact('widthrawals'));
     }
 }

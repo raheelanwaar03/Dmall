@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('widthrawal_Amount');
             $table->string('widthrawal_bank');
+            $table->string('user_id');
             $table->string('status')->default('pending');
             $table->string('widthrawal_bank_Account');
             $table->string('user_bank_Name');
