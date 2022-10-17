@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>User Dashboard</title>
+    <title>Admin Dashboard</title>
     <link href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -26,9 +26,9 @@
             </a>
             <hr class="sidebar-divider my-0">
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route('User.index') }}">
+                <a class="nav-link" href="{{ route('Admin.index') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>User Dashboard</span></a>
+                    <span>Admin Dashboard</span></a>
             </li>
             <hr class="sidebar-divider">
             <div class="sidebar-heading">
@@ -38,7 +38,7 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Request for Widthraw</span>
+                    <span>User Widthrawal Request</span>
                 </a>
             </li>
             <li class="nav-item">
