@@ -37,7 +37,8 @@
                                                 </p>
                                             </div>
                                             <div class="form-body">
-                                                <form class="row g-3">
+                                                <form action="{{ route('login') }}" method="POST" class="row g-3">
+                                                    @csrf
                                                     <div class="col-12">
                                                         <label for="inputEmailAddress" class="form-label">Email
                                                             Address</label>
@@ -49,18 +50,7 @@
                                                             Password</label>
                                                         <div class="input-group" id="show_hide_password">
                                                             <input type="password" class="form-control border-end-0"
-                                                                id="inputChoosePassword" value="12345678"
-                                                                placeholder="Enter Password"> <a href="javascript:;"
-                                                                class="input-group-text bg-transparent"><i
-                                                                    class='bx bx-hide'></i></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-check form-switch">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                id="flexSwitchCheckChecked" checked>
-                                                            <label class="form-check-label"
-                                                                for="flexSwitchCheckChecked">Remember Me</label>
+                                                                placeholder="Enter Password">
                                                         </div>
                                                     </div>
                                                     <div class="col-12">

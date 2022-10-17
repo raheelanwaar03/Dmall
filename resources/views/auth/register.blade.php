@@ -68,13 +68,6 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
-                                                        <div class="form-check form-switch">
-                                                            <input class="form-check-input" type="checkbox">
-                                                            <label class="form-check-label" for="flexSwitchCheckChecked">I
-                                                                read and agree to Terms & Conditions</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12">
                                                         <div class="d-grid">
                                                             <button type="submit" class="btn btn-dark"><i
                                                                     class='bx bx-user'></i>Sign up</button>

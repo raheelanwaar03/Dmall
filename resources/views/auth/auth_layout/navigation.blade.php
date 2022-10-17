@@ -26,53 +26,12 @@
                     <nav class="navbar navbar-expand">
                         <div class="shiping-title d-none d-sm-flex">Welcome to our Shopingo store!</div>
                         <ul class="navbar-nav ms-auto d-none d-lg-flex">
-                            <li class="nav-item"><a class="nav-link" href="order-tracking.html">Track Order</a>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('welcome.aboutUs') }}">About</a>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="about-us.html">About</a>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="shop-categories.html">Our Stores</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="blog-post.html">Blog</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact</a>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('welcome.contactUs') }}">Contact</a>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="javascript:;">Help & FAQs</a>
-                            </li>
-                        </ul>
-                        <ul class="navbar-nav">
-                            <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#"
-                                    data-bs-toggle="dropdown">USD</a>
-                                <ul class="dropdown-menu dropdown-menu-lg-end">
-                                    <li><a class="dropdown-item" href="#">USD</a>
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">EUR</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#"
-                                    data-bs-toggle="dropdown">
-                                    <div class="lang d-flex gap-1">
-                                        <div><i class="flag-icon flag-icon-um"></i>
-                                        </div>
-                                        <div><span>ENG</span>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-lg-end">
-                                    <a class="dropdown-item d-flex allign-items-center" href="javascript:;"> <i
-                                            class="flag-icon flag-icon-de me-2"></i><span>German</span>
-                                    </a> <a class="dropdown-item d-flex allign-items-center" href="javascript:;"><i
-                                            class="flag-icon flag-icon-fr me-2"></i><span>French</span></a>
-                                    <a class="dropdown-item d-flex allign-items-center" href="javascript:;"><i
-                                            class="flag-icon flag-icon-um me-2"></i><span>English</span></a>
-                                    <a class="dropdown-item d-flex allign-items-center" href="javascript:;"><i
-                                            class="flag-icon flag-icon-in me-2"></i><span>Hindi</span></a>
-                                    <a class="dropdown-item d-flex allign-items-center" href="javascript:;"><i
-                                            class="flag-icon flag-icon-cn me-2"></i><span>Chinese</span></a>
-                                    <a class="dropdown-item d-flex allign-items-center" href="javascript:;"><i
-                                            class="flag-icon flag-icon-ae me-2"></i><span>Arabic</span></a>
-                                </div>
                             </li>
                         </ul>
                         <ul class="navbar-nav social-link ms-lg-2 ms-auto">
@@ -99,7 +58,7 @@
                                     <i class="bx bx-menu"></i>
                                 </div>
                                 <div class="logo">
-                                    <a href="index.html">
+                                    <a href="{{ route('welcome') }}">
                                         <img src="{{ asset('assets/images/logo-icon.png') }}" class="logo-icon"
                                             alt="" />
                                     </a>
@@ -118,7 +77,7 @@
                                 <div class="fs-1 text-content"><i class='bx bx-headphone'></i></div>
                                 <div class="">
                                     <p class="mb-0 text-content">CALL US NOW</p>
-                                    <h5 class="mb-0">+011 5827918</h5>
+                                    <h5 class="mb-0">{{ env('APP_Num') }}</h5>
                                 </div>
                             </div>
                         </div>
@@ -126,14 +85,14 @@
                             <div class="top-cart-icons">
                                 <nav class="navbar navbar-expand">
                                     <ul class="navbar-nav">
-                                        <li class="nav-item"><a href="account-dashboard.html"
+                                        <li class="nav-item"><a href="{{ route('login') }}"
                                                 class="nav-link cart-link"><i class='bx bx-user'></i></a>
                                         </li>
-                                        <li class="nav-item"><a href="wishlist.html" class="nav-link cart-link"><i
-                                                    class='bx bx-heart'></i></a>
+                                        <li class="nav-item"><a href="{{ route('login') }}"
+                                                class="nav-link cart-link"><i class='bx bx-heart'></i></a>
                                         </li>
                                         <li class="nav-item dropdown dropdown-large">
-                                            <a href="#"
+                                            <a href="{{ route('login') }}"
                                                 class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative cart-link"
                                                 data-bs-toggle="dropdown"> <span class="alert-count">8</span>
                                                 <i class='bx bx-shopping-bag'></i>
@@ -314,9 +273,9 @@
                         <div class="offcanvas-body primary-menu">
                             <ul class="navbar-nav justify-content-start flex-grow-1 gap-1">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.html">Home</a>
+                                    <a class="nav-link" href="{{ route('welcome') }}">Home</a>
                                 </li>
-                                <li class="nav-item dropdown">
+                                {{-- <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="tv-shows.html"
                                         data-bs-toggle="dropdown">
                                         Categories
@@ -376,8 +335,8 @@
                                         </div>
                                         <!-- end row -->
                                     </div>
-                                </li>
-                                <li class="nav-item dropdown">
+                                </li> --}}
+                                {{-- <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"
                                         data-bs-toggle="dropdown">
                                         Shop <i class='bx bx-chevron-down ms-1'></i>
@@ -432,30 +391,31 @@
                                                 Comparison</a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> --}}
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="about-us.html">About</a>
+                                    <a class="nav-link" href="{{ route('welcome.aboutUs') }}">About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact-us.html">Contact</a>
+                                    <a class="nav-link" href="{{ route('welcome.contactUs') }}">Contact</a>
                                 </li>
-                                <li class="nav-item"> <a class="nav-link" href="shop-categories.html">Our Store</a>
-                                </li>
+                                {{-- <li class="nav-item"> <a class="nav-link" href="shop-categories.html">Our Store</a>
+                                </li> --}}
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"
                                         data-bs-toggle="dropdown">
                                         Account
                                     </a>
                                     <ul class="dropdown-menu">
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
                                         <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
                                         <li><a class="dropdown-item" href="{{ route('register') }}">Register</a>
                                         </li>
-                                        <li><a class="dropdown-item"
-                                                href="authentication-reset-password.html">Password</a></li>
                                     </ul>
                                 </li>
-                                <li class="nav-item dropdown">
+                                {{-- <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"
                                         data-bs-toggle="dropdown">
                                         Blog
@@ -464,7 +424,7 @@
                                         <li><a class="dropdown-item" href="blog-post.html">Blog Post</a></li>
                                         <li><a class="dropdown-item" href="blog-read.html">Blog Read</a></li>
                                     </ul>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                     </div>
