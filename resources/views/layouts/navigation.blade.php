@@ -26,13 +26,8 @@
                     <nav class="navbar navbar-expand">
                         <div class="shiping-title d-none d-sm-flex">Welcome to our Shopingo store!</div>
                         <ul class="navbar-nav ms-auto d-none d-lg-flex">
-                            <li class="nav-item"><a class="nav-link" href="order-tracking.html">Track Order</a>
-                            </li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('welcome.aboutUs') }}">About</a>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="shop-categories.html">Our Stores</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="blog-post.html">Blog</a>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('welcome.contactUs') }}">Contact</a>
                             </li>
@@ -82,7 +77,7 @@
                                 <div class="fs-1 text-content"><i class='bx bx-headphone'></i></div>
                                 <div class="">
                                     <p class="mb-0 text-content">CALL US NOW</p>
-                                    <h5 class="mb-0">+011 5827918</h5>
+                                    <h5 class="mb-0">{{ env('APP_Num') }}</h5>
                                 </div>
                             </div>
                         </div>
@@ -90,14 +85,14 @@
                             <div class="top-cart-icons">
                                 <nav class="navbar navbar-expand">
                                     <ul class="navbar-nav">
-                                        <li class="nav-item"><a href="account-dashboard.html"
+                                        <li class="nav-item"><a href="{{ route('login') }}"
                                                 class="nav-link cart-link"><i class='bx bx-user'></i></a>
                                         </li>
-                                        <li class="nav-item"><a href="wishlist.html" class="nav-link cart-link"><i
+                                        <li class="nav-item"><a href="{{ route('login') }}" class="nav-link cart-link"><i
                                                     class='bx bx-heart'></i></a>
                                         </li>
                                         <li class="nav-item dropdown dropdown-large">
-                                            <a href="#"
+                                            <a href="{{ route('login') }}"
                                                 class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative cart-link"
                                                 data-bs-toggle="dropdown"> <span class="alert-count">8</span>
                                                 <i class='bx bx-shopping-bag'></i>
@@ -280,7 +275,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('welcome') }}">Home</a>
                                 </li>
-                                <li class="nav-item dropdown">
+                                {{-- <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="tv-shows.html"
                                         data-bs-toggle="dropdown">
                                         Categories
@@ -340,8 +335,8 @@
                                         </div>
                                         <!-- end row -->
                                     </div>
-                                </li>
-                                <li class="nav-item dropdown">
+                                </li> --}}
+                                {{-- <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"
                                         data-bs-toggle="dropdown">
                                         Shop <i class='bx bx-chevron-down ms-1'></i>
@@ -396,7 +391,7 @@
                                                 Comparison</a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> --}}
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('welcome.aboutUs') }}">About</a>
@@ -404,8 +399,8 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('welcome.contactUs') }}">Contact</a>
                                 </li>
-                                <li class="nav-item"> <a class="nav-link" href="shop-categories.html">Our Store</a>
-                                </li>
+                                {{-- <li class="nav-item"> <a class="nav-link" href="shop-categories.html">Our Store</a>
+                                </li> --}}
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"
                                         data-bs-toggle="dropdown">
@@ -418,11 +413,9 @@
                                         <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
                                         <li><a class="dropdown-item" href="{{ route('register') }}">Register</a>
                                         </li>
-                                        <li><a class="dropdown-item"
-                                                href="authentication-reset-password.html">Password</a></li>
                                     </ul>
                                 </li>
-                                <li class="nav-item dropdown">
+                                {{-- <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"
                                         data-bs-toggle="dropdown">
                                         Blog
@@ -431,7 +424,7 @@
                                         <li><a class="dropdown-item" href="blog-post.html">Blog Post</a></li>
                                         <li><a class="dropdown-item" href="blog-read.html">Blog Read</a></li>
                                     </ul>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                     </div>
