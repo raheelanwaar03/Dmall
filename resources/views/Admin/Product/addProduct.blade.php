@@ -11,24 +11,31 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-title">
-                    <h3 class="text-center text-primary">
+                    <h3 class="text-center text-primary mt-3">
                         Add New Product
                     </h3>
                 </div>
                 <div class="card-body">
-                    <div class="form-group">
-                        <label for="">Product Name</label>
-                        <input type="text" name="product_name" placeholder="Product Name" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Product Image</label>
-                        <input type="file" name="product_img" placeholder="Product Image" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Product Description</label>
-                        <input type="text" name="product_description" placeholder="Product Description" class="form-control">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Add Product</button>
+                    <form action="{{ route('Product.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group">
+                            <label for="">Product Name</label>
+                            <input type="text" name="product_name" placeholder="Product Name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Product Description</label>
+                            <input type="text" name="product_description" placeholder="Product Description" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Product Price</label>
+                            <input type="text" name="product_price" placeholder="Product Price" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Product Image</label>
+                            <input type="file" name="product_img" placeholder="Product Image" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Product</button>
+                    </form>
                 </div>
             </div>
         </div>
