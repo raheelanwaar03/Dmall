@@ -32,24 +32,13 @@
             </li>
             <hr class="sidebar-divider">
             <div class="sidebar-heading">
-                Main
+                Transcation
             </div>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('Admin.Widthrawal.User.Request') }}">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>User All Transcation</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('Admin.User.Transcation.Pending') }}">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>User Pending Request</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('Admin.User.Transcation.Approved') }}">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Approved Requests</span>
+                    <span>Utilities</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
@@ -62,10 +51,25 @@
                     </div>
                 </div>
             </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Transcation</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">User Transcation:</h6>
+                        <a class="collapse-item" href="{{ route('Admin.Widthrawal.User.Request') }}">User All Transcation</a>
+                        <a class="collapse-item" href="{{ route('Admin.User.Transcation.Pending') }}">User Pending Request</a>
+                        <a class="collapse-item" href="{{ route('Admin.User.Transcation.Approved') }}">User Approved Request</a>
+                    </div>
+                </div>
+            </li>
+
             <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
+                <a class="nav-link collapsed" href="#">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Pages</span>
                 </a>
