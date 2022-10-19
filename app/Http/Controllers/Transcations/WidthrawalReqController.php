@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Transcations;
 
 use App\Http\Controllers\Controller;
+use App\Models\admin\Transcation\WidthrawLimit;
 use App\Models\Transctions\WidthrawlAmount;
 use Illuminate\Http\Request;
 
@@ -21,6 +22,22 @@ class WidthrawalReqController extends Controller
             'widthrawal_bank_Account' => 'required',
             'user_bank_Name' => 'required',
         ]);
+
+        $userWidthrawAmount = $validated['widthrawal_Amount'];
+        $query = WidthrawLimit::first();
+        $adminMinLimit = $query->widthraw_min;
+        $adminMaxLimit = $query->widthraw_max;
+
+        if ($userWidthrawAmount < $adminMinLimit)
+        {
+            return redirect()->back()->with('error','Your Amount is less than Admin limit');
+        }
+
+        if ($userWidthrawAmount > $adminMaxLimit)
+        {
+            return redirect()->back()->with('error','Your Amount is Greater than Admin limit');
+        }
+
 
         $widthrawal = new WidthrawlAmount();
         $widthrawal->widthrawal_Amount = $validated['widthrawal_Amount'];
