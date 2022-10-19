@@ -15,19 +15,20 @@
                     </h3>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('Product.edit') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('Product.update',$product->id) }}" method="POST" enctype="multipart/form-data">
+                        @method('put')
                         @csrf
                         <div class="form-group">
                             <label for="">Product Name</label>
-                            <input type="text" name="product_name" placeholder="Product Name" class="form-control">
+                            <input type="text" name="product_name" value="{{ $product->product_name }}" placeholder="Product Name" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="">Product Description</label>
-                            <input type="text" name="product_description" placeholder="Product Description" class="form-control">
+                            <input type="text" name="product_description" value="{{ $product->product_description }}" placeholder="Product Description" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="">Product Price</label>
-                            <input type="text" name="product_price" placeholder="Product Price" class="form-control">
+                            <input type="text" name="product_price" value="{{ $product->product_price }}" placeholder="Product Price" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="">Product Image</label>
