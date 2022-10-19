@@ -63,15 +63,18 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fas fa-fw fa-chart-area"></i>
                     <span>Transcation</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">User Transcation:</h6>
-                        <a class="collapse-item" href="{{ route('Admin.Widthrawal.User.Request') }}">User All Transcation</a>
-                        <a class="collapse-item" href="{{ route('Admin.User.Transcation.Pending') }}">User Pending Request</a>
-                        <a class="collapse-item" href="{{ route('Admin.User.Transcation.Approved') }}">User Approved Request</a>
+                        <a class="collapse-item" href="{{ route('Admin.Widthrawal.User.Request') }}">User All
+                            Transcation</a>
+                        <a class="collapse-item" href="{{ route('Admin.User.Transcation.Pending') }}">User Pending
+                            Request</a>
+                        <a class="collapse-item" href="{{ route('Admin.User.Transcation.Approved') }}">User Approved
+                            Request</a>
                     </div>
                 </div>
             </li>
@@ -82,7 +85,8 @@
                     <i class="fas fa-fw fa-folder"></i>
                     <span>User</span>
                 </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">User Mangment:</h6>
                         <a class="collapse-item" href="{{ route('Admin.allUsers') }}">All User</a>
@@ -91,9 +95,9 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
+                <a class="nav-link" href="{{ route('Limit.index') }}">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Set Widthraw Limit</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="tables.html">
@@ -162,8 +166,10 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name }}</span>
-                                <img class="img-profile rounded-circle" src="{{ asset('assets/img/undraw_profile.svg') }}">
+                                <span
+                                    class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name }}</span>
+                                <img class="img-profile rounded-circle"
+                                    src="{{ asset('assets/img/undraw_profile.svg') }}">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
