@@ -65,7 +65,8 @@ class ProductMangerController extends Controller
      */
     public function show($id)
     {
-        //
+        $products = ProductManger::find($id);
+        return view('Admin.Product.showProduct',compact('products'));
     }
 
     /**
@@ -76,7 +77,8 @@ class ProductMangerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $products = ProductManger::find($id);
+        return view('Admin.Product.editProduct',compact('products'));
     }
 
     /**
@@ -99,6 +101,8 @@ class ProductMangerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = ProductManger::find($id);
+        $product->delete();
+        return redirect()->back()->with('success','Product Deleted successfuly');
     }
 }

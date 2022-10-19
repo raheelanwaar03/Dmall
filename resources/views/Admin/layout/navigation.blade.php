@@ -57,8 +57,6 @@
                         <h6 class="collapse-header">Product's Mangement:</h6>
                         <a class="collapse-item" href="{{ route('Product.create') }}">Add New Product</a>
                         <a class="collapse-item" href="{{ route('Product.index') }}">All Products</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
                     </div>
                 </div>
             </li>
