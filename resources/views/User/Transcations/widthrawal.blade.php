@@ -9,7 +9,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-title">
-                        <h1 class="text-center text-warning mt-3">Widthraw Amout!</h1>
+                        <h1 class="text-center text-primary mt-3">Widthraw Amout!</h1>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('User.Widthrawal.Amount.store') }}" method="POST">

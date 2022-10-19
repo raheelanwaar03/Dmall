@@ -15,7 +15,8 @@ class LimitController extends Controller
      */
     public function index()
     {
-        return view('Admin.Transctions.widthrawLimit');
+        $widthrawLimit = WidthrawLimit::first();
+        return view('Admin.Transctions.widthrawLimit',compact('widthrawLimit'));
     }
 
     /**
@@ -78,9 +79,12 @@ class LimitController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, WidthrawLimit  $widthrawLimit)
     {
-        //
+        $widthrawLimit->widthraw_min = $request->widthraw_min;
+        $widthrawLimit->widthraw_max = $request->widthraw_max;
+        $widthrawLimit->save();
+        return redirect()->back()->with('success', 'Limit Updated');
     }
 
     /**
