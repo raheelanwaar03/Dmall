@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('Admin')->middleware(['auth','adminAuth'])->group(function(){
 
     Route::get('/',[AdminController::class, 'index'])->name('Admin.index');
+    Route::get('/all-Users',[AdminController::class, 'allUsers'])->name('Admin.allUsers');
+    Route::get('/User/ban/{id}',[AdminController::class, 'userBan'])->name('Admin.Ban.User');
     // Admin Transcation detail Routes
     Route::get('/widthrawal-req',[TranscationDetails::class,'userWidthrawalReq'])->name('Admin.Widthrawal.User.Request');
     Route::get('/approved-user-req/{id}',[TranscationDetails::class,'approvedReq'])->name('Admin.Make.Request.Approve');
