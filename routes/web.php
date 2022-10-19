@@ -12,6 +12,7 @@ Route::get('/Contact-Us',[WelcomeController::class,'contactUs'])->name('welcome.
 Route::prefix('user')->middleware(['auth','userAuth'])->group(function(){
 
     Route::get('/',[UserController::class, 'index'])->name('User.index');
+    Route::get('/Approved',[UserController::class, 'approvedTranscation'])->name('User.Transcation.Approved');
     // Transcation of Amount Routes
     Route::get('/widthrawal-req',[WidthrawalReqController::class ,'widthrawalReqView'])->name('User.WidthrawalReq.view');
     Route::get('/transcation-details',[WidthrawalReqController::class ,'transcationDetails'])->name('User.Widthrawal.Transcation.Details');

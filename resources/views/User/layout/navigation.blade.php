@@ -17,7 +17,7 @@
 
 <body id="page-top">
     <div id="wrapper">
-        <ul class="navbar-nav bg-gradient-warning sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('User.index') }}">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
@@ -35,16 +35,19 @@
                 Main
             </div>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('User.WidthrawalReq.view') }}">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Request for Widthraw</span>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Transcation</span>
                 </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('User.Widthrawal.Transcation.Details') }}">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Transcation Details</span>
-                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">MY Transcations:</h6>
+                        <a class="collapse-item" href="{{ route('User.WidthrawalReq.view') }}">Request for Widthraw</a>
+                        <a class="collapse-item" href="{{ route('User.Widthrawal.Transcation.Details') }}">All Transcation Details</a>
+                        <a class="collapse-item" href="{{ route('User.Transcation.Approved') }}">Approved Transcations</a>
+                    </div>
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
@@ -99,7 +102,7 @@
                             <input type="text" class="form-control bg-light border-0 small"
                                 placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
-                                <button class="btn btn-warning" type="button">
+                                <button class="btn btn-primary" type="button">
                                     <i class="fas fa-search fa-sm"></i>
                                 </button>
                             </div>
