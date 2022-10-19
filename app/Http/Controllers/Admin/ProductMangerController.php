@@ -88,9 +88,20 @@ class ProductMangerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, ProductManger $product)
     {
-        return 1;
+        if ($request->hasFile('product_img')) {
+            $file = $request->file('product_img');
+            $fileName = rand('111111', '999999') . '.' .  $file->getClientOriginalExtension();
+            $file->move(public_path('images'), $fileName);
+            $product->product_img = $fileName;
+        }
+
+        $product->product_name = $request->product_name;
+        $product->product_price = $request->product_price;
+        $product->product_description = $request->product_description;
+        $product->save();
+        return redirect()->back()->with('success','Product Updated Successfuly');
     }
 
     /**

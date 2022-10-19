@@ -32,9 +32,9 @@
                         </div>
                         <div class="form-group">
                             <label for="">Product Image</label>
-                            <input type="file" name="product_img" placeholder="Product Image" class="form-control">
+                            <input type="file" name="product_img" class="form-control">
                         </div>
-                        <button type="submit" class="btn btn-primary">Add Product</button>
+                        <button type="submit" class="btn btn-primary">Update Product</button>
                     </form>
                 </div>
             </div>
