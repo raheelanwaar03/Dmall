@@ -25,8 +25,8 @@
             <section class="">
                 <div class="container">
                     <div class="section-authentication-signin d-flex align-items-center justify-content-center my-5">
-                        <div class="row row-cols-1 row-cols-xl-2">
-                            <div class="col mx-auto">
+                        <div class="row">
+                            <div class="col-sm-12 mx-auto">
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="border p-4 rounded">
