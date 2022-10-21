@@ -74,6 +74,28 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card shadow mb-4">
+                    <div class="clipboard-area">
+                        <input class="from-control" id="referCommission"
+                            value="{{ route('register', ['refer' => Auth::user()->username]) }}" readonly>
+                        <button id="referCommissionButton" class="clip-area btn btn-secondary px-3"><i
+                                class="fa fa-clipboard"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     </div>
+@endsection
+
+@section('footer')
+    <script>
+        $(document).ready(function() {
+                    $('#referCommissionButton').on('click', function() {
+                        $('#referCommission').select();
+                        document.execCommand('copy');
+                    });
+    </script>
 @endsection
