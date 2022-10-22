@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\admin\Transcation;
 
 use App\Http\Controllers\Controller;
-use App\Models\admin\Transcation\WidthrawLimit;
+use App\Models\Admin\Transcation\WidthrawLimit;
 use Illuminate\Http\Request;
 
 class LimitController extends Controller
