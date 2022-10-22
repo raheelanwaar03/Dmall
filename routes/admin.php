@@ -10,6 +10,9 @@ Route::prefix('Admin')->middleware(['auth','adminAuth'])->group(function(){
 
     Route::get('/',[AdminController::class, 'index'])->name('Admin.index');
     Route::get('/all-Users',[AdminController::class, 'allUsers'])->name('Admin.allUsers');
+    Route::get('/User/register-user',[AdminController::class, 'registeredUser'])->name('Admin.AllRegistered.User');
+    Route::get('/User/register/{id}',[AdminController::class, 'registerId'])->name('Admin.Register.User');
+    Route::get('/User/banned-user',[AdminController::class, 'bannedUser'])->name('Admin.AllBanned.User');
     Route::get('/User/ban/{id}',[AdminController::class, 'userBan'])->name('Admin.Ban.User');
     // Admin Transcation detail Routes
     Route::get('/widthrawal-req',[TranscationDetails::class,'userWidthrawalReq'])->name('Admin.Widthrawal.User.Request');

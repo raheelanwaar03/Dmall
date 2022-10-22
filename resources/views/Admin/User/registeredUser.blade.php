@@ -9,7 +9,7 @@
             <div class="col-sm-12">
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Transcation Details</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">All Registered Users</h6>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -48,8 +48,6 @@
                                             <td>
                                                 <a href="{{ route('Admin.Ban.User',['id'=>$user->id]) }}"
                                                     class="btn btn-danger">Ban</a>
-                                                    <a href="{{ route('Admin.Register.User',['id'=>$user->id]) }}"
-                                                        class="btn btn-success">Register</a>
                                             </td>
                                         </tr>
                                     @endforeach

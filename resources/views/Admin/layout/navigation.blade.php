@@ -90,7 +90,8 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">User Mangment:</h6>
                         <a class="collapse-item" href="{{ route('Admin.allUsers') }}">All User</a>
-                        <a class="collapse-item" href="#">Register User</a>
+                        <a class="collapse-item" href="{{ route('Admin.AllRegistered.User') }}">Register User</a>
+                        <a class="collapse-item" href="{{ route('Admin.AllBanned.User') }}">Banned User</a>
                     </div>
                 </div>
             </li>
