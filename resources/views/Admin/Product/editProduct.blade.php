@@ -24,7 +24,9 @@
                         </div>
                         <div class="form-group">
                             <label for="">Product Description</label>
-                            <input type="text" name="product_description" value="{{ $product->product_description }}" placeholder="Product Description" class="form-control">
+                            <textarea name="product_description" class="form-control" cols="30" rows="10">
+                                {{ $product->product_description }}
+                            </textarea>
                         </div>
                         <div class="form-group">
                             <label for="">Product Price</label>
