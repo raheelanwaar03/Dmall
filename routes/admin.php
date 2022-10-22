@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\admin\ProductMangerController;
-use App\Http\Controllers\admin\Transcation\LimitController;
-use App\Http\Controllers\admin\Transcation\TranscationDetails;
+use App\Http\Controllers\Admin\ProductMangerController;
+use App\Http\Controllers\Admin\Transcation\LimitController;
+use App\Http\Controllers\Admin\Transcation\TranscationDetails;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('Admin')->middleware(['auth','adminAuth'])->group(function(){
