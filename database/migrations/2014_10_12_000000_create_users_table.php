@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->string('role')->default('user');
             $table->string('referal')->default('default');
-            $table->string('referal_bouns')->nullable(0);
+            $table->integer('referal_bouns')->nullable(0);
             $table->string('account_type')->default('registered');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

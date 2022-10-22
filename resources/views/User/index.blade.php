@@ -12,8 +12,8 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                    Earnings</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                    Referal Commission</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ auth()->user()->referal_bouns }}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -60,7 +60,23 @@
                 </div>
             </div>
         </div>
+        {{-- <div class="container">
+            <div class="row rs-vertical-middle">
+                <div class="col-lg-6 pr-0">
+                    <div class="sec-title4 mb-35">
+                        <div class="sub-title mb-6">Refer Commission</div>
+                        <h2 class="title">Refer Friend and Earn Bouns</h2>
+                        <div class="clipboard-area">
+                            <input class="from-control" id="referCommission"
+                                value="{{ route('register', ['refer' => Auth::user()->username]) }}" readonly>
+                            <button id="referCommissionButton" class="clip-area btn btn-secondary px-3"><i
+                                    class="fa fa-clipboard"></i></button>
+                        </div>
 
+                    </div>
+                </div>
+            </div>
+        </div> --}}
         <div class="row">
             <div class="col-lg-6 mb-4">
                 <div class="card shadow mb-4">
@@ -74,18 +90,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-6 mb-4">
-                <div class="card shadow mb-4">
-                    <div class="clipboard-area">
-                        <input class="from-control" id="referCommission"
-                            value="{{ route('register', ['refer' => Auth::user()->username]) }}" readonly>
-                        <button id="referCommissionButton" class="clip-area btn btn-secondary px-3"><i
-                                class="fa fa-clipboard"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
     </div>
 @endsection

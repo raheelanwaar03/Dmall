@@ -20,11 +20,11 @@
                         @csrf
                         <div class="form-group">
                             <label for="">Widthraw Limit{Min}</label>
-                            <input type="text" name="widthraw_min" value="{{ $widthrawLimit->widthraw_min }}" placeholder="Product Name" class="form-control">
+                            <input type="text" name="widthraw_min"  placeholder="Product Name" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="">Widthraw Limit{Max}</label>
-                            <input type="text" name="widthraw_max" value="{{ $widthrawLimit->widthraw_max }}" placeholder="Product Name" class="form-control">
+                            <input type="text" name="widthraw_max" placeholder="Product Name" class="form-control">
                         </div>
                         <button type="submit" class="btn btn-primary">Set limit</button>
                     </form>
@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <div class="row">
+    {{-- <div class="row">
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-title">
@@ -58,7 +58,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 </div>
 </div>

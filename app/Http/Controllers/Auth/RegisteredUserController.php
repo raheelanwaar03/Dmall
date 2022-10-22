@@ -35,13 +35,29 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        $referalSecurity = User::where('referal',$request->username)->first();
+        if($referalSecurity = '')
+        {
+            $referal = 'default';
+            $referal_bouns = 0;
+        }
+        elseif($referalSecurity = $request->username)
+        {
+            $referal = $request->username;
+            $referal_bouns = 50;
+        }
+
         $user = User::create([
             'name' => $request->name,
+            'username' => $request->name,
             'email' => $request->email,
+            'referal' => $referal,
+            'referal_bouns' => $referal_bouns,
             'password' => Hash::make($request->password),
         ]);
 

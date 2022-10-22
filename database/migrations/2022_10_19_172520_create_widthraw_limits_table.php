@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('widthraw_limits', function (Blueprint $table) {
             $table->id();
-            $table->integer('widthraw_min');
-            $table->integer('widthraw_max');
+            $table->integer('widthraw_min')->nullable();
+            $table->integer('widthraw_max')->nullable();
             $table->timestamps();
         });
     }

@@ -40,8 +40,13 @@
                                                 <form action="{{ route('register') }}" method="POST" class="row g-3">
                                                     @csrf
                                                     <div class="col-sm-12">
-                                                        <label for="inputFirstName" class="form-label">Username</label>
+                                                        <label for="inputFirstName" class="form-label">Full Name</label>
                                                         <input type="text" name="name" class="form-control"
+                                                            placeholder="Jhon">
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <label for="inputFirstName" class="form-label">Username</label>
+                                                        <input type="text" name="username" class="form-control"
                                                             placeholder="Jhon">
                                                     </div>
                                                     <div class="col-12">
