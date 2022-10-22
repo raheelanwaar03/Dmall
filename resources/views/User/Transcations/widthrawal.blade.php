@@ -9,7 +9,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-title">
-                        <h1 class="text-center text-primary mt-3">Widthraw Amout!</h1>
+                        <h1 class="text-center text-primary mt-3">Widthraw Your Referal Commission!</h1>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('User.Widthrawal.Amount.store') }}" method="POST">
@@ -38,7 +38,7 @@
                                 <label for="">Phone Number (optional)</label>
                                 <input type="text" name="widthrawal_Pho_Nubmer" class="form-control" placeholder="like: 031*******8">
                             </div>
-                            <button type="submit" class="btn btn-warning">Widthraw</button>
+                            <button type="submit" class="btn btn-primary">Widthraw</button>
                         </form>
                     </div>
                 </div>

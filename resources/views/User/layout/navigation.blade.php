@@ -35,7 +35,7 @@
                 Main
             </div>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="{{ route('User.Widthrawal.Transcation.Details') }}" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Transcation</span>
@@ -44,8 +44,9 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">MY Transcations:</h6>
                         <a class="collapse-item" href="{{ route('User.WidthrawalReq.view') }}">Request for Widthraw</a>
-                        <a class="collapse-item" href="{{ route('User.Widthrawal.Transcation.Details') }}">All Transcation Details</a>
+                        <a class="collapse-item" href="{{ route('User.Widthrawal.Transcation.Details') }}">All Transcation Request</a>
                         <a class="collapse-item" href="{{ route('User.Transcation.Approved') }}">Approved Transcations</a>
+                        <a class="collapse-item" href="{{ route('User.Transcation.Rejected') }}">Rejected Transcations</a>
                     </div>
                 </div>
             </li>

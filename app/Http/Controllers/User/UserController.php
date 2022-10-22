@@ -19,4 +19,10 @@ class UserController extends Controller
         $widthrawals = WidthrawlAmount::where('status','approved')->where('user_id',auth()->user()->id)->get();
         return view('User.Transcations.approvedTranscation',compact('widthrawals'));
     }
+
+    public function rejectTranscation()
+    {
+        $widthrawals = WidthrawlAmount::where('status','rejected')->where('user_id',auth()->user()->id)->get();
+        return view('User.Transcations.rejectedTransaction',compact('widthrawals'));
+    }
 }
