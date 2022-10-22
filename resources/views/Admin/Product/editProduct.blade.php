@@ -32,10 +32,10 @@
                             <label for="">Product Price</label>
                             <input type="text" name="product_price" value="{{ $product->product_price }}" placeholder="Product Price" class="form-control">
                         </div>
-                        {{-- <div class="form-group">
+                        <div class="form-group">
                             <label for="">Product Image</label>
                             <input type="file" name="product_img" class="form-control">
-                        </div> --}}
+                        </div>
                         <button type="submit" class="btn btn-primary">Update Product</button>
                     </form>
                 </div>
