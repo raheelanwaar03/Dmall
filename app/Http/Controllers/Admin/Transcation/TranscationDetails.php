@@ -34,12 +34,12 @@ class TranscationDetails extends Controller
         return redirect()->back()->with('success','You have approved the User Request');
     }
 
-    public function pendingReq($id)
+    public function rejectReq($id)
     {
         $widthrawal = WidthrawlAmount::find($id);
-        $widthrawal->status = 'pending';
+        $widthrawal->status = 'rejected';
         $widthrawal->save();
-        return redirect()->back()->with('success','You have approved the User Request');
+        return redirect()->back()->with('success','You have Rejected the User Widthrawal Request');
     }
 
 }

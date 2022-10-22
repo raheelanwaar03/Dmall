@@ -47,7 +47,7 @@
                                             <td>{{ $widthrawal->created_at }}</td>
                                             <td>
                                                 <a href="{{ route('Admin.Make.Request.Approve',['id'=>$widthrawal->id]) }}" class="btn btn-success">approved</a>
-                                                <a href="{{ route('Admin.Make.Request.Pending',['id'=>$widthrawal->id]) }}" class="btn btn-danger">Pending</a>
+                                                <a href="{{ route('Admin.Make.Request.Reject',['id'=>$widthrawal->id]) }}" class="btn btn-danger">reject</a>
                                             </td>
                                         </tr>
                                     @endforeach

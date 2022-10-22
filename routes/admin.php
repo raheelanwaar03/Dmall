@@ -17,7 +17,7 @@ Route::prefix('Admin')->middleware(['auth','adminAuth'])->group(function(){
     // Admin Transcation detail Routes
     Route::get('/widthrawal-req',[TranscationDetails::class,'userWidthrawalReq'])->name('Admin.Widthrawal.User.Request');
     Route::get('/approved-user-req/{id}',[TranscationDetails::class,'approvedReq'])->name('Admin.Make.Request.Approve');
-    Route::get('/pending-user-req/{id}',[TranscationDetails::class,'pendingReq'])->name('Admin.Make.Request.Pending');
+    Route::get('/reject-user-req/{id}',[TranscationDetails::class,'rejectReq'])->name('Admin.Make.Request.Reject');
     Route::get('/user-approved-transctions',[TranscationDetails::class,'approvedTransction'])->name('Admin.User.Transcation.Approved');
     Route::get('/user-pending-transctions',[TranscationDetails::class,'pendingTransction'])->name('Admin.User.Transcation.Pending');
     //Limit Routes
