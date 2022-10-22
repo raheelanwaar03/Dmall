@@ -42,4 +42,10 @@ class TranscationDetails extends Controller
         return redirect()->back()->with('success','You have Rejected the User Widthrawal Request');
     }
 
+    public function rejectTransction()
+    {
+        $userWidthrawalReqs = WidthrawlAmount::where('status','rejected')->get();
+        return view('Admin.Transctions.rejectedTranscation',compact('userWidthrawalReqs'));
+    }
+
 }

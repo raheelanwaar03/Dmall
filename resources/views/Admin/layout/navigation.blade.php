@@ -71,10 +71,12 @@
                         <h6 class="collapse-header">User Transcation:</h6>
                         <a class="collapse-item" href="{{ route('Admin.Widthrawal.User.Request') }}">User All
                             Transcation</a>
-                        <a class="collapse-item" href="{{ route('Admin.User.Transcation.Pending') }}">User Pending
-                            Request</a>
-                        <a class="collapse-item" href="{{ route('Admin.User.Transcation.Approved') }}">User Approved
-                            Request</a>
+                        <a class="collapse-item" href="{{ route('Admin.User.Transcation.Pending') }}">Pending
+                            Transcations</a>
+                        <a class="collapse-item" href="{{ route('Admin.User.Transcation.Approved') }}">Approved
+                            Transcations</a>
+                            <a class="collapse-item" href="{{ route('Admin.User.Transcation.Rejected') }}">Rejected
+                                Transcations</a>
                     </div>
                 </div>
             </li>
