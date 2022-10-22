@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin\Transcation;
+namespace App\Http\Controllers\Admin\Transcation\TranscationDetails;
 
 use App\Http\Controllers\Controller;
 use App\Models\Transctions\WidthrawlAmount;

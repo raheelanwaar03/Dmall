@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\ProductMangerController;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin\ProductManger;
+use App\Models\admin\ProductManger;
 use Illuminate\Http\Request;
 
 class ProductMangerController extends Controller

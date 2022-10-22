@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\admin\Transcation;
+namespace App\Http\Controllers\Admin\Transcation\LimitController;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin\Transcation\WidthrawLimit;
+use App\Models\admin\Transcation\WidthrawLimit;
 use Illuminate\Http\Request;
 
 class LimitController extends Controller
