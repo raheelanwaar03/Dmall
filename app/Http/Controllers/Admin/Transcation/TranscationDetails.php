@@ -45,7 +45,7 @@ class TranscationDetails extends Controller
     public function rejectTransction()
     {
         $userWidthrawalReqs = WidthrawlAmount::where('status','rejected')->get();
-        return view('Admin.Transctions.rejectedTranscation',compact('userWidthrawal'));
+        return view('Admin.Transctions.rejectedTranscation',compact('userWidthrawalReqs'));
     }
 
 }
