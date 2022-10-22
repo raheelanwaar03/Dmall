@@ -15,8 +15,8 @@ class LimitController extends Controller
      */
     public function index()
     {
-        $widthrawLimit = WidthrawLimit::first();
-        return view('Admin.Transctions.widthrawLimit',compact('widthrawLimit'));
+        $widthrawLimits = WidthrawLimit::where('limit', 1)->get();
+        return view('Admin.Transctions.widthrawLimit',compact('widthrawLimits'));
     }
 
     /**
@@ -40,12 +40,14 @@ class LimitController extends Controller
 
             $validated = $request->validate([
                 'widthraw_min' => 'required',
-                'widthraw_max' => 'required'
+                'widthraw_max' => 'required',
+                'referal_bouns' => 'required',
             ]);
 
             $widthrawLimit = new WidthrawLimit();
             $widthrawLimit->widthraw_min = $validated['widthraw_min'];
             $widthrawLimit->widthraw_max = $validated['widthraw_max'];
+            $widthrawLimit->referal_bouns = $validated['referal_bouns'];
             $widthrawLimit->save();
             return redirect()->back()->with('success','Widthraw limits Applied');
     }
@@ -69,7 +71,8 @@ class LimitController extends Controller
      */
     public function edit($id)
     {
-        //
+        $widthrawLimit = WidthrawLimit::where('limit', 1)->find($id);
+        return view('Admin.Transctions.editLimit',compact('widthrawLimit'));
     }
 
     /**
@@ -83,8 +86,9 @@ class LimitController extends Controller
     {
         $widthrawLimit->widthraw_min = $request->widthraw_min;
         $widthrawLimit->widthraw_max = $request->widthraw_max;
+        $widthrawLimit->referal_bouns = $request->referal_bouns;
         $widthrawLimit->save();
-        return redirect()->back()->with('success', 'Limit Updated');
+        return redirect()->back()->with('success', 'Limit Updated Successfuly');
     }
 
     /**
