@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Transcation\LimitController;
+namespace App\Http\Controllers\Admin\Transcation;
 
 use App\Http\Controllers\Controller;
 use App\Models\admin\Transcation\WidthrawLimit;
@@ -88,7 +88,7 @@ class LimitController extends Controller
         $widthrawLimit->widthraw_max = $request->widthraw_max;
         $widthrawLimit->referal_bouns = $request->referal_bouns;
         $widthrawLimit->save();
-        return redirect()->back()->with('success', 'Limit Updated Successfuly');
+        return redirect()->back()->with('success', 'Limit Updated');
     }
 
     /**
