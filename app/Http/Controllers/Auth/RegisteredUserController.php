@@ -18,9 +18,9 @@ class RegisteredUserController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create()
+    public function create($referal = 'default')
     {
-        return view('auth.register');
+        return view('auth.register',compact('referal'));
     }
 
     /**
@@ -40,24 +40,23 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $referalSecurity = User::where('referal',$request->username)->first();
-        if($referalSecurity = '')
-        {
-            $referal = 'default';
-            $referal_bouns = 0;
-        }
-        elseif($referalSecurity = $request->username)
-        {
-            $referal = $request->username;
-            $referal_bouns = 50;
-        }
+        // $referalSecurity = User::where('username',$request->referal)->first();
+        // if($referalSecurity = '')
+        // {
+        //     $referal = 'default';
+        //     $referal_bouns = 0;
+        // }
+        // else{
+        //     $referal = $request->referal;
+        //     $referal_bouns = 50;
+        // }
 
         $user = User::create([
             'name' => $request->name,
             'username' => $request->name,
             'email' => $request->email,
-            'referal' => $referal,
-            'referal_bouns' => $referal_bouns,
+            // 'referal' => $request->referal,
+            // 'referal_bouns' => $request->referal_bouns,
             'password' => Hash::make($request->password),
         ]);
 

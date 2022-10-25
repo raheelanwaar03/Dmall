@@ -62,7 +62,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col">
+                {{-- <div class="col">
                     <div class="footer-section3">
                         <h5 class="mb-4 text-uppercase fw-bold">Popular Tags</h5>
                         <div class="tags-box d-flex flex-wrap gap-2">
@@ -82,8 +82,8 @@
                             <a href="javascript:;" class="btn btn-ecomm btn-outline-dark">Shoes</a>
                         </div>
                     </div>
-                </div>
-                <div class="col">
+                </div> --}}
+                {{-- <div class="col">
                     <div class="footer-section4">
                         <h5 class="mb-4 text-uppercase fw-bold">Stay informed</h5>
                         <div class="subscribe">
@@ -94,21 +94,8 @@
                             <p class="mt-3 mb-0">Subscribe to our newsletter to receive early discount offers,
                                 updates and new products info.</p>
                         </div>
-                        <div class="download-app mt-3">
-                            <h6 class="mb-3 text-uppercase fw-bold">Download our app</h6>
-                            <div class="d-flex align-items-center gap-2">
-                                <a href="javascript:;">
-                                    <img src="{{ asset('assets/images/icons/apple-store.png') }}" class=""
-                                        width="140" alt="" />
-                                </a>
-                                <a href="javascript:;">
-                                    <img src="{{ asset('assets/images/icons/play-store.png') }}" class=""
-                                        width="140" alt="" />
-                                </a>
-                            </div>
-                        </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
@@ -118,18 +105,7 @@
                 <p class="mb-0">Copyright © 2022. All right reserved.</p>
                 <div class="payment-icon">
                     <div class="row row-cols-auto g-2 justify-content-end">
-                        <div class="col">
-                            <img src="{{ asset('assets/images/icons/visa.png') }}" alt="" />
-                        </div>
-                        <div class="col">
-                            <img src="{{ asset('assets/images/icons/paypal.png') }}" alt="" />
-                        </div>
-                        <div class="col">
-                            <img src="{{ asset('assets/images/icons/mastercard.png') }}" alt="" />
-                        </div>
-                        <div class="col">
-                            <img src="{{ asset('assets/images/icons/american-express.png') }}" alt="" />
-                        </div>
+                       <h3>We use cash on delivery system!</h3>
                     </div>
                 </div>
             </div>

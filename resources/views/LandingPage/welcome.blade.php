@@ -1352,7 +1352,7 @@
                     </div>
                 </div>
             </section>
-            <section class="py-4">
+            {{-- <section class="py-4">
                 <div class="container">
                     <h3 class="d-none">Brands</h3>
                     <div class="brand-grid">
@@ -1416,7 +1416,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> --}}
             <section class="py-4 border-top">
                 <div class="container">
                     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4">
