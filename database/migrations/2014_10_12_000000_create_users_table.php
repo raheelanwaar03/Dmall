@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('username')->unique();
             $table->string('role')->default('user');
             $table->string('referal')->default('default')->nullable();
             $table->integer('referal_bouns')->default(0);

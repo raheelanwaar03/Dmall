@@ -59,17 +59,6 @@ a {
 	width: 100%;
 	position: relative
 }
-.clipboard-area{
-    position: relative;
-  }
-.clip-area{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    overflow: hidden;
-    z-index: 1;
-  }
 /* Header */
 
 .header-wrapper .top-menu {
