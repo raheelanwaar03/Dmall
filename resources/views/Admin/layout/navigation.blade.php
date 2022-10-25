@@ -24,12 +24,22 @@
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
     <link href="{{ asset('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
+    {{-- DataTable cdn --}}
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        });
+    </script>
 </head>
 
 <body id="page-top">
     <div id="wrapper">
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('Admin.index') }}">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center"
+                href="{{ route('Admin.index') }}">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -75,8 +85,8 @@
                             Transcations</a>
                         <a class="collapse-item" href="{{ route('Admin.User.Transcation.Approved') }}">Approved
                             Transcations</a>
-                            <a class="collapse-item" href="{{ route('Admin.User.Transcation.Rejected') }}">Rejected
-                                Transcations</a>
+                        <a class="collapse-item" href="{{ route('Admin.User.Transcation.Rejected') }}">Rejected
+                            Transcations</a>
                     </div>
                 </div>
             </li>

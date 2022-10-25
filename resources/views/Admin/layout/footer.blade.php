@@ -33,6 +33,7 @@
 <script src="{{ asset('assets/vendor/chart.js/Chart.min.js') }}"></script>
 <script src="{{ asset('assets/js/demo/chart-area-demo.js') }}"></script>
 <script src="{{ asset('assets/js/demo/chart-pie-demo.js') }}"></script>
+
 </body>
 
 </html>
