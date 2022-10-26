@@ -24,11 +24,19 @@
                         </div>
                         <div class="form-group">
                             <label for="">Product Description</label>
-                            <textarea name="product_description" class="form-control" cols="30" rows="10"></textarea>
+                            <textarea name="product_description" class="form-control" cols="15" rows="6"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Product Description</label>
+                            <textarea name="product_catagory" class="form-control" cols="15" rows="6"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="">Product Price</label>
                             <input type="text" name="product_price" placeholder="Product Price" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Product Quantity</label>
+                            <input type="text" name="product_qty" placeholder="Product Price" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="">Product Image</label>

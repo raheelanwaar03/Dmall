@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('role')->default('user');
+            $table->string('username')->unique();
             $table->string('referal')->default('default')->nullable();
             $table->integer('referal_bouns')->default(0);
             $table->string('account_type')->default('registered');

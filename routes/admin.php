@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CatagoryController;
 use App\Http\Controllers\Admin\ProductMangerController;
 use App\Http\Controllers\Admin\Transcation\LimitController;
 use App\Http\Controllers\Admin\Transcation\TranscationDetails;
@@ -25,4 +26,7 @@ Route::prefix('Admin')->middleware(['auth','adminAuth'])->group(function(){
     Route::resource('/Limit',LimitController::class);
     //Admin Product Manger Routes
     Route::resource('/Product',ProductMangerController::class);
+    // Admin catagory Routes
+    Route::resource('/Catagory',CatagoryController::class);
+
 });
