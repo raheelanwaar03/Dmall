@@ -3,13 +3,17 @@
 namespace App\Http\Controllers\landingPage;
 
 use App\Http\Controllers\Controller;
+use App\Models\admin\Catagory;
+use App\Models\Admin\ProductManger;
 use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
 {
     public function landingPage()
     {
-        return view('LandingPage.welcome');
+        $products = ProductManger::paginate(10);
+        $catagorys = Catagory::paginate(10);
+        return view('LandingPage.welcome',compact('products','catagorys'));
     }
 
     public function aboutUs()
