@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('product_mangers', function (Blueprint $table) {
             $table->id();
             $table->string('product_name');
+            $table->string('product_id');
             $table->string('product_catagory');
             $table->longText('product_description');
             $table->integer('product_price');

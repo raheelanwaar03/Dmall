@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\admin\Catagory;
 use App\Models\admin\ProductManger;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,8 @@ class ProductMangerController extends Controller
      */
     public function create()
     {
-        return view('Admin.Product.addProduct');
+        $catagorys = Catagory::all();
+        return view('Admin.Product.addProduct',compact('catagorys'));
     }
 
     /**
@@ -39,10 +41,23 @@ class ProductMangerController extends Controller
     {
         $validated = $request->validate([
             'product_name'=>'required',
+            'product_catagory'=>'required',
             'product_description'=>'required',
             'product_price'=>'required',
+            'product_qty'=>'required',
             'product_img'=>'required',
+
         ]);
+        return session('Product_id');
+        if ($request->product_id)
+        {
+            $productID = $request->product_id;
+        }
+
+        $productID = session('ProductId');
+
+        return $productID;
+
         $file = $request->file('product_img');
         $fileName = rand('111111','9999999') . '.' . $file->getClientOriginalExtension();
         $file->move(public_path('images'),$fileName);
@@ -50,8 +65,11 @@ class ProductMangerController extends Controller
 
         $product = new ProductManger();
         $product->product_name = $validated['product_name'];
+        $product->product_id = $request->product_id;
+        $product->product_catagory = $validated['product_catagory'];
         $product->product_description = $validated['product_description'];
         $product->product_price = $validated['product_price'];
+        $product->product_qty = $validated['product_qty'];
         $product->product_img = $fileName;
         $product->save();
         return redirect()->back()->with('success', 'You have Add a new Product Successfuly');
