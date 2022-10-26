@@ -17,10 +17,12 @@
                                 <thead>
                                     <tr>
                                         <th>Product Id</th>
-                                        <th>Product Name</th>
-                                        <th>Product Price</th>
-                                        <th>Product Description</th>
-                                        <th>Product Image</th>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>Description</th>
+                                        <th>Qty</th>
+                                        <th>Category</th>
+                                        <th>Image</th>
                                         <th>Date</th>
                                         <th>Action</th>
                                     </tr>
@@ -28,9 +30,12 @@
                                 <tfoot>
                                     <tr>
                                         <th>Product Id</th>
-                                        <th>Product Name</th>
-                                        <th>Product Price</th>
-                                        <th>Product Description</th>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>Description</th>
+                                        <th>Qty</th>
+                                        <th>Category</th>
+                                        <th>Image</th>
                                         <th>Date</th>
                                         <th>Action</th>
                                     </tr>
@@ -42,6 +47,8 @@
                                             <td>{{ $product->product_name }}</td>
                                             <td>{{ $product->product_price }}</td>
                                             <td>{{ $product->product_description }}</td>
+                                            <td>{{ $product->product_qty }}</td>
+                                            <td>{{ $product->product_catagory }}</td>
                                             <td>
                                                 <img src="{{ asset('images/' . $product->product_img) }}" height="90px"
                                                     width="90px" class="img-fluid img-thumbnail" alt="product_img">

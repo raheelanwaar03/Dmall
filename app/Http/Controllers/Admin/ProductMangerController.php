@@ -48,7 +48,7 @@ class ProductMangerController extends Controller
             'product_img'=>'required',
 
         ]);
-        return session('Product_id');
+        return productId();
         if ($request->product_id)
         {
             $productID = $request->product_id;
