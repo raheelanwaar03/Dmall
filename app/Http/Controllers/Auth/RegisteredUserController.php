@@ -40,7 +40,7 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $referSecurity = User::where('referal',$request->email)->first();
+        $referSecurity = User::where('referal',$request->username)->first();
         if ($referSecurity == '') {
             $refer = 'default';
             $referal_bouns = 0;

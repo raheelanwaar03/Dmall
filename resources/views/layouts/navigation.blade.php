@@ -15,7 +15,7 @@
     <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
     <link href="../../../../unpkg.com/boxicons%402.1.2/css/boxicons.min.css" rel="stylesheet">
     <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet">
-    <title>Shopingo - eCommerce HTML Template</title>
+    <title>Dmall - eCommerce HTML Template</title>
 </head>
 
 <body>
@@ -24,7 +24,11 @@
             <div class="top-menu">
                 <div class="container">
                     <nav class="navbar navbar-expand">
+                        @if (auth()->user())
+                        <div class="shiping-title d-none d-sm-flex">Welcome {{ auth()->user()->username }} to our Shopingo store!</div>
+                        @else
                         <div class="shiping-title d-none d-sm-flex">Welcome to our Shopingo store!</div>
+                        @endif
                         <ul class="navbar-nav ms-auto d-none d-lg-flex">
                             <li class="nav-item"><a class="nav-link" href="{{ route('welcome.aboutUs') }}">About</a>
                             </li>
