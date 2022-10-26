@@ -65,13 +65,9 @@
             <div class="col-lg-6 mb-4">
                 <div class="card shadow bordered-primary mb-4">
                     <div>
-                        <input type="text" style="width: 90%;border:none" value="{{ route('register', ['referal' => Auth::user()->email]) }}"
+                        <input type="text" style="width: 90%;border:none" value="{{ route('register', ['referal' => Auth::user()->username]) }}"
                             id="myInput">
                         <button onclick="myFunction()" class="btn btn-secondary px-2"><i class="fa fa-clipboard"></i></button>
-                        {{-- <input style="width: 90%;border:none" class="from-control" id="myInput"
-                            value="{{ route('register', ['referal' => Auth::user()->email]) }}" readonly>
-                        <button onclick="myFunction()" class="btn btn-secondary px-3"><i
-                                class="fa fa-clipboard"></i></button> --}}
                     </div>
                 </div>
             </div>

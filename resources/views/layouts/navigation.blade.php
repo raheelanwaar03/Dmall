@@ -25,18 +25,27 @@
                 <div class="container">
                     <nav class="navbar navbar-expand">
                         @if (auth()->user())
-                        <div class="shiping-title d-none d-sm-flex">Welcome {{ auth()->user()->username }} to our Shopingo store!</div>
+                            <div class="shiping-title d-none d-sm-flex">Welcome {{ auth()->user()->username }} to our
+                                Shopingo store!</div>
                         @else
-                        <div class="shiping-title d-none d-sm-flex">Welcome to our Shopingo store!</div>
+                            <div class="shiping-title d-none d-sm-flex">Welcome to our Shopingo store!</div>
                         @endif
-                        <ul class="navbar-nav ms-auto d-none d-lg-flex">
+                        <ul class="navbar-nav ms-auto d-none d-lg-flex justify-content-center align-items-center">
                             <li class="nav-item"><a class="nav-link" href="{{ route('welcome.aboutUs') }}">About</a>
                             </li>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('welcome.contactUs') }}">Contact</a>
+                            <li class="nav-item"><a class="nav-link"
+                                    href="{{ route('welcome.contactUs') }}">Contact</a>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="javascript:;">Help & FAQs</a>
-                            </li>
+                            @if (auth()->user())
+                                <li class="nav-item">
+                                    <form action="{{ route('logout') }}" method="POST">
+                                        @csrf
+                                        <button style=" border-radius:7px" type="submit" class="btn btn-sm btn-warning text-light">Logout</button>
+                                    </form>
+                                </li>
+                            @endif
+
                         </ul>
                         <ul class="navbar-nav social-link ms-lg-2 ms-auto">
                             <li class="nav-item"> <a class="nav-link" href="javascript:;"><i
@@ -92,8 +101,8 @@
                                         <li class="nav-item"><a href="{{ route('login') }}"
                                                 class="nav-link cart-link"><i class='bx bx-user'></i></a>
                                         </li>
-                                        <li class="nav-item"><a href="{{ route('login') }}" class="nav-link cart-link"><i
-                                                    class='bx bx-heart'></i></a>
+                                        <li class="nav-item"><a href="{{ route('login') }}"
+                                                class="nav-link cart-link"><i class='bx bx-heart'></i></a>
                                         </li>
                                         <li class="nav-item dropdown dropdown-large">
                                             <a href="{{ route('login') }}"
@@ -416,6 +425,7 @@
                                         </li>
                                         <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
                                         <li><a class="dropdown-item" href="{{ route('register') }}">Register</a>
+                                        <li><a class="dropdown-item" href="{{ route('User.index') }}">Dashboard</a>
                                         </li>
                                     </ul>
                                 </li>
