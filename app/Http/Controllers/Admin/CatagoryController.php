@@ -16,7 +16,8 @@ class CatagoryController extends Controller
      */
     public function index()
     {
-        //
+        $catagorys = Catagory::all();
+        return view('Admin.Catagory.allCatagories',compact('catagorys'));
     }
 
     /**
@@ -45,7 +46,7 @@ class CatagoryController extends Controller
 
         $image = $validated['catagory_img'];
         $imageName = rand(111111,999999). '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('images',$imageName));
+        $image->move(public_path('images'),$imageName);
 
         $catagory = new Catagory();
         $catagory->catagory_name = $validated['catagory_name'];
@@ -63,7 +64,8 @@ class CatagoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $catagory = Catagory::find($id);
+        return view('Admin.Catagory.showCatagory',compact('catagory'));
     }
 
     /**

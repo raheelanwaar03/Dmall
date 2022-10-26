@@ -66,7 +66,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Catagory Mangement:</h6>
                         <a class="collapse-item" href="{{ route('Catagory.create') }}">Add New Catagory</a>
-                        <a class="collapse-item" href="#">All Catagories</a>
+                        <a class="collapse-item" href="{{ route('Catagory.index') }}">All Catagories</a>
                     </div>
                 </div>
             </li>
