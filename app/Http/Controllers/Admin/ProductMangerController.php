@@ -48,15 +48,14 @@ class ProductMangerController extends Controller
             'product_img'=>'required',
 
         ]);
-        return productId();
         if ($request->product_id)
         {
             $productID = $request->product_id;
         }
+        else{
+            $productID = productId();
+        }
 
-        $productID = session('ProductId');
-
-        return $productID;
 
         $file = $request->file('product_img');
         $fileName = rand('111111','9999999') . '.' . $file->getClientOriginalExtension();
@@ -65,7 +64,8 @@ class ProductMangerController extends Controller
 
         $product = new ProductManger();
         $product->product_name = $validated['product_name'];
-        $product->product_id = $request->product_id;
+        $product->product_id = $productID;
+        $product->product_discount = $request->product_discount;
         $product->product_catagory = $validated['product_catagory'];
         $product->product_description = $validated['product_description'];
         $product->product_price = $validated['product_price'];

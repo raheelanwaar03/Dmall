@@ -26,12 +26,12 @@
                                 <input type="text" name="product_id" placeholder="Product Id" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="">Product Description</label>
-                                <textarea name="product_description" class="form-control" cols="15" rows="6"></textarea>
-                            </div>
-                            <div class="form-group">
                                 <label for="">Product Price</label>
                                 <input type="text" name="product_price" placeholder="Product Price" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Product Discount</label>
+                                <input type="text" name="product_discount" placeholder="Product Discount" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="">Product Category</label>
@@ -41,6 +41,10 @@
                                         </option>
                                     @endforeach
                                 </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Product Description</label>
+                                <textarea name="product_description" class="form-control" cols="15" rows="6"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="">Product Quantity</label>

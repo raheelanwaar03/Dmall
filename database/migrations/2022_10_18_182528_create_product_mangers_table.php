@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('product_name');
             $table->string('product_id');
+            $table->string('product_discount')->nullable();
             $table->string('product_catagory');
             $table->longText('product_description');
             $table->integer('product_price');

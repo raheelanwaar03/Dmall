@@ -99,6 +99,8 @@ class CatagoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $catagory = Catagory::find($id);
+        $catagory->delete();
+        return redirect()->back()->with('success','Product Deleted Successfuly');
     }
 }
