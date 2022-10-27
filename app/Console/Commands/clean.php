@@ -109,7 +109,7 @@ class clean extends Command
         $product->product_description = 'Red Shirt with all sizes and designs';
         $product->product_price = '500';
         $product->product_qty = '5';
-        $product->product_img = '936448.png';
+        $product->product_img = '6884505.png';
         $product->save();
 
         $product = new ProductManger();
@@ -119,17 +119,17 @@ class clean extends Command
         $product->product_description = 'Product with all sizes and designs';
         $product->product_price = '900';
         $product->product_qty = '5';
-        $product->product_img = '803298.png';
+        $product->product_img = '558909.png';
         $product->save();
 
         $product = new ProductManger();
         $product->product_name = 'Product';
         $product->product_id = '#3212';
-        $product->product_catagory = 'Shirt';
+        $product->product_catagory = 'Fashion';
         $product->product_description = 'Product with all sizes and designs';
         $product->product_price = '4300';
         $product->product_qty = '5';
-        $product->product_img = '962591.png';
+        $product->product_img = '7395015.png';
         $product->save();
 
         $product = new ProductManger();
@@ -140,7 +140,7 @@ class clean extends Command
         $product->product_description = 'Product Description with all sizes and designs';
         $product->product_price = '500';
         $product->product_qty = '5';
-        $product->product_img = '453298.png';
+        $product->product_img = '3796419.png';
         $product->save();
 
         $product = new ProductManger();
@@ -150,7 +150,7 @@ class clean extends Command
         $product->product_description = 'Product Description with all sizes and designs';
         $product->product_price = '500';
         $product->product_qty = '5';
-        $product->product_img = '878973.png';
+        $product->product_img = '5071230.png';
         $product->save();
 
         $product = new ProductManger();
