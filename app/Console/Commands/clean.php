@@ -66,37 +66,37 @@ class clean extends Command
         $catagory = new Catagory();
         $catagory->catagory_name = 'Shirt';
         $catagory->catagory_des = 'All kind of Shirts with new design and sizes';
-        $catagory->catagory_img = 'images/01.png';
+        $catagory->catagory_img = '3796419.png';
         $catagory->save();
 
         $catagory = new Catagory();
         $catagory->catagory_name = 'Sports';
         $catagory->catagory_des = 'All kind of Sports with new design and sizes';
-        $catagory->catagory_img = 'images/05.png';
+        $catagory->catagory_img = '5443825.png';
         $catagory->save();
 
         $catagory = new Catagory();
         $catagory->catagory_name = 'Fashion';
         $catagory->catagory_des = 'All kind of Fashion with new design and sizes';
-        $catagory->catagory_img = 'images/07.png';
+        $catagory->catagory_img = '5071230.png';
         $catagory->save();
 
         $catagory = new Catagory();
         $catagory->catagory_name = 'Electronic';
         $catagory->catagory_des = 'All kind of Electronic with new design and sizes';
-        $catagory->catagory_img = 'images/09.png';
+        $catagory->catagory_img = '7786715.png';
         $catagory->save();
 
         $catagory = new Catagory();
         $catagory->catagory_name = 'Furniture';
         $catagory->catagory_des = 'All kind of Furniture with new design and sizes';
-        $catagory->catagory_img = 'images/03.png';
+        $catagory->catagory_img = '5871713.png';
         $catagory->save();
 
         $catagory = new Catagory();
         $catagory->catagory_name = 'Shoes';
         $catagory->catagory_des = 'All kind of Shoes with new design and sizes';
-        $catagory->catagory_img = 'images/04.png';
+        $catagory->catagory_img = '6351976.png';
         $catagory->save();
 
 
@@ -109,7 +109,7 @@ class clean extends Command
         $product->product_description = 'Red Shirt with all sizes and designs';
         $product->product_price = '500';
         $product->product_qty = '5';
-        $product->product_img = 'images/09.png';
+        $product->product_img = '936448.png';
         $product->save();
 
         $product = new ProductManger();
@@ -119,7 +119,7 @@ class clean extends Command
         $product->product_description = 'Product with all sizes and designs';
         $product->product_price = '900';
         $product->product_qty = '5';
-        $product->product_img = 'images/09.png';
+        $product->product_img = '803298.png';
         $product->save();
 
         $product = new ProductManger();
@@ -129,7 +129,7 @@ class clean extends Command
         $product->product_description = 'Product with all sizes and designs';
         $product->product_price = '4300';
         $product->product_qty = '5';
-        $product->product_img = 'images/09.png';
+        $product->product_img = '962591.png';
         $product->save();
 
         $product = new ProductManger();
@@ -140,7 +140,7 @@ class clean extends Command
         $product->product_description = 'Product Description with all sizes and designs';
         $product->product_price = '500';
         $product->product_qty = '5';
-        $product->product_img = 'images/21.png';
+        $product->product_img = '453298.png';
         $product->save();
 
         $product = new ProductManger();
@@ -150,7 +150,7 @@ class clean extends Command
         $product->product_description = 'Product Description with all sizes and designs';
         $product->product_price = '500';
         $product->product_qty = '5';
-        $product->product_img = 'images/09.png';
+        $product->product_img = '878973.png';
         $product->save();
 
         $product = new ProductManger();
@@ -160,7 +160,7 @@ class clean extends Command
         $product->product_description = 'Product Description with all sizes and designs';
         $product->product_price = '500';
         $product->product_qty = '5';
-        $product->product_img = 'images/14.png';
+        $product->product_img = '726311.png';
         $product->save();
 
         $product = new ProductManger();
@@ -170,7 +170,7 @@ class clean extends Command
         $product->product_description = 'Product with all sizes and designs';
         $product->product_price = '7000';
         $product->product_qty = '6';
-        $product->product_img = 'images/25.png';
+        $product->product_img = '297342.png';
         $product->save();
 
         $product = new ProductManger();
@@ -180,7 +180,7 @@ class clean extends Command
         $product->product_description = 'Product Description with all sizes and designs';
         $product->product_price = '300';
         $product->product_qty = '9';
-        $product->product_img = 'images/17.png';
+        $product->product_img = '2452533.png';
         $product->save();
 
 
@@ -191,7 +191,7 @@ class clean extends Command
         $product->product_description = 'Product Description with all sizes and designs';
         $product->product_price = '100';
         $product->product_qty = '3';
-        $product->product_img = 'images/20.png';
+        $product->product_img = '619851.png';
         $product->save();
 
         $product = new ProductManger();
@@ -201,7 +201,7 @@ class clean extends Command
         $product->product_description = 'Product Description with all sizes and designs';
         $product->product_price = '50055';
         $product->product_qty = '1';
-        $product->product_img = 'images/18.png';
+        $product->product_img = '558909.png';
         $product->save();
 
 
@@ -213,9 +213,9 @@ class clean extends Command
         $product->product_description = 'Mobile with all sizes and designs';
         $product->product_price = '50000';
         $product->product_qty = '3';
-        $product->product_img = 'images/12.png';
+        $product->product_img = '284793.png';
         $product->save();
 
-        return Command::SUCCESS;
+        return 'SUCCESS';
     }
 }
