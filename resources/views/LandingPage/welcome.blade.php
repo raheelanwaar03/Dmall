@@ -233,13 +233,13 @@
                                               <a href="javascript:;"><i class="bx bx-heart"></i></a>
                                           </div>
                                       </div>
-                                      <div class="cursor-pointer rating mt-2">
+                                      {{-- <div class="cursor-pointer rating mt-2">
                                           <i class="bx bxs-star text-warning"></i>
                                           <i class="bx bxs-star text-warning"></i>
                                           <i class="bx bxs-star text-warning"></i>
                                           <i class="bx bxs-star text-warning"></i>
                                           <i class="bx bxs-star text-warning"></i>
-                                      </div>
+                                      </div> --}}
                                       <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                                         <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">$59.00</div>
                                         <div class="h6 fw-bold">$48.00</div>
