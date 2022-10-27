@@ -417,6 +417,17 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"
                                         data-bs-toggle="dropdown">
+                                        Categories
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        @foreach ($catagorys as $catagory)
+                                        <li><a class="dropdown-item" href="#">{{ $catagory->catagory_name }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"
+                                        data-bs-toggle="dropdown">
                                         Account
                                     </a>
                                     <ul class="dropdown-menu">
@@ -429,16 +440,6 @@
                                         </li>
                                     </ul>
                                 </li>
-                                {{-- <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"
-                                        data-bs-toggle="dropdown">
-                                        Blog
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="blog-post.html">Blog Post</a></li>
-                                        <li><a class="dropdown-item" href="blog-read.html">Blog Read</a></li>
-                                    </ul>
-                                </li> --}}
                             </ul>
                         </div>
                     </div>

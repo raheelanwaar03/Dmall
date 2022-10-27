@@ -210,7 +210,7 @@
                                 </div>
                             </div>
                             @empty
-                            <div class="col">
+                            {{-- <div class="col">
                                 <div class="card">
                                     <div class="position-relative overflow-hidden">
                                         <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
@@ -513,7 +513,7 @@
                                             <a href="javascript:;"><i class='bx bx-cart-add' ></i></a>
                                           </div>
                                       <div class="quick-view position-absolute start-0 bottom-0 end-0">
-                                        <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewProduct">Quick View</a>
+                                        <a href="" data-bs-toggle="modal" data-bs-target="#QuickViewProduct">Quick View</a>
                                       </div>
                                       <a href="javascript:;">
                                         <img src="{{ asset('assets/images/products/09.png') }}" class="img-fluid" alt="...">
@@ -580,7 +580,7 @@
                                     </div>
                                   </div>
                               </div>
-                          </div>
+                          </div> --}}
                             @endforelse
                             <div>
                                 {{ $products->withQueryString()->links('pagination::bootstrap-5') }}
