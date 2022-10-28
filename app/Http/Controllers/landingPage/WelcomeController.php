@@ -4,7 +4,7 @@ namespace App\Http\Controllers\landingPage;
 
 use App\Http\Controllers\Controller;
 use App\Models\admin\Catagory;
-use App\Models\Admin\ProductManger;
+use App\Models\admin\ProductManger;
 use App\Models\User\AddToCart;
 use Illuminate\Http\Request;
 
