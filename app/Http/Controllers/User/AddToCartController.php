@@ -29,4 +29,9 @@ class AddToCartController extends Controller
         $cartProduct->save();
         return redirect()->back()->with('success','Product added to cart successfuly');
     }
+
+    public function index()
+    {
+        return  view('User.AddToCart.index');
+    }
 }

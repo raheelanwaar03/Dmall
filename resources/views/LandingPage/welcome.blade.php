@@ -599,7 +599,7 @@
                         </div>
                     </div>
                 </div>
-        </div> --}}
+        </div>
         @endforelse
         <div>
             {{ $products->withQueryString()->links('pagination::bootstrap-5') }}

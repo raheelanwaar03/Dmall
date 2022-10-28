@@ -20,7 +20,7 @@
                                                     <img src="{{ asset('images/' . $product->product_img) }}"
                                                       height="250px" width="250px" class="m-3"  alt="product image">
                                                 </div>
-                                                <form action="{{ route('User.AddToCart',['id'=>$product->id]) }}" method="Post">
+                                                <form action="{{ route('User.AddToCart.store',['id'=>$product->id]) }}" method="Post">
                                                     @csrf
                                                     <div class="ml-4">
                                                         <div class="mt-3">

@@ -41,14 +41,15 @@
                                 <li class="nav-item">
                                     <form action="{{ route('logout') }}" method="POST">
                                         @csrf
-                                        <button style=" border-radius:7px" type="submit" class="btn btn-sm btn-warning text-light">Logout</button>
+                                        <button style=" border-radius:7px" type="submit"
+                                            class="btn btn-sm btn-warning text-light">Logout</button>
                                     </form>
                                 </li>
                             @endif
 
                         </ul>
                         <ul class="navbar-nav social-link ms-lg-2 ms-auto">
-                            <li class="nav-item"> <a class="nav-link" href="javascript:;"><i
+                            <li class="nav-item"> <a class="nav-link" href="https:://www.Facebook.com"><i
                                         class='bx bxl-facebook'></i></a>
                             </li>
                             <li class="nav-item"> <a class="nav-link" href="javascript:;"><i
@@ -104,20 +105,12 @@
                                         <li class="nav-item"><a href="{{ route('login') }}"
                                                 class="nav-link cart-link"><i class='bx bx-heart'></i></a>
                                         </li>
-                                        <li class="nav-item dropdown dropdown-large">
-                                            <a href="{{ route('login') }}"
-                                                class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative cart-link"
-                                                data-bs-toggle="dropdown"> <span class="alert-count">8</span>
+                                        <li class="nav-item">
+                                            <a href="{{ route('User.AddToCart') }}"
+                                                class="nav-link position-relative cart-link">
+                                                <span class="alert-count">{{ cartProduct() }}</span>
                                                 <i class='bx bx-shopping-bag'></i>
                                             </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a href="#">
-                                                    <div class="cart-header">
-                                                        <p class="cart-header-title mb-0">8 ITEMS</p>
-                                                        <p class="cart-header-clear ms-auto mb-0">VIEW CART</p>
-                                                    </div>
-                                                </a>
-                                            </div>
                                         </li>
                                     </ul>
                                 </nav>
@@ -274,7 +267,8 @@
                                     </a>
                                     <ul class="dropdown-menu">
                                         @foreach ($catagorys as $catagory)
-                                        <li><a class="dropdown-item" href="#">{{ $catagory->catagory_name }}</a></li>
+                                            <li><a class="dropdown-item"
+                                                    href="#">{{ $catagory->catagory_name }}</a></li>
                                         @endforeach
                                     </ul>
                                 </li>
