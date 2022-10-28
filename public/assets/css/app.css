@@ -59,6 +59,9 @@ a {
 	width: 100%;
 	position: relative
 }
+.cart{
+    font-size: 30px;
+}
 /* Header */
 
 .header-wrapper .top-menu {

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\landingPage\WelcomeController;
 use App\Http\Controllers\Transcations\WidthrawalReqController;
+use App\Http\Controllers\User\AddToCartController;
 use App\Http\Controllers\User\UserAddressController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\UserProductController;
@@ -29,6 +30,10 @@ Route::prefix('user')->middleware(['auth','userAuth'])->group(function(){
     Route::get('/Address/Edit/{id}',[UserAddressController::class,'edit'])->name('User.Address.Edit');
     Route::post('/Address/updating/{id}',[UserAddressController::class,'update'])->name('User.Address.update');
     Route::post('/Address/store',[UserAddressController::class,'store'])->name('User.Address.store');
+
+    // Add to Cart Routes
+
+    Route::post('Add-To-Cart/{id}',[AddToCartController::class,'store'])->name('User.AddToCart');
 
 });
 

@@ -187,9 +187,6 @@
                                                     <h6 class="mb-0 fw-bold product-short-title">
                                                         {{ $product->product_name }}</h6>
                                                 </div>
-                                                <div class="icon-wishlist">
-                                                    <a href="javascript:;"><i class="bx bx-heart"></i></a>
-                                                </div>
                                             </div>
                                             <div class="cursor-pointer rating mt-2">
                                                 <i class="bx bxs-star text-warning"></i>
