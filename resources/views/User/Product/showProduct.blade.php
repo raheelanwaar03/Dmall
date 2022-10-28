@@ -18,7 +18,7 @@
                                                 class="product-detail-body d-flex justify-content-center align-itmes-around">
                                                 <div class="mr-4">
                                                     <img src="{{ asset('images/' . $product->product_img) }}"
-                                                      height="250px" width="250px"  alt="product image">
+                                                      height="250px" width="250px" class="m-3"  alt="product image">
                                                 </div>
                                                 <div class="ml-4">
                                                     <div class="mt-3">
@@ -41,30 +41,6 @@
                                                             Wishlist</a>
                                                     </div>
                                                     <hr />
-                                                    {{-- <div class="product-sharing">
-                                                        <div class="d-flex align-items-center gap-2 flex-wrap">
-                                                            <div class="">
-                                                                <button type="button" class="btn-social bg-twitter"><i
-                                                                        class='bx bxl-twitter'></i></button>
-                                                            </div>
-                                                            <div class="">
-                                                                <button type="button" class="btn-social bg-facebook"><i
-                                                                        class='bx bxl-facebook'></i></button>
-                                                            </div>
-                                                            <div class="">
-                                                                <button type="button" class="btn-social bg-linkedin"><i
-                                                                        class='bx bxl-linkedin'></i></button>
-                                                            </div>
-                                                            <div class="">
-                                                                <button type="button" class="btn-social bg-youtube"><i
-                                                                        class='bx bxl-youtube'></i></button>
-                                                            </div>
-                                                            <div class="">
-                                                                <button type="button" class="btn-social bg-pinterest"><i
-                                                                        class='bx bxl-pinterest'></i></button>
-                                                            </div>
-                                                        </div>
-                                                    </div> --}}
                                                 </div>
                                             </div>
                                         </div>

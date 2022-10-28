@@ -201,7 +201,7 @@
                                             <div
                                                 class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
 
-                                                @if ($product->product_price !== null)
+                                                @if ($product->product_discount !== null)
                                                     <div class="h6 fw-bold">${{ $product->product_discount }}</div>
                                                     <div style="text-decoration: line-through" class="h6 fw-bold">
                                                         ${{ $product->product_price }}</div>
