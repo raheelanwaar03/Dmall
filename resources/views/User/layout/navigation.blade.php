@@ -448,3 +448,24 @@
                 </nav>
             </div>
         </div>
+        <div class="page-wrapper">
+            <div class="page-content">
+                <section class="py-3 border-bottom border-top d-none d-md-flex bg-light">
+                    <div class="container">
+                        <div class="page-breadcrumb d-flex align-items-center">
+                            <h3 class="breadcrumb-title pe-3">Dashboard</h3>
+                            <div class="ms-auto">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb mb-0 p-0">
+                                        <li class="breadcrumb-item"><a href="{{ route('welcome') }}"><i
+                                                    class="bx bx-home-alt"></i>
+                                                Home</a>
+                                        </li>
+                                        </li>
+                                        <li class="breadcrumb-item active" aria-current="page">@yield('pageName')</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </section>

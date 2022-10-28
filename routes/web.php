@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\landingPage\WelcomeController;
 use App\Http\Controllers\Transcations\WidthrawalReqController;
+use App\Http\Controllers\User\UserAddressController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\UserProductController;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,9 @@ Route::prefix('user')->middleware(['auth','userAuth'])->group(function(){
     Route::post('/widthrawal-req/store',[WidthrawalReqController::class ,'storeWidthrawalAmount'])->name('User.Widthrawal.Amount.store');
     // Product Routes
     Route::get('/Product/{id}',[UserProductController::class,'showProduct'])->name('User.Product.Show');
+
+    // User Adress Route
+    Route::get('/Address',[UserAddressController::class,'userAddress'])->name('User.Address');
 
 });
 
