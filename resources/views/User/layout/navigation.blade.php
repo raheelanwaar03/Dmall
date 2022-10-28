@@ -1,175 +1,450 @@
-<!DOCTYPE html>
+<!Doctype html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>User Dashboard</title>
-    <link href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{{ asset('assets/images/favicon-32x32.png') }}" type="image/png" />
+    <link href="{{ asset('assets/plugins/OwlCarousel/css/owl.carousel.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/pace.min.css') }}" rel="stylesheet" />
+    <script src="{{ asset('assets/js/pace.min.js') }}"></script>
+    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&amp;display=swap"
         rel="stylesheet">
-    <link href="{{ asset('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
+    <link href="../../../../unpkg.com/boxicons%402.1.2/css/boxicons.min.css" rel="stylesheet">
+    <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet">
+    <title>Dmall - eCommerce HTML Template</title>
 </head>
 
-<body id="page-top">
-    <div id="wrapper">
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('welcome') }}">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+<body>
+    <div class="wrapper">
+        <div class="header-wrapper">
+            <div class="top-menu">
+                <div class="container">
+                    <nav class="navbar navbar-expand">
+                        @if (auth()->user())
+                            <div class="shiping-title d-none d-sm-flex">Welcome {{ auth()->user()->username }} to our
+                                Shopingo store!</div>
+                        @else
+                            <div class="shiping-title d-none d-sm-flex">Welcome to our Shopingo store!</div>
+                        @endif
+                        <ul class="navbar-nav ms-auto d-none d-lg-flex justify-content-center align-items-center">
+                            <li class="nav-item"><a class="nav-link" href="{{ route('welcome.aboutUs') }}">About</a>
+                            </li>
+                            </li>
+                            <li class="nav-item"><a class="nav-link"
+                                    href="{{ route('welcome.contactUs') }}">Contact</a>
+                            </li>
+                            @if (auth()->user())
+                                <li class="nav-item">
+                                    <form action="{{ route('logout') }}" method="POST">
+                                        @csrf
+                                        <button style=" border-radius:7px" type="submit"
+                                            class="btn btn-sm btn-warning text-light">Logout</button>
+                                    </form>
+                                </li>
+                            @endif
+
+                        </ul>
+                        <ul class="navbar-nav social-link ms-lg-2 ms-auto">
+                            <li class="nav-item"> <a class="nav-link" href="javascript:;"><i
+                                        class='bx bxl-facebook'></i></a>
+                            </li>
+                            <li class="nav-item"> <a class="nav-link" href="javascript:;"><i
+                                        class='bx bxl-twitter'></i></a>
+                            </li>
+                            <li class="nav-item"> <a class="nav-link" href="javascript:;"><i
+                                        class='bx bxl-linkedin'></i></a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-                <div class="sidebar-brand-text mx-3">{{ env('APP_NAME') }}</div>
-            </a>
-            <hr class="sidebar-divider my-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ route('User.index') }}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>User Dashboard</span></a>
-            </li>
-            <hr class="sidebar-divider">
-            <div class="sidebar-heading">
-                Main
             </div>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('User.Widthrawal.Transcation.Details') }}" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Transcation</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">MY Transcations:</h6>
-                        <a class="collapse-item" href="{{ route('User.WidthrawalReq.view') }}">Request for Widthraw</a>
-                        <a class="collapse-item" href="{{ route('User.Widthrawal.Transcation.Details') }}">All Transcation Request</a>
-                        <a class="collapse-item" href="{{ route('User.Transcation.Approved') }}">Approved Transcations</a>
-                        <a class="collapse-item" href="{{ route('User.Transcation.Rejected') }}">Rejected Transcations</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
-                    </div>
-                </div>
-            </li>
-            <hr class="sidebar-divider">
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
-            <hr class="sidebar-divider d-none d-md-block">
-        </ul>
-        <div id="content-wrapper" class="d-flex flex-column">
-            <div id="content">
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small"
-                                placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
+            <div class="header-content bg-warning">
+                <div class="container">
+                    <div class="row align-items-center gx-4">
+                        <div class="col-auto">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="mobile-toggle-menu d-inline d-xl-none" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasNavbar">
+                                    <i class="bx bx-menu"></i>
+                                </div>
+                                <div class="logo">
+                                    <a href="{{ route('welcome') }}">
+                                        <img src="{{ asset('assets/images/logo-icon.png') }}" class="logo-icon"
+                                            alt="" />
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </form>
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
+                        <div class="col-12 col-xl order-4 order-xl-0">
+                            <div class="input-group flex-nowrap pb-3 pb-xl-0">
+                                <input type="text" class="form-control w-100 border-dark border border-3"
+                                    placeholder="Search for Products">
+                                <button class="btn btn-dark btn-ecomm border-3" type="button">Search</button>
+                            </div>
+                        </div>
+                        <div class="col-auto d-none d-xl-flex">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="fs-1 text-content"><i class='bx bx-headphone'></i></div>
+                                <div class="">
+                                    <p class="mb-0 text-content">CALL US NOW</p>
+                                    <h5 class="mb-0">{{ env('APP_Num') }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto ms-auto">
+                            <div class="top-cart-icons">
+                                <nav class="navbar navbar-expand">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item"><a href="{{ route('login') }}"
+                                                class="nav-link cart-link"><i class='bx bx-user'></i></a>
+                                        </li>
+                                        <li class="nav-item"><a href="{{ route('login') }}"
+                                                class="nav-link cart-link"><i class='bx bx-heart'></i></a>
+                                        </li>
+                                        <li class="nav-item dropdown dropdown-large">
+                                            <a href="{{ route('login') }}"
+                                                class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative cart-link"
+                                                data-bs-toggle="dropdown"> <span class="alert-count">8</span>
+                                                <i class='bx bx-shopping-bag'></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-end">
+                                                <a href="javascript:;">
+                                                    <div class="cart-header">
+                                                        <p class="cart-header-title mb-0">8 ITEMS</p>
+                                                        <p class="cart-header-clear ms-auto mb-0">VIEW CART</p>
+                                                    </div>
+                                                </a>
+                                                <div class="cart-list">
+                                                    <a class="dropdown-item" href="javascript:;">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <h6 class="cart-product-title">Men White T-Shirt</h6>
+                                                                <p class="cart-product-price">1 X $29.00</p>
+                                                            </div>
+                                                            <div class="position-relative">
+                                                                <div class="cart-product-cancel position-absolute"><i
+                                                                        class='bx bx-x'></i>
+                                                                </div>
+                                                                <div class="cart-product">
+                                                                    <img src="{{ asset('assets/images/products/01.png') }}"
+                                                                        class="" alt="product image">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a class="dropdown-item" href="javascript:;">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <h6 class="cart-product-title">Puma Sports Shoes</h6>
+                                                                <p class="cart-product-price">1 X $29.00</p>
+                                                            </div>
+                                                            <div class="position-relative">
+                                                                <div class="cart-product-cancel position-absolute"><i
+                                                                        class='bx bx-x'></i>
+                                                                </div>
+                                                                <div class="cart-product">
+                                                                    <img src="{{ asset('assets/images/products/05.png') }}"
+                                                                        class="" alt="product image">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a class="dropdown-item" href="javascript:;">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <h6 class="cart-product-title">Women Red Sneakers</h6>
+                                                                <p class="cart-product-price">1 X $29.00</p>
+                                                            </div>
+                                                            <div class="position-relative">
+                                                                <div class="cart-product-cancel position-absolute"><i
+                                                                        class='bx bx-x'></i>
+                                                                </div>
+                                                                <div class="cart-product">
+                                                                    <img src="{{ asset('assets/images/products/17.png') }}"
+                                                                        class="" alt="product image">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a class="dropdown-item" href="javascript:;">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <h6 class="cart-product-title">Black Headphone</h6>
+                                                                <p class="cart-product-price">1 X $29.00</p>
+                                                            </div>
+                                                            <div class="position-relative">
+                                                                <div class="cart-product-cancel position-absolute"><i
+                                                                        class='bx bx-x'></i>
+                                                                </div>
+                                                                <div class="cart-product">
+                                                                    <img src="{{ asset('assets/images/products/10.png') }}"
+                                                                        class="" alt="product image">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a class="dropdown-item" href="javascript:;">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <h6 class="cart-product-title">Blue Girl Shoes</h6>
+                                                                <p class="cart-product-price">1 X $29.00</p>
+                                                            </div>
+                                                            <div class="position-relative">
+                                                                <div class="cart-product-cancel position-absolute"><i
+                                                                        class='bx bx-x'></i>
+                                                                </div>
+                                                                <div class="cart-product">
+                                                                    <img src="{{ asset('assets/images/products/08.png') }}"
+                                                                        class="" alt="product image">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a class="dropdown-item" href="javascript:;">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <h6 class="cart-product-title">Men Leather Belt</h6>
+                                                                <p class="cart-product-price">1 X $29.00</p>
+                                                            </div>
+                                                            <div class="position-relative">
+                                                                <div class="cart-product-cancel position-absolute"><i
+                                                                        class='bx bx-x'></i>
+                                                                </div>
+                                                                <div class="cart-product">
+                                                                    <img src="{{ asset('assets/images/products/18.png') }}"
+                                                                        class="" alt="product image">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a class="dropdown-item" href="javascript:;">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <h6 class="cart-product-title">Men Yellow T-Shirt</h6>
+                                                                <p class="cart-product-price">1 X $29.00</p>
+                                                            </div>
+                                                            <div class="position-relative">
+                                                                <div class="cart-product-cancel position-absolute"><i
+                                                                        class='bx bx-x'></i>
+                                                                </div>
+                                                                <div class="cart-product">
+                                                                    <img src="{{ asset('assets/images/products/04.png') }}"
+                                                                        class="" alt="product image">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a class="dropdown-item" href="javascript:;">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <h6 class="cart-product-title">Pool Charir</h6>
+                                                                <p class="cart-product-price">1 X $29.00</p>
+                                                            </div>
+                                                            <div class="position-relative">
+                                                                <div class="cart-product-cancel position-absolute"><i
+                                                                        class='bx bx-x'></i>
+                                                                </div>
+                                                                <div class="cart-product">
+                                                                    <img src="{{ asset('assets/images/products/16.png') }}"
+                                                                        class="" alt="product image">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <a href="javascript:;">
+                                                    <div class="text-center cart-footer d-flex align-items-center">
+                                                        <h5 class="mb-0">TOTAL</h5>
+                                                        <h5 class="mb-0 ms-auto">$189.00</h5>
+                                                    </div>
+                                                </a>
+                                                <div class="d-grid p-3 border-top"> <a href="javascript:;"
+                                                        class="btn btn-dark btn-ecomm">CHECKOUT</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="primary-menu">
+                <nav class="navbar navbar-expand-xl w-100 navbar-dark container mb-0 p-0">
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
+                        <div class="offcanvas-header">
+                            <div class="offcanvas-logo"><img src="{{ asset('assets/images/logo-icon.png') }}"
+                                    width="100" alt="">
+                            </div>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body primary-menu">
+                            <ul class="navbar-nav justify-content-start flex-grow-1 gap-1">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('welcome') }}">Home</a>
+                                </li>
+                                {{-- <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="tv-shows.html"
+                                        data-bs-toggle="dropdown">
+                                        Categories
+                                    </a>
+                                    <div class="dropdown-menu dropdown-large-menu">
+                                        <div class="row">
+                                            <div class="col-12 col-xl-4">
+                                                <h6 class="large-menu-title">Fashion</h6>
+                                                <ul class="list-unstyled">
+                                                    <li><a href="javascript:;">Casual T-Shirts</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Formal Shirts</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Jackets</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Jeans</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Dresses</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Sneakers</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Belts</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Sports Shoes</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-12 col-xl-4">
+                                                <h6 class="large-menu-title">Electronics</h6>
+                                                <ul class="list-unstyled">
+                                                    <li><a href="javascript:;">Mobiles</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Laptops</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Macbook</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Televisions</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Lighting</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Smart Watch</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">Galaxy Phones</a>
+                                                    </li>
+                                                    <li><a href="javascript:;">PC Monitors</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- end col-3 -->
+                                            <div class="col-12 col-xl-4 d-none d-xl-block">
+                                                <div class="pramotion-banner1">
+                                                    <img src="{{ asset('assets/images/gallery/menu-img.jpg') }}"
+                                                        class="img-fluid" alt="" />
+                                                </div>
+                                            </div>
+                                            <!-- end col-3 -->
                                         </div>
+                                        <!-- end row -->
                                     </div>
-                                </form>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw"></i>
+                                </li> --}}
+                                {{-- <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"
+                                        data-bs-toggle="dropdown">
+                                        Shop <i class='bx bx-chevron-down ms-1'></i>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item dropdown"><a
+                                                class="dropdown-item dropdown-toggle dropdown-toggle-nocaret"
+                                                href="#">Shop Layouts <i
+                                                    class='bx bx-chevron-right float-end'></i></a>
+                                            <ul class="submenu dropdown-menu">
+                                                <li><a class="dropdown-item" href="shop-grid-left-sidebar.html">Shop
+                                                        Grid - Left Sidebar</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="shop-grid-right-sidebar.html">Shop
+                                                        Grid - Right Sidebar</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="shop-list-left-sidebar.html">Shop
+                                                        List - Left Sidebar</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="shop-list-right-sidebar.html">Shop
+                                                        List - Right Sidebar</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="shop-grid-filter-on-top.html">Shop
+                                                        Grid - Top Filter</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="shop-list-filter-on-top.html">Shop
+                                                        List - Top Filter</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="dropdown-item" href="product-details.html">Product Details</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="shop-cart.html">Shop Cart</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="shop-categories.html">Shop Categories</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="checkout-details.html">Billing Details</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="checkout-shipping.html">Checkout
+                                                Shipping</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="checkout-payment.html">Payment Method</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="checkout-review.html">Order Review</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="checkout-complete.html">Checkout
+                                                Complete</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="order-tracking.html">Order Tracking</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="product-comparison.html">Product
+                                                Comparison</a>
+                                        </li>
+                                    </ul>
+                                </li> --}}
 
-                                <span class="badge badge-danger badge-counter">3+</span>
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-envelope fa-fw"></i>
-                                <span class="badge badge-danger badge-counter">7</span>
-                            </a>
-                        </li>
-
-                        <div class="topbar-divider d-none d-sm-block"></div>
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name }}</span>
-                                <img class="img-profile rounded-circle" src="{{ asset('assets/img/undraw_profile.svg') }}">
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="{{ route('welcome') }}">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Continue Shoping
-                                </a>
-
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{{ route('logout') }}" data-toggle="modal"
-                                    data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
-                        </li>
-
-                    </ul>
-
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('welcome.aboutUs') }}">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('welcome.contactUs') }}">Contact</a>
+                                </li>
+                                {{-- <li class="nav-item"> <a class="nav-link" href="shop-categories.html">Our Store</a>
+                                </li> --}}
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"
+                                        data-bs-toggle="dropdown">
+                                        Categories
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        @foreach ($catagorys as $catagory)
+                                            <li><a class="dropdown-item"
+                                                    href="#">{{ $catagory->catagory_name }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"
+                                        data-bs-toggle="dropdown">
+                                        Account
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('register') }}">Register</a>
+                                        <li><a class="dropdown-item" href="{{ route('User.index') }}">Dashboard</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </nav>
+            </div>
+        </div>

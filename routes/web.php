@@ -3,6 +3,7 @@
 use App\Http\Controllers\landingPage\WelcomeController;
 use App\Http\Controllers\Transcations\WidthrawalReqController;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\User\UserProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',[WelcomeController::class,'landingPage'])->name('welcome');
@@ -18,6 +19,8 @@ Route::prefix('user')->middleware(['auth','userAuth'])->group(function(){
     Route::get('/widthrawal-req',[WidthrawalReqController::class ,'widthrawalReqView'])->name('User.WidthrawalReq.view');
     Route::get('/transcation-details',[WidthrawalReqController::class ,'transcationDetails'])->name('User.Widthrawal.Transcation.Details');
     Route::post('/widthrawal-req/store',[WidthrawalReqController::class ,'storeWidthrawalAmount'])->name('User.Widthrawal.Amount.store');
+    // Product Routes
+    Route::get('/Product/{id}',[UserProductController::class,'showProduct'])->name('User.Product.Show');
 
 });
 

@@ -1,95 +1,166 @@
 @extends('User.layout.app')
 
 @section('content')
-    <div class="container-fluid">
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">User Dashboard</h1>
-        </div>
-        <div class="row">
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-primary shadow h-100 py-2">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                    Referal Commission</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ auth()->user()->referal_bouns }}
-                                </div>
-                            </div>
-                            <div class="col-auto">
-                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                            </div>
+    <div class="page-wrapper">
+        <div class="page-content">
+            <section class="py-3 border-bottom border-top d-none d-md-flex bg-light">
+                <div class="container">
+                    <div class="page-breadcrumb d-flex align-items-center">
+                        <h3 class="breadcrumb-title pe-3">Dashboard</h3>
+                        <div class="ms-auto">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb mb-0 p-0">
+                                    <li class="breadcrumb-item"><a href="{{ route('welcome') }}"><i
+                                                class="bx bx-home-alt"></i>
+                                            Home</a>
+                                    </li>
+                                    </li>
+                                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                                </ol>
+                            </nav>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-info shadow h-100 py-2">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Pending Widthrawal
-                                    Amount
+            </section>
+            <section class="py-4">
+                <div class="container">
+                    <h3 class="d-none">Dashboard</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="card shadow-none mb-3 mb-lg-0 border rounded-0">
+                                        <div class="card-body">
+                                            <div class="list-group list-group-flush"> <a href="account-dashboard.html"
+                                                    class="list-group-item active d-flex justify-content-between align-items-center">Dashboard
+                                                    <i class='bx bx-tachometer fs-5'></i></a>
+                                                <a href="account-orders.html"
+                                                    class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Orders
+                                                    <i class='bx bx-cart-alt fs-5'></i></a>
+                                                <a href="account-downloads.html"
+                                                    class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Downloads
+                                                    <i class='bx bx-download fs-5'></i></a>
+                                                <a href="account-addresses.html"
+                                                    class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Addresses
+                                                    <i class='bx bx-home-smile fs-5'></i></a>
+                                                <a href="account-payment-methods.html"
+                                                    class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Payment
+                                                    Methods <i class='bx bx-credit-card fs-5'></i></a>
+                                                <a href="account-user-details.html"
+                                                    class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Account
+                                                    Details <i class='bx bx-user-circle fs-5'></i></a>
+                                                <a href="#"
+                                                    class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Logout
+                                                    <i class='bx bx-log-out fs-5'></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="row no-gutters align-items-center">
-                                    <div class="col-auto">
-                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">2</div>
+                                <div class="col-lg-8">
+                                    <div class="card shadow-none mb-0">
+                                        <div class="card-body">
+                                            <p>Hello <strong>{{ auth()->user()->username }}</strong>
+                                            <p>From your account dashboard you can view your Recent Orders,<br> manage your
+                                                shipping and billing addesses.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-auto">
-                                <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-warning shadow h-100 py-2">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                    Pending Requests</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                            </div>
-                            <div class="col-auto">
-                                <i class="fas fa-comments fa-2x text-gray-300"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </section>
         </div>
-        <div class="row">
-            <div class="col-lg-6 mb-4">
-                <div class="card shadow bordered-primary mb-4">
-                    <div>
-                        <input type="text" style="width: 90%;border:none" value="{{ route('register', ['referal' => Auth::user()->username]) }}"
-                            id="myInput">
-                        <button onclick="myFunction()" class="btn btn-secondary px-2"><i class="fa fa-clipboard"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6 mb-4">
-                <div class="card shadow mb-4">
-                    <div class="card-body">
-                        <h4 class="small font-weight-bold">Referal<span class="float-right">Complete!</span></h4>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="100"
-                                aria-valuemin="0" aria-valuemax="100">50%</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
     </div>
 @endsection
+{{-- <div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">User Dashboard</h1>
+    </div>
+    <div class="row">
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Referal Commission</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ auth()->user()->referal_bouns }}
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Pending Widthrawal
+                                Amount
+                            </div>
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">2</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                Pending Requests</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+            <div class="card shadow bordered-primary mb-4">
+                <div>
+                    <input type="text" style="width: 90%;border:none" value="{{ route('register', ['referal' => Auth::user()->username]) }}"
+                        id="myInput">
+                    <button onclick="myFunction()" class="btn btn-secondary px-2"><i class="fa fa-clipboard"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <h4 class="small font-weight-bold">Referal<span class="float-right">Complete!</span></h4>
+                    <div class="progress">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="100"
+                            aria-valuemin="0" aria-valuemax="100">50%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+</div>
+</div> --}}
+{{--
 @section('footer')
     <script>
         function myFunction() {
@@ -107,4 +178,4 @@
             alert("Copied the Link: " + copyText.value);
         }
     </script>
-@endsection
+@endsection --}}

@@ -8,8 +8,9 @@ use Illuminate\Http\Request;
 
 class UserProductController extends Controller
 {
-    public function products()
+    public function showProduct($id)
     {
-        //
+        $product = ProductManger::find($id);
+        return view('User.Product.showProduct',compact('product'));
     }
 }

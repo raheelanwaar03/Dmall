@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Admin\CatagoryController;
 use App\Http\Controllers\Controller;
+use App\Models\admin\Catagory;
 use App\Models\Transctions\WidthrawlAmount;
 use App\Models\User;
 
@@ -11,7 +13,8 @@ class UserController extends Controller
     public function index()
     {
         $user = User::get();
-        return view('User.index',compact('user'));
+        $catagorys = Catagory::all();
+        return view('User.index',compact('user','catagorys'));
     }
 
     public function approvedTranscation()
