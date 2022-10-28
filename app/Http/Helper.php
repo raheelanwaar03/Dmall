@@ -15,6 +15,8 @@ function  productId()
 
 function cartProduct()
 {
-    $cartProduct = AddToCart::where('user_id',auth()->user()->id)->count();
-    return $cartProduct;
+    if (auth()->user){
+        $cartProduct = AddToCart::where('user_id',auth()->user()->id)->count();
+        return $cartProduct;
+    }
 }
