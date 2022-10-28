@@ -10,11 +10,12 @@
                 <a href="account-downloads.html"
                     class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Downloads
                     <i class='bx bx-download fs-5'></i></a>
-                <a href="{{ route('User.Address') }}"
-                    class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Add Addresses
-                    <i class='bx bx-home-smile fs-5'></i></a>
-                    <a href="account-addresses.html"
+                <a href="{{ route('User.Address.index') }}"
                     class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Addresses
+                    <i class='bx bx-home-smile fs-5'></i></a>
+                <a href="{{ route('User.Address') }}"
+                    class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Shiping
+                    Address
                     <i class='bx bx-home-smile fs-5'></i></a>
                 <a href="account-payment-methods.html"
                     class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Payment

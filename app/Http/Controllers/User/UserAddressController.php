@@ -32,4 +32,11 @@ class UserAddressController extends Controller
         $userAddress->save();
         return redirect()->back()->with('success','Your Address Saved Successfuly');
     }
+
+    public function index()
+    {
+        $catagorys = Catagory::all();
+        $userAddress = UserAddress::get();
+        return view('User.Account.addresses',compact('catagorys','userAddress'));
+    }
 }
