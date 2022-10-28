@@ -14,7 +14,7 @@
                                 {{-- Write yor main content here --}}
 
                                 <div class="card-body">
-                                    <form action="#" method="POST">
+                                    <form action="{{ route('User.Address.store') }}" method="POST">
                                         @csrf
                                         <div class="form-group">
                                             <div class="label">City</div>

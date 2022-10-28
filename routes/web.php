@@ -25,6 +25,7 @@ Route::prefix('user')->middleware(['auth','userAuth'])->group(function(){
 
     // User Adress Route
     Route::get('/Address',[UserAddressController::class,'userAddress'])->name('User.Address');
+    Route::post('/Address/store',[UserAddressController::class,'store'])->name('User.Address.store');
 
 });
 
