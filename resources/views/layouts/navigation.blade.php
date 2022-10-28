@@ -108,7 +108,6 @@
                                         <li class="nav-item">
                                             <a href="{{ route('User.AddToCart') }}"
                                                 class="nav-link position-relative cart-link">
-                                                <span class="alert-count"></span>
                                                 <i class='bx bx-shopping-bag'></i>
                                             </a>
                                         </li>
