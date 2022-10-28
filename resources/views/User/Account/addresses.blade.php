@@ -27,11 +27,14 @@
                                             <h5 class="mb-3">Shipping Addresses</h5>
                                             <address>
                                                 @forelse ( $userAddress as $address )
-                                                {{ $address->user_city }}<br>
-                                                {{ $address->user_area }}<br>
-                                                {{ $address->user_streat }}
-                                                {{ $address->user_zip }}<br>
-                                                Pakistan
+                                             city:  {{ $address->user_city }}<br> <br>
+                                              area:  {{ $address->user_area }}<br><br>
+                                               street: {{ $address->user_street }} <br><br>
+                                               zip: {{ $address->user_zip }}<br>
+                                                Pakistan <br>
+                                                <div class="mt-4">
+                                                    <a href="{{ route('User.Address.Edit',['id'=>$address->id]) }}" class="btn btn-warning">Edit Address</a>
+                                                </div>
                                                 @empty
                                                     <h3>Please Add your Address</h3>
                                                 @endforelse

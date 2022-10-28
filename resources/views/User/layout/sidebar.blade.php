@@ -7,22 +7,16 @@
                 <a href="account-orders.html"
                     class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Orders
                     <i class='bx bx-cart-alt fs-5'></i></a>
-                <a href="account-downloads.html"
-                    class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Downloads
-                    <i class='bx bx-download fs-5'></i></a>
                 <a href="{{ route('User.Address.index') }}"
                     class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Addresses
                     <i class='bx bx-home-smile fs-5'></i></a>
                 <a href="{{ route('User.Address') }}"
-                    class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Shiping
+                    class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Add Shiping
                     Address
                     <i class='bx bx-home-smile fs-5'></i></a>
-                <a href="account-payment-methods.html"
-                    class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Payment
-                    Methods <i class='bx bx-credit-card fs-5'></i></a>
-                <a href="account-user-details.html"
+                {{-- <a href="account-user-details.html"
                     class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Account
-                    Details <i class='bx bx-user-circle fs-5'></i></a>
+                    Details <i class='bx bx-user-circle fs-5'></i></a> --}}
             </div>
         </div>
     </div>

@@ -26,6 +26,8 @@ Route::prefix('user')->middleware(['auth','userAuth'])->group(function(){
     // User Adress Route
     Route::get('/Add-Address',[UserAddressController::class,'userAddress'])->name('User.Address');
     Route::get('/Address',[UserAddressController::class,'index'])->name('User.Address.index');
+    Route::get('/Address/Edit/{id}',[UserAddressController::class,'edit'])->name('User.Address.Edit');
+    Route::post('/Address/updating/{id}',[UserAddressController::class,'update'])->name('User.Address.update');
     Route::post('/Address/store',[UserAddressController::class,'store'])->name('User.Address.store');
 
 });
