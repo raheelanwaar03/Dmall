@@ -15982,7 +15982,7 @@ File: icons.css
 
 }
 .style:hover{
-
+    border: none;
     color: black;
 
 }
