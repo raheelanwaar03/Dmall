@@ -171,8 +171,8 @@
                                             @csrf
                                             <div class="position-relative overflow-hidden">
                                                 <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
-                                                    <button type="submit" class="style"><i
-                                                            class="bx cart bx-shopping-bag"></i></button>
+                                                    <button type="submit" class="style cart"><i
+                                                            class="bx bx-shopping-bag"></i></button>
                                                 </div>
                                                 <div class="quick-view position-absolute start-0 bottom-0 end-0">
                                                     <a href="{{ route('User.Product.Show', ['id' => $product->id]) }}">View
