@@ -171,9 +171,8 @@
                                                 <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
                                             </div>
                                             <div class="quick-view position-absolute start-0 bottom-0 end-0">
-                                                <a href="{{ route('User.Product.Show',['id'=>$product->id]) }}">View Product</a>
-                                                {{-- <a href="{{ route('User.Product.Show',['id'=>$product->id]) }}" data-bs-toggle="modal">
-                                                    Quick View</a> --}}
+                                                <a href="{{ route('User.Product.Show', ['id' => $product->id]) }}">View
+                                                    Product</a>
                                             </div>
                                             <a href="javascript:;">
                                                 <img src="{{ asset('images/' . $product->product_img) }}"
@@ -187,6 +186,13 @@
                                                     <h6 class="mb-0 fw-bold product-short-title">
                                                         {{ $product->product_name }}</h6>
                                                 </div>
+                                                <form action="{{ route('User.AddToCart.store',['id'=>$product->id]) }}" method="Post">
+                                                    @csrf
+                                                    <div class="icon-wishlist d-flex justify-content-end align-items-center">
+                                                        <input type="number" name="cart_qty" value="1" class="w-25">
+                                                        <button type="submit" class="btn btn-small style"><i class="bx cart bx-shopping-bag"></i></button>
+                                                    </div>
+                                                </form>
                                             </div>
                                             <div class="cursor-pointer rating mt-2">
                                                 <i class="bx bxs-star text-warning"></i>

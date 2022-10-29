@@ -15973,3 +15973,15 @@ File: icons.css
 	background-image: url(../flags/1x1/un.svg)
 
 }
+
+.style{
+
+    border: none;
+    text-decoration: none;
+
+}
+.style:hover{
+
+    color: black;
+
+}
