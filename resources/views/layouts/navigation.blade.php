@@ -120,7 +120,7 @@
                         </div>
                     </div>
                 </div>
-            @else{
+            @else
                 <div class="header-content bg-warning">
                     <div class="container">
                         <div class="row align-items-center gx-4">
@@ -177,7 +177,6 @@
                         </div>
                     </div>
                 </div>
-            }
             @endif
             <div class="primary-menu">
                 <nav class="navbar navbar-expand-xl w-100 navbar-dark container mb-0 p-0">

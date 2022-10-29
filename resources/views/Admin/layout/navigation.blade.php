@@ -126,6 +126,11 @@
                     <span>Set Widthraw Limit</span></a>
             </li>
             <hr class="sidebar-divider d-none d-md-block">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('Admin.User.Order') }}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Order</span></a>
+            </li>
         </ul>
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">

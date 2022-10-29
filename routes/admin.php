@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CatagoryController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductMangerController;
 use App\Http\Controllers\Admin\Transcation\LimitController;
 use App\Http\Controllers\Admin\Transcation\TranscationDetails;
@@ -28,5 +29,9 @@ Route::prefix('Admin')->middleware(['auth','adminAuth'])->group(function(){
     Route::resource('/Product',ProductMangerController::class);
     // Admin catagory Routes
     Route::resource('/Catagory',CatagoryController::class);
+    // Order Routes
+
+    Route::get('/User/Orders',[OrderController::class,'index'])->name('Admin.User.Order');
+    Route::get('/User/Orders/{id}',[OrderController::class,'status'])->name('Admin.User.Order.Delivered');
 
 });
