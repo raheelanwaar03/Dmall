@@ -620,19 +620,19 @@
                 <div class="new-arrivals owl-carousel owl-theme position-relative">
                     <div class="item">
                         <div class="card">
-                            {{-- <div class="position-relative overflow-hidden">
-                                <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                            <div class="position-relative overflow-hidden">
+                                {{-- <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
                                     <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
                                 </div>
                                 <div class="quick-view position-absolute start-0 bottom-0 end-0">
                                     <a href="javascript:;" data-bs-toggle="modal"
                                         data-bs-target="#QuickViewProduct">Quick View</a>
-                                </div>
+                                </div> --}}
                                 <a href="javascript:;">
                                     <img src="{{ asset('assets/images/products/11.png') }}" class="img-fluid"
                                         alt="...">
                                 </a>
-                            </div> --}}
+                            </div>
                             <div class="card-body px-0">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="">
@@ -660,19 +660,19 @@
                     </div>
                     <div class="item">
                         <div class="card">
-                            {{-- <div class="position-relative overflow-hidden">
-                                <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                             <div class="position-relative overflow-hidden">
+                                {{-- <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
                                     <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
                                 </div>
                                 <div class="quick-view position-absolute start-0 bottom-0 end-0">
                                     <a href="javascript:;" data-bs-toggle="modal"
                                         data-bs-target="#QuickViewProduct">Quick View</a>
-                                </div>
+                                </div> --}}
                                 <a href="javascript:;">
                                     <img src="{{ asset('assets/images/products/12.png') }}" class="img-fluid"
                                         alt="...">
                                 </a>
-                            </div> --}}
+                            </div>
                             <div class="card-body px-0">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="">
@@ -700,19 +700,19 @@
                     </div>
                     <div class="item">
                         <div class="card">
-                            {{-- <div class="position-relative overflow-hidden">
-                                <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                             <div class="position-relative overflow-hidden">
+                                {{-- <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
                                     <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
                                 </div>
                                 <div class="quick-view position-absolute start-0 bottom-0 end-0">
                                     <a href="javascript:;" data-bs-toggle="modal"
                                         data-bs-target="#QuickViewProduct">Quick View</a>
-                                </div>
+                                </div> --}}
                                 <a href="javascript:;">
                                     <img src="{{ asset('assets/images/products/13.png') }}" class="img-fluid"
                                         alt="...">
                                 </a>
-                            </div> --}}
+                            </div>
                             <div class="card-body px-0">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="">
@@ -740,19 +740,19 @@
                     </div>
                     <div class="item">
                         <div class="card">
-                            {{-- <div class="position-relative overflow-hidden">
-                                <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                             <div class="position-relative overflow-hidden">
+                                {{-- <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
                                     <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
                                 </div>
                                 <div class="quick-view position-absolute start-0 bottom-0 end-0">
                                     <a href="javascript:;" data-bs-toggle="modal"
                                         data-bs-target="#QuickViewProduct">Quick View</a>
-                                </div>
+                                </div> --}}
                                 <a href="javascript:;">
                                     <img src="{{ asset('assets/images/products/14.png') }}" class="img-fluid"
                                         alt="...">
                                 </a>
-                            </div> --}}
+                            </div>
                             <div class="card-body px-0">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="">
@@ -780,19 +780,19 @@
                     </div>
                     <div class="item">
                         <div class="card">
-                            {{-- <div class="position-relative overflow-hidden">
-                                <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                            <div class="position-relative overflow-hidden">
+                                {{-- <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
                                     <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
                                 </div>
                                 <div class="quick-view position-absolute start-0 bottom-0 end-0">
                                     <a href="javascript:;" data-bs-toggle="modal"
                                         data-bs-target="#QuickViewProduct">Quick View</a>
-                                </div>
+                                </div> --}}
                                 <a href="javascript:;">
                                     <img src="{{ asset('assets/images/products/15.png') }}" class="img-fluid"
                                         alt="...">
                                 </a>
-                            </div> --}}
+                            </div>
                             <div class="card-body px-0">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="">
@@ -820,19 +820,19 @@
                     </div>
                     <div class="item">
                         <div class="card">
-                            {{-- <div class="position-relative overflow-hidden">
-                                <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                            <div class="position-relative overflow-hidden">
+                                {{-- <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
                                     <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
                                 </div>
                                 <div class="quick-view position-absolute start-0 bottom-0 end-0">
                                     <a href="javascript:;" data-bs-toggle="modal"
                                         data-bs-target="#QuickViewProduct">Quick View</a>
-                                </div>
+                                </div> --}}
                                 <a href="javascript:;">
                                     <img src="{{ asset('assets/images/products/16.png') }}" class="img-fluid"
                                         alt="...">
                                 </a>
-                            </div> --}}
+                            </div>
                             <div class="card-body px-0">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="">
@@ -860,19 +860,19 @@
                     </div>
                     <div class="item">
                         <div class="card">
-                            {{-- <div class="position-relative overflow-hidden">
-                                <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                             <div class="position-relative overflow-hidden">
+                                {{-- <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
                                     <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
                                 </div>
                                 <div class="quick-view position-absolute start-0 bottom-0 end-0">
                                     <a href="javascript:;" data-bs-toggle="modal"
                                         data-bs-target="#QuickViewProduct">Quick View</a>
-                                </div>
+                                </div> --}}
                                 <a href="javascript:;">
                                     <img src="{{ asset('assets/images/products/17.png') }}" class="img-fluid"
                                         alt="...">
                                 </a>
-                            </div> --}}
+                            </div>
                             <div class="card-body px-0">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="">
@@ -900,19 +900,19 @@
                     </div>
                     <div class="item">
                         <div class="card">
-                            {{-- <div class="position-relative overflow-hidden">
-                                <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
+                            <div class="position-relative overflow-hidden">
+                                {{-- <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
                                     <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
                                 </div>
                                 <div class="quick-view position-absolute start-0 bottom-0 end-0">
                                     <a href="javascript:;" data-bs-toggle="modal"
                                         data-bs-target="#QuickViewProduct">Quick View</a>
-                                </div>
+                                </div> --}}
                                 <a href="javascript:;">
                                     <img src="{{ asset('assets/images/products/18.png') }}" class="img-fluid"
                                         alt="...">
                                 </a>
-                            </div> --}}
+                            </div>
                             <div class="card-body px-0">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="">
