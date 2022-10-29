@@ -33,7 +33,7 @@ Route::prefix('user')->middleware(['auth','userAuth'])->group(function(){
 
     // Add to Cart Routes
 
-    Route::post('Add-To-Cart/Products',[AddToCartController::class,'index'])->name('User.AddToCart');
+    Route::get('Cart/Products',[AddToCartController::class,'index'])->name('User.AddToCart');
     Route::post('Add-To-Cart/{id}',[AddToCartController::class,'store'])->name('User.AddToCart.store');
 
 });

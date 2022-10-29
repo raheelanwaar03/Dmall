@@ -107,8 +107,8 @@
                                         </li>
                                         <li class="nav-item dropdown dropdown-large">
                                             <a href="{{ route('User.AddToCart') }}"
-                                                class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative cart-link"
-                                                data-bs-toggle="dropdown"> <span class="alert-count">{{ cartProduct() }}</span>
+                                                class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative cart-link">
+                                                <span class="alert-count">{{ cartProduct() }}</span>
                                                 <i class='bx bx-shopping-bag'></i>
                                             </a>
                                         </li>
@@ -255,15 +255,13 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('welcome.aboutUs') }}">About</a>
                                 </li>
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a class="nav-link" href="{{ route('User.AddToCart') }}">Cart Product</a>
-                                </li>
+                                </li> --}}
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('welcome.contactUs') }}">Contact</a>
                                 </li>
-                                {{-- <li class="nav-item"> <a class="nav-link" href="shop-categories.html">Our Store</a>
-                                </li> --}}
-                                <li class="nav-item dropdown">
+                                {{-- <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"
                                         data-bs-toggle="dropdown">
                                         Categories
@@ -274,7 +272,7 @@
                                                     href="#">{{ $catagory->catagory_name }}</a></li>
                                         @endforeach
                                     </ul>
-                                </li>
+                                </li> --}}
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"
                                         data-bs-toggle="dropdown">
@@ -301,7 +299,7 @@
                 <section class="py-3 border-bottom border-top d-none d-md-flex bg-light">
                     <div class="container">
                         <div class="page-breadcrumb d-flex align-items-center">
-                            <h3 class="breadcrumb-title pe-3">Dashboard</h3>
+                            <h3 class="breadcrumb-title pe-3">@yield('pageName')</h3>
                             <div class="ms-auto">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb mb-0 p-0">

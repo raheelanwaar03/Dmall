@@ -62,62 +62,125 @@
                     </nav>
                 </div>
             </div>
-            <div class="header-content bg-warning">
-                <div class="container">
-                    <div class="row align-items-center gx-4">
-                        <div class="col-auto">
-                            <div class="d-flex align-items-center gap-3">
-                                <div class="mobile-toggle-menu d-inline d-xl-none" data-bs-toggle="offcanvas"
-                                    data-bs-target="#offcanvasNavbar">
-                                    <i class="bx bx-menu"></i>
-                                </div>
-                                <div class="logo">
-                                    <a href="{{ route('welcome') }}">
-                                        <img src="{{ asset('assets/images/logo-icon.png') }}" class="logo-icon"
-                                            alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-xl order-4 order-xl-0">
-                            <div class="input-group flex-nowrap pb-3 pb-xl-0">
-                                <input type="text" class="form-control w-100 border-dark border border-3"
-                                    placeholder="Search for Products">
-                                <button class="btn btn-dark btn-ecomm border-3" type="button">Search</button>
-                            </div>
-                        </div>
-                        <div class="col-auto d-none d-xl-flex">
-                            <div class="d-flex align-items-center gap-3">
-                                <div class="fs-1 text-content"><i class='bx bx-headphone'></i></div>
-                                <div class="">
-                                    <p class="mb-0 text-content">CALL US NOW</p>
-                                    <h5 class="mb-0">{{ env('APP_Num') }}</h5>
+            @if(auth()->user())
+            {
+                <div class="header-content bg-warning">
+                    <div class="container">
+                        <div class="row align-items-center gx-4">
+                            <div class="col-auto">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="mobile-toggle-menu d-inline d-xl-none" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasNavbar">
+                                        <i class="bx bx-menu"></i>
+                                    </div>
+                                    <div class="logo">
+                                        <a href="{{ route('welcome') }}">
+                                            <img src="{{ asset('assets/images/logo-icon.png') }}" class="logo-icon"
+                                                alt="" />
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-auto ms-auto">
-                            <div class="top-cart-icons">
-                                <nav class="navbar navbar-expand">
-                                    <ul class="navbar-nav">
-                                        <li class="nav-item"><a href="{{ route('login') }}"
-                                                class="nav-link cart-link"><i class='bx bx-user'></i></a>
-                                        </li>
-                                        <li class="nav-item"><a href="{{ route('login') }}"
-                                                class="nav-link cart-link"><i class='bx bx-heart'></i></a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="{{ route('User.AddToCart') }}"
-                                                class="nav-link position-relative cart-link">
-                                                <i class='bx bx-shopping-bag'></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
+                            <div class="col-12 col-xl order-4 order-xl-0">
+                                <div class="input-group flex-nowrap pb-3 pb-xl-0">
+                                    <input type="text" class="form-control w-100 border-dark border border-3"
+                                        placeholder="Search for Products">
+                                    <button class="btn btn-dark btn-ecomm border-3" type="button">Search</button>
+                                </div>
+                            </div>
+                            <div class="col-auto d-none d-xl-flex">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="fs-1 text-content"><i class='bx bx-headphone'></i></div>
+                                    <div class="">
+                                        <p class="mb-0 text-content">CALL US NOW</p>
+                                        <h5 class="mb-0">{{ env('APP_Num') }}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-auto ms-auto">
+                                <div class="top-cart-icons">
+                                    <nav class="navbar navbar-expand">
+                                        <ul class="navbar-nav">
+                                            <li class="nav-item"><a href="{{ route('login') }}"
+                                                    class="nav-link cart-link"><i class='bx bx-user'></i></a>
+                                            </li>
+                                            <li class="nav-item"><a href="{{ route('login') }}"
+                                                    class="nav-link cart-link"><i class='bx bx-heart'></i></a>
+                                            </li>
+                                            <li class="nav-item dropdown dropdown-large">
+                                                <a href="{{ route('User.AddToCart') }}"
+                                                    class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative cart-link">
+                                                    <span class="alert-count">{{ cartProduct() }}</span>
+                                                    <i class='bx bx-shopping-bag'></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            }
+            @else{
+                <div class="header-content bg-warning">
+                    <div class="container">
+                        <div class="row align-items-center gx-4">
+                            <div class="col-auto">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="mobile-toggle-menu d-inline d-xl-none" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasNavbar">
+                                        <i class="bx bx-menu"></i>
+                                    </div>
+                                    <div class="logo">
+                                        <a href="{{ route('welcome') }}">
+                                            <img src="{{ asset('assets/images/logo-icon.png') }}" class="logo-icon"
+                                                alt="" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-xl order-4 order-xl-0">
+                                <div class="input-group flex-nowrap pb-3 pb-xl-0">
+                                    <input type="text" class="form-control w-100 border-dark border border-3"
+                                        placeholder="Search for Products">
+                                    <button class="btn btn-dark btn-ecomm border-3" type="button">Search</button>
+                                </div>
+                            </div>
+                            <div class="col-auto d-none d-xl-flex">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="fs-1 text-content"><i class='bx bx-headphone'></i></div>
+                                    <div class="">
+                                        <p class="mb-0 text-content">CALL US NOW</p>
+                                        <h5 class="mb-0"></h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-auto ms-auto">
+                                <div class="top-cart-icons">
+                                    <nav class="navbar navbar-expand">
+                                        <ul class="navbar-nav">
+                                            <li class="nav-item"><a href="{{ route('login') }}"
+                                                    class="nav-link cart-link"><i class='bx bx-user'></i></a>
+                                            </li>
+                                            <li class="nav-item"><a href="{{ route('login') }}"
+                                                    class="nav-link cart-link"><i class='bx bx-heart'></i></a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{ route('User.AddToCart') }}"
+                                                    class="nav-link position-relative cart-link">
+                                                    <i class='bx bx-shopping-bag'></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            @endif
             <div class="primary-menu">
                 <nav class="navbar navbar-expand-xl w-100 navbar-dark container mb-0 p-0">
                     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
@@ -257,9 +320,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('welcome.contactUs') }}">Contact</a>
                                 </li>
-                                {{-- <li class="nav-item"> <a class="nav-link" href="shop-categories.html">Our Store</a>
-                                </li> --}}
-                                <li class="nav-item dropdown">
+                                {{-- <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"
                                         data-bs-toggle="dropdown">
                                         Categories
@@ -270,7 +331,7 @@
                                                     href="#">{{ $catagory->catagory_name }}</a></li>
                                         @endforeach
                                     </ul>
-                                </li>
+                                </li> --}}
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"
                                         data-bs-toggle="dropdown">

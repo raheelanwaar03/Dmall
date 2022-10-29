@@ -15977,7 +15977,8 @@ File: icons.css
 .style{
 
     border: none;
-    text-decoration: none;
+    background-color: white;
+    border-radius: 35px;
 
 }
 .style:hover{

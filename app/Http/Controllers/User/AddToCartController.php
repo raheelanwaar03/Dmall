@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\admin\Catagory;
 use App\Models\admin\ProductManger;
 use App\Models\User\AddToCart;
 use Illuminate\Http\Request;
@@ -23,6 +24,7 @@ class AddToCartController extends Controller
             $cartProduct->product_price = $product->product_price * $request->cart_qty;
         }
 
+        $cartProduct->product_name = $product->product_name;
         $cartProduct->product_img = $product->product_img;
         $cartProduct->product_id = $product->product_id;
         $cartProduct->cart_product_qty = $request->cart_qty;
@@ -32,6 +34,8 @@ class AddToCartController extends Controller
 
     public function index()
     {
-        return  view('User.AddToCart.index');
+        $catagorys = Catagory::all();
+        $cartProducts = AddToCart::where('user_id',auth()->user()->id)->get();
+        return  view('User.AddToCart.index',compact('catagorys','cartProducts'));
     }
 }

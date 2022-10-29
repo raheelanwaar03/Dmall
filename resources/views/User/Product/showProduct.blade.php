@@ -28,6 +28,8 @@
                                                             <p>{{ $product->product_name }}</p>
                                                             <h6>Discription :</h6>
                                                             <p class="mb-0">{{ $product->product_description }}</p>
+                                                            <h6>Price :</h6>
+                                                            <p class="mb-0">{{ $product->product_price }}</p>
                                                         </div>
                                                         <dl class="row mt-3">
                                                             <dt class="col-sm-3">Id</dt>
