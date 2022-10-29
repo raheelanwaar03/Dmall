@@ -35,6 +35,8 @@ Route::prefix('user')->middleware(['auth','userAuth'])->group(function(){
 
     Route::get('Cart/Products',[AddToCartController::class,'index'])->name('User.AddToCart');
     Route::post('Add-To-Cart/{id}',[AddToCartController::class,'store'])->name('User.AddToCart.store');
+    Route::get('Cart/Product/delete/{id}',[AddToCartController::class,'destroy'])->name('User.AddToCart.destroy');
+    Route::post('Cart/Product/update/{id}',[AddToCartController::class,'update'])->name('User.AddToCart.update');
 
 });
 

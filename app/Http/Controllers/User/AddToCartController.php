@@ -15,6 +15,7 @@ class AddToCartController extends Controller
         $product = ProductManger::find($id);
         $cartProduct = new AddToCart();
         $cartProduct->user_id = auth()->user()->id;
+        $cartProduct->item_price = $product->product_price;
 
         if($product->product_discount)
         {
@@ -23,12 +24,12 @@ class AddToCartController extends Controller
         else{
             $cartProduct->product_price = $product->product_price * $request->cart_qty;
         }
-
         $cartProduct->product_name = $product->product_name;
         $cartProduct->product_img = $product->product_img;
         $cartProduct->product_id = $product->product_id;
         $cartProduct->cart_product_qty = $request->cart_qty;
         $cartProduct->save();
+
         return redirect()->back()->with('success','Product added to cart successfuly');
     }
 
@@ -38,4 +39,21 @@ class AddToCartController extends Controller
         $cartProducts = AddToCart::where('user_id',auth()->user()->id)->get();
         return  view('User.AddToCart.index',compact('catagorys','cartProducts'));
     }
+
+    public function destroy($id)
+    {
+        $cartProduct = AddToCart::find($id);
+        $cartProduct->delete();
+        return redirect()->back()->with('success','Product Removed from cart');
+    }
+
+    public function update(Request $request,$id)
+    {
+        $cartProduct = AddToCart::find($id);
+        $cartProduct->cart_product_qty = $request->cart_product_qty;
+        $cartProduct->product_price = $cartProduct->item_price * $cartProduct->cart_product_qty;
+        $cartProduct->save();
+        return redirect()->back()->with('success','You have changed the Product Quantity');
+    }
+
 }

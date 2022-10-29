@@ -1,4 +1,4 @@
-@extends('User.layout.app')
+{{-- @extends('User.layout.app')
 
 @section('content')
     <section class="py-4">
@@ -13,7 +13,7 @@
 
                                 {{-- Write yor main content here --}}
 
-                                <div class="card-body">
+                                {{-- <div class="card-body">
                                     <form action="{{ route('User.Address.store') }}" method="POST">
                                         @csrf
                                         <div class="form-group">
@@ -49,8 +49,8 @@
         </div>
     </section>
     </div>
-    </div>
-@endsection
-@section('pageName')
-    Add Address
-@endsection
+    </div> --}}
+{{-- @endsection --}}
+{{-- @section('pageName') --}}
+    {{-- Add Address --}}
+{{-- @endsection --}}

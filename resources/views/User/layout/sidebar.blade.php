@@ -7,12 +7,12 @@
                 <a href="account-orders.html"
                     class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Orders
                     <i class='bx bx-cart-alt fs-5'></i></a>
+                <a href="{{ route('User.AddToCart') }}"
+                    class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Cart
+                    Products
+                    <i class="bx bx-shopping-bag fs-5"></i></a>
                 <a href="{{ route('User.Address.index') }}"
                     class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Addresses
-                    <i class='bx bx-home-smile fs-5'></i></a>
-                <a href="{{ route('User.Address') }}"
-                    class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Add Shiping
-                    Address
                     <i class='bx bx-home-smile fs-5'></i></a>
                 {{-- <a href="account-user-details.html"
                     class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Account

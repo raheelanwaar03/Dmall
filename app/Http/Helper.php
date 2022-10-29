@@ -18,3 +18,15 @@ function cartProduct()
         $cartProduct = AddToCart::where('user_id',auth()->user()->id)->count();
         return $cartProduct;
 }
+
+function cartProductQuantity()
+{
+    $orderProduct = AddToCart::where('user_id',auth()->user()->id)->sum('cart_product_qty');
+    return $orderProduct;
+}
+
+function productPrice()
+{
+    $cartProductPrice = AddToCart::where('user_id',auth()->user()->id)->sum('product_price');
+    return $cartProductPrice;
+}

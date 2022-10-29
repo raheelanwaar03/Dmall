@@ -79,13 +79,12 @@
                 <p class="mb-0">Copyright © 2022. All right reserved.</p>
                 <div class="payment-icon">
                     <div class="row row-cols-auto g-2 justify-content-end">
-                        <h3>We use cash on delivery system!</h3>
+                        <h5>We use cash on delivery system!</h5>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    {{-- @include('User.Product.showProduct') --}}
 </footer>
 <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
 </div>
