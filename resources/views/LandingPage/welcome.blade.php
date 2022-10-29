@@ -171,7 +171,7 @@
                                             @csrf
                                             <div class="position-relative overflow-hidden">
                                                 <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
-                                                    <button title="Add Product To Cart" type="submit" class="style"><i
+                                                    <button title="Add Product To Cart" type="submit" class="btn btn-sm style"><i
                                                             class="bx bx-shopping-bag"></i></button>
                                                 </div>
                                                 <div class="quick-view position-absolute start-0 bottom-0 end-0">
