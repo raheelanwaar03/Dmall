@@ -23,15 +23,15 @@ Route::prefix('Admin')->middleware(['auth','adminAuth'])->group(function(){
     Route::get('/user-approved-transctions',[TranscationDetails::class,'approvedTransction'])->name('Admin.User.Transcation.Approved');
     Route::get('/user-pending-transctions',[TranscationDetails::class,'pendingTransction'])->name('Admin.User.Transcation.Pending');
     Route::get('/user-reject-transctions',[TranscationDetails::class,'rejectTransction'])->name('Admin.User.Transcation.Rejected');
+    // Order Routes
+    Route::get('/User/Orders',[OrderController::class,'index'])->name('Admin.User.Order');
+    Route::get('/User/Orders/{id}',[OrderController::class,'changeStatus'])->name('Admin.Order.Deliver');
+    Route::get('/User/Orders/Delivered',[OrderController::class,'deliverOrder'])->name('Admin.User.Order.Delivered');
     //Limit Routes
     Route::resource('/Limit',LimitController::class);
     //Admin Product Manger Routes
     Route::resource('/Product',ProductMangerController::class);
     // Admin catagory Routes
     Route::resource('/Catagory',CatagoryController::class);
-    // Order Routes
-
-    Route::get('/User/Orders',[OrderController::class,'index'])->name('Admin.User.Order');
-    Route::get('/User/Orders/{id}',[OrderController::class,'status'])->name('Admin.User.Order.Delivered');
 
 });

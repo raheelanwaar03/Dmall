@@ -55,7 +55,7 @@
                                             </td>
                                             <td>{{ $product->created_at }}</td>
                                             <td>
-                                                 <a href="{{ route('Admin.Order.Deliver', $product->id) }}"
+                                                 <a href="{{ route('Admin.User.Order.Deliver', $product->id) }}"
                                                     class="btn btn-primary">Deliver</a>
                                                 {{--<a href="{{ route('Product.edit',['Product'=> $product->id]) }}"
                                                     class="btn btn-info">Edit</a>

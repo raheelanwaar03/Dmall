@@ -129,7 +129,12 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('Admin.User.Order') }}">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Order</span></a>
+                    <span>All Orders</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('Admin.User.Order.Delivered') }}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Delivered Orders</span></a>
             </li>
         </ul>
         <div id="content-wrapper" class="d-flex flex-column">
