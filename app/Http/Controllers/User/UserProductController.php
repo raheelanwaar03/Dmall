@@ -15,4 +15,5 @@ class UserProductController extends Controller
         $product = ProductManger::find($id);
         return view('User.Product.showProduct',compact('product','catagorys'));
     }
+
 }

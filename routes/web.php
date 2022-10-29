@@ -10,6 +10,7 @@ use App\Http\Controllers\User\UserProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',[WelcomeController::class,'landingPage'])->name('welcome');
+Route::get('/Products',[WelcomeController::class,'index'])->name('welcome.Products');
 Route::get('/About-Us',[WelcomeController::class,'aboutUs'])->name('welcome.aboutUs');
 Route::get('/Contact-Us',[WelcomeController::class,'contactUs'])->name('welcome.contactUs');
 

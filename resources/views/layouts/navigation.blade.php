@@ -63,7 +63,6 @@
                 </div>
             </div>
             @if(auth()->user())
-            {
                 <div class="header-content bg-warning">
                     <div class="container">
                         <div class="row align-items-center gx-4">
@@ -121,7 +120,6 @@
                         </div>
                     </div>
                 </div>
-            }
             @else{
                 <div class="header-content bg-warning">
                     <div class="container">

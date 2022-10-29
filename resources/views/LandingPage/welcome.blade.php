@@ -11,7 +11,8 @@
                             <h3 class="h3 fw-bold d-none d-md-block">New Trending</h3>
                             <h1 class="h1 fw-bold">Women Fashion</h1>
                             <p class="fw-bold text-dark d-none d-md-block"><i>Last call for upto 15%</i></p>
-                            <div class=""><a class="btn btn-dark btn-ecomm px-4" href="shop-grid.html">Shop
+                            <div class=""><a class="btn btn-dark btn-ecomm px-4"
+                                    href="{{ route('welcome.Products') }}">Shop
                                     Now</a>
                             </div>
                         </div>
@@ -26,7 +27,8 @@
                             <h3 class="h3 fw-bold d-none d-md-block">New Trending</h3>
                             <h1 class="h1 fw-bold">Men Fashion</h1>
                             <p class="fw-bold text-dark d-none d-md-block"><i>Last call for upto 15%</i></p>
-                            <div class=""><a class="btn btn-dark btn-ecomm px-4" href="shop-grid.html">Shop
+                            <div class=""><a class="btn btn-dark btn-ecomm px-4"
+                                    href="{{ route('welcome.Products') }}">Shop
                                     Now</a>
                             </div>
                         </div>
@@ -41,7 +43,8 @@
                             <h3 class="h3 fw-bold d-none d-md-block">New Trending</h3>
                             <h1 class="h1 fw-bold">Kids Fashion</h1>
                             <p class="fw-bold text-dark d-none d-md-block"><i>Last call for upto 15%</i></p>
-                            <div class=""><a class="btn btn-dark btn-ecomm px-4" href="shop-grid.html">Shop
+                            <div class=""><a class="btn btn-dark btn-ecomm px-4"
+                                    href="{{ route('welcome.Products') }}">Shop
                                     Now</a>
                             </div>
                         </div>
@@ -108,7 +111,8 @@
                                         <div class="card-body">
                                             <h5 class="card-title text-uppercase fw-bold">Men Wear</h5>
                                             <p class="card-text text-uppercase">Starting at $9</p>
-                                            <a href="javascript:;" class="btn btn-outline-dark btn-ecomm">SHOP
+                                            <a href="{{ route('welcome.Products') }}"
+                                                class="btn btn-outline-dark btn-ecomm">SHOP
                                                 NOW</a>
                                         </div>
                                     </div>
@@ -125,7 +129,8 @@
                                     <div class="col">
                                         <div class="card-body">
                                             <h5 class="card-title text-uppercase fw-bold">Women Wear</h5>
-                                            <p class="card-text text-uppercase">Starting at $9</p> <a href="javascript:;"
+                                            <p class="card-text text-uppercase">Starting at $9</p> <a
+                                                href="{{ route('welcome.Products') }}"
                                                 class="btn btn-outline-dark btn-ecomm">SHOP
                                                 NOW</a>
                                         </div>
@@ -143,7 +148,8 @@
                                     <div class="col">
                                         <div class="card-body">
                                             <h5 class="card-title text-uppercase fw-bold">Kids Wear</h5>
-                                            <p class="card-text text-uppercase">Starting at $9</p><a href="javascript:;"
+                                            <p class="card-text text-uppercase">Starting at $9</p><a
+                                                href="{{ route('welcome.Products') }}"
                                                 class="btn btn-outline-dark btn-ecomm">SHOP
                                                 NOW</a>
                                         </div>
@@ -171,7 +177,9 @@
                                             @csrf
                                             <div class="position-relative overflow-hidden">
                                                 <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
-                                                    <i title="Add Product To Cart" class="bx bx-shopping-bag"></i>
+                                                    <button title="Add Product To Cart" type="submit"
+                                                        class="btn btn-sm style"><i
+                                                            class="bx bx-shopping-bag"></i></button>
                                                 </div>
                                                 <div class="quick-view position-absolute start-0 bottom-0 end-0">
                                                     <a href="{{ route('User.Product.Show', ['id' => $product->id]) }}">View
@@ -185,7 +193,8 @@
                                             <div class="card-body px-0">
                                                 <div class="d-flex align-items-center justify-content-between">
                                                     <div class="">
-                                                        <p class="mb-1 product-short-name">{{ $product->product_catagory }}
+                                                        <p class="mb-1 product-short-name">
+                                                            {{ $product->product_catagory }}
                                                         </p>
                                                         <h6 class="mb-0 fw-bold product-short-title">
                                                             {{ $product->product_name }}</h6>
@@ -954,8 +963,8 @@
                             <div class="card-body text-center">
                                 <h5 class="card-title">Sunglasses Sale</h5>
                                 <p class="card-text">See all Sunglasses and get 10% off at all Sunglasses
-                                </p> <a href="javascript:;" class="btn btn-dark btn-ecomm">SHOP BY
-                                    GLASSES</a>
+                                </p> <a href="{{ route('welcome.Products') }}" class="btn btn-dark btn-ecomm">SHOP
+                                    Now</a>
                             </div>
                         </div>
                     </div>
@@ -968,8 +977,8 @@
                             <div class="card-body text-center">
                                 <h5 class="card-title">Cosmetics Sales</h5>
                                 <p class="card-text">Buy Cosmetics products and get 30% off at all
-                                    Cosmetics</p> <a href="javascript:;" class="btn btn-dark btn-ecomm">SHOP BY
-                                    COSMETICS</a>
+                                    Cosmetics</p> <a href="{{ route('welcome.Products') }}"
+                                    class="btn btn-dark btn-ecomm">SHOP Now</a>
                             </div>
                         </div>
                     </div>
@@ -981,9 +990,9 @@
                                     <h5 class="card-title text-white">Fashion Summer Sale</h5>
                                     <p class="card-text text-uppercase fs-1 lh-1 mt-3 mb-2 text-white">Up
                                         to 80% off</p>
-                                    <p class="card-text fs-5 text-white">On Top Fashion Brands</p> <a href="javascript:;"
-                                        class="btn btn-white btn-ecomm">SHOP BY
-                                        FASHION</a>
+                                    <p class="card-text fs-5 text-white">On Top Fashion Brands</p> <a
+                                        href="{{ route('welcome.Products') }}" class="btn btn-white btn-ecomm">SHOP
+                                        Now</a>
                                 </div>
                             </div>
                         </div>
@@ -997,7 +1006,7 @@
                             <div class="card-body text-center">
                                 <h5 class="card-title fs-2 fw-bold text-uppercase">Super Sale</h5>
                                 <p class="card-text text-uppercase fs-5 lh-1 mb-2">Up to 50% off</p>
-                                <p class="card-text">On All Electronic</p> <a href="javascript:;"
+                                <p class="card-text">On All Electronic</p> <a href="{{ route('welcome.Products') }}"
                                     class="btn btn-dark btn-ecomm">HURRY UP!</a>
                             </div>
                         </div>

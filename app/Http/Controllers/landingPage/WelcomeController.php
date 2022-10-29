@@ -13,8 +13,15 @@ class WelcomeController extends Controller
     public function landingPage()
     {
         $products = ProductManger::paginate(10);
-        $catagorys = Catagory::paginate(10);
+        $catagorys = Catagory::all();
         return view('LandingPage.welcome',compact('products','catagorys'));
+    }
+
+    public function index()
+    {
+        $products = ProductManger::paginate(8);
+        $catagorys = Catagory::all();
+        return view('LandingPage.allProducts',compact('products','catagorys'));
     }
 
     public function aboutUs()
