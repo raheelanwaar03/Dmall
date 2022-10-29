@@ -4,7 +4,7 @@
             <div class="list-group list-group-flush"> <a href="{{ route('User.index') }}"
                     class="list-group-item active d-flex justify-content-between align-items-center">Dashboard
                     <i class='bx bx-tachometer fs-5'></i></a>
-                <a href="account-orders.html"
+                <a href="{{ route('User.Order.Index') }}"
                     class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Orders
                     <i class='bx bx-cart-alt fs-5'></i></a>
                 <a href="{{ route('User.AddToCart') }}"

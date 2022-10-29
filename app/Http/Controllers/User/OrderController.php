@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\admin\Catagory;
 use App\Models\User\AddToCart;
 use App\Models\User\Order;
 use App\Models\User\UserAddress;
@@ -12,7 +13,9 @@ class OrderController extends Controller
 {
     public function index()
     {
-        return view('User.Order.index');
+        $orderProduct = Order::where('user_id',auth()->user()->id)->get();
+        $catagorys = Catagory::all();
+        return view('User.Order.index',compact('catagorys','orderProduct'));
     }
 
     public function store()

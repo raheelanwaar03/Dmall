@@ -38,8 +38,9 @@
                                                             class="form-control rounded-0"
                                                             value="{{ $cartProduct->cart_product_qty }}" min="1">
                                                         {{-- <input type="hidden" value="{{ $cartProduct->product_id }}"> --}}
-                                                        <button type="submit"
-                                                            class="btn btn-warning text-light">Change</button>
+                                                        <button type="submit" class="btn btn-warning text-light">
+                                                            <i class='bx bx-repost'></i>
+                                                        </button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -84,7 +85,7 @@
                                         @csrf
                                         <div class="card rounded-0 border bg-transparent shadow-none">
                                             <div class="card-body">
-                                                <p class="fs-5">Estimate Shipping and Tax</p>
+                                                <p class="fs-5">Shiping Address</p>
                                                 <div class="my-3 border-top"></div>
                                                 <div class="mb-3">
                                                     <label class="form-label">City Name</label>
@@ -125,7 +126,8 @@
                                             <div class="d-grid">
                                                 <form action="{{ route('User.Order.Store') }}" method="Post">
                                                     @csrf
-                                                    <button type="submit" class="btn btn-dark btn-ecomm">Proceed to Checkout</button>
+                                                    <button type="submit" class="btn btn-dark btn-ecomm">Proceed to
+                                                        Checkout</button>
                                                 </form>
                                             </div>
                                         </div>

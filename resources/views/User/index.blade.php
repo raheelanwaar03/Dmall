@@ -17,6 +17,7 @@
                                             <p>Hello <strong>{{ auth()->user()->username }}</strong>
                                             <p>From your account dashboard you can view your Recent Orders,<br> manage your
                                                 shipping and billing addesses.</p>
+                                                <a href="{{ route('welcome') }}" class="btn btn-dark btn-ecomm">Continue Shoping</a>
                                         </div>
                                     </div>
                                 </div>
