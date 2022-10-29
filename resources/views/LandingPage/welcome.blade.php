@@ -171,8 +171,7 @@
                                             @csrf
                                             <div class="position-relative overflow-hidden">
                                                 <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
-                                                    <button title="Add Product To Cart" type="submit" class="btn btn-sm style"><i
-                                                            class="bx bx-shopping-bag"></i></button>
+                                                    <i title="Add Product To Cart" class="bx bx-shopping-bag"></i>
                                                 </div>
                                                 <div class="quick-view position-absolute start-0 bottom-0 end-0">
                                                     <a href="{{ route('User.Product.Show', ['id' => $product->id]) }}">View
@@ -194,8 +193,8 @@
 
                                                     <div
                                                         class="icon-wishlist d-flex justify-content-end align-items-center">
-                                                        <input type="number" min='1' name="cart_qty" value="1"
-                                                            class="w-25">
+                                                        <input type="number" min='1' name="cart_qty"
+                                                            value="1" class="w-25">
                                                     </div>
                                         </form>
                                     </div>
@@ -660,7 +659,7 @@
                     </div>
                     <div class="item">
                         <div class="card">
-                             <div class="position-relative overflow-hidden">
+                            <div class="position-relative overflow-hidden">
                                 {{-- <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
                                     <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
                                 </div>
@@ -700,7 +699,7 @@
                     </div>
                     <div class="item">
                         <div class="card">
-                             <div class="position-relative overflow-hidden">
+                            <div class="position-relative overflow-hidden">
                                 {{-- <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
                                     <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
                                 </div>
@@ -740,7 +739,7 @@
                     </div>
                     <div class="item">
                         <div class="card">
-                             <div class="position-relative overflow-hidden">
+                            <div class="position-relative overflow-hidden">
                                 {{-- <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
                                     <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
                                 </div>
@@ -860,7 +859,7 @@
                     </div>
                     <div class="item">
                         <div class="card">
-                             <div class="position-relative overflow-hidden">
+                            <div class="position-relative overflow-hidden">
                                 {{-- <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
                                     <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
                                 </div>
