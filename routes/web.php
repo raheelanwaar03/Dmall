@@ -3,6 +3,7 @@
 use App\Http\Controllers\landingPage\WelcomeController;
 use App\Http\Controllers\Transcations\WidthrawalReqController;
 use App\Http\Controllers\User\AddToCartController;
+use App\Http\Controllers\User\OrderController;
 use App\Http\Controllers\User\UserAddressController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\UserProductController;
@@ -37,6 +38,11 @@ Route::prefix('user')->middleware(['auth','userAuth'])->group(function(){
     Route::post('Add-To-Cart/{id}',[AddToCartController::class,'store'])->name('User.AddToCart.store');
     Route::get('Cart/Product/delete/{id}',[AddToCartController::class,'destroy'])->name('User.AddToCart.destroy');
     Route::post('Cart/Product/update/{id}',[AddToCartController::class,'update'])->name('User.AddToCart.update');
+
+    // Order Product
+    Route::get('/Order',[OrderController::class,'index'])->name('User.Order.Index');
+    Route::post('/Order/store',[OrderController::class,'store'])->name('User.Order.Store');
+
 
 });
 

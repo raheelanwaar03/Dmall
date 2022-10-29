@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\admin\Catagory;
 use App\Models\admin\ProductManger;
 use App\Models\User\AddToCart;
+use App\Models\User\UserAddress;
 use Illuminate\Http\Request;
 
 class AddToCartController extends Controller

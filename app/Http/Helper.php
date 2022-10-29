@@ -25,8 +25,14 @@ function cartProductQuantity()
     return $orderProduct;
 }
 
-function productPrice()
+function orderTotalPrice()
 {
     $cartProductPrice = AddToCart::where('user_id',auth()->user()->id)->sum('product_price');
     return $cartProductPrice;
+}
+
+function consign_num()
+{
+    $consign_num = rand(111111,99999);
+    return $consign_num;
 }
