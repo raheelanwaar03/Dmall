@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('Admin')->middleware(['auth','adminAuth'])->group(function(){
 
+     // Order Routes
+     Route::get('/User/Orders',[OrderController::class,'index'])->name('Admin.User.Order');
+     Route::get('/User/Orders/{id}',[OrderController::class,'changeStatus'])->name('Admin.Order.Deliver');
+     Route::get('/Orders/Delivered',[OrderController::class,'deliverOrder'])->name('Admin.Order.Delivered.Users');
+    //  admin user Routes
     Route::get('/',[AdminController::class, 'index'])->name('Admin.index');
     Route::get('/all-Users',[AdminController::class, 'allUsers'])->name('Admin.allUsers');
     Route::get('/User/register-user',[AdminController::class, 'registeredUser'])->name('Admin.AllRegistered.User');
@@ -23,10 +28,6 @@ Route::prefix('Admin')->middleware(['auth','adminAuth'])->group(function(){
     Route::get('/user-approved-transctions',[TranscationDetails::class,'approvedTransction'])->name('Admin.User.Transcation.Approved');
     Route::get('/user-pending-transctions',[TranscationDetails::class,'pendingTransction'])->name('Admin.User.Transcation.Pending');
     Route::get('/user-reject-transctions',[TranscationDetails::class,'rejectTransction'])->name('Admin.User.Transcation.Rejected');
-    // Order Routes
-    Route::get('/User/Orders',[OrderController::class,'index'])->name('Admin.User.Order');
-    Route::get('/User/Orders/{id}',[OrderController::class,'changeStatus'])->name('Admin.Order.Deliver');
-    Route::get('/User/Orders/Delivered',[OrderController::class,'deliverOrder'])->name('Admin.User.Order.Delivered');
     //Limit Routes
     Route::resource('/Limit',LimitController::class);
     //Admin Product Manger Routes

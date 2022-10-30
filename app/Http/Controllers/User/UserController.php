@@ -17,6 +17,12 @@ class UserController extends Controller
         return view('User.index',compact('user','catagorys'));
     }
 
+    public function refer()
+    {
+        $catagorys = Catagory::all();
+        return view('User.Account.referFriend',compact('catagorys'));
+    }
+
     public function approvedTranscation()
     {
         $widthrawals = WidthrawlAmount::where('status','approved')->where('user_id',auth()->user()->id)->get();

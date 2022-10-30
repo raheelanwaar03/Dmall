@@ -9,7 +9,7 @@
             <div class="col-sm-12">
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Product Details</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Delivered Orders</h6>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -24,7 +24,7 @@
                                         <th>Consign_Num</th>
                                         <th>Image</th>
                                         <th>Date</th>
-                                        <th>Action</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -37,7 +37,7 @@
                                         <th>Consign_Num</th>
                                         <th>Image</th>
                                         <th>Date</th>
-                                        <th>Action</th>
+                                        <th>Status</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
@@ -55,8 +55,11 @@
                                             </td>
                                             <td>{{ $product->created_at }}</td>
                                             <td>
-                                                 <a href="{{ route('Admin.User.Order.Deliver', $product->id) }}"
-                                                    class="btn btn-primary">Deliver</a>
+                                                @if($product->status == 'Delivered')
+                                                <div class="bg-success p-3 text-light">
+                                                    {{ $product->status }}
+                                                </div>
+                                                @endif
                                                 {{--<a href="{{ route('Product.edit',['Product'=> $product->id]) }}"
                                                     class="btn btn-info">Edit</a>
                                                 <form action="{{ route('Product.destroy', $product->id) }}" method="POST"

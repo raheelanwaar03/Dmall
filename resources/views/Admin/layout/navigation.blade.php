@@ -56,9 +56,6 @@
                 Main
             </div>
             <li class="nav-item">
-                <a class="nan-link collapsed" href="{{ route('Catagory.index') }}">All Categories</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
@@ -121,20 +118,14 @@
                     <span>Add Category</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('Limit.index') }}">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Set Widthraw Limit</span></a>
-            </li>
-            <hr class="sidebar-divider d-none d-md-block">
-            <li class="nav-item">
                 <a class="nav-link" href="{{ route('Admin.User.Order') }}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>All Orders</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('Admin.User.Order.Delivered') }}">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Delivered Orders</span></a>
+                <a class="nav-link" href="{{ route('Limit.index') }}">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Set Widthraw Limit</span></a>
             </li>
         </ul>
         <div id="content-wrapper" class="d-flex flex-column">

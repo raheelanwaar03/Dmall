@@ -18,9 +18,9 @@ class RegisteredUserController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create($referal = 'default')
+    public function create()
     {
-        return view('auth.register',compact('referal'));
+        return view('auth.register');
     }
 
     /**
@@ -40,7 +40,8 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $referSecurity = User::where('referal',$request->username)->first();
+        $referSecurity = User::where('username',$request->username)->first();
+        return $referSecurity;
         if ($referSecurity == '') {
             $refer = 'default';
             $referal_bouns = 0;

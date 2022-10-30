@@ -17,6 +17,7 @@ Route::get('/Contact-Us',[WelcomeController::class,'contactUs'])->name('welcome.
 Route::prefix('user')->middleware(['auth','userAuth'])->group(function(){
 
     Route::get('/',[UserController::class, 'index'])->name('User.index');
+    Route::get('/Refer',[UserController::class, 'refer'])->name('User.Refer');
     Route::get('/Widthrawal/Approved',[UserController::class, 'approvedTranscation'])->name('User.Transcation.Approved');
     Route::get('/Widthrawal/Rejected',[UserController::class, 'rejectTranscation'])->name('User.Transcation.Rejected');
     // Transcation of Widthrawal Routes
