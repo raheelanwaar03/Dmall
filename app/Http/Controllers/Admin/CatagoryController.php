@@ -16,7 +16,7 @@ class CatagoryController extends Controller
      */
     public function index()
     {
-        $catagorys = Catagory::all();
+        $catagorys = Catagory::paginate(10);
         return view('Admin.Catagory.allCatagories',compact('catagorys'));
     }
 

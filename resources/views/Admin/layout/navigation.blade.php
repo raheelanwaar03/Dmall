@@ -25,14 +25,6 @@
         rel="stylesheet">
     <link href="{{ asset('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
     {{-- DataTable cdn --}}
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-    <script>
-        $(document).ready(function() {
-            $('#example').DataTable();
-        });
-    </script>
 </head>
 
 <body id="page-top">
