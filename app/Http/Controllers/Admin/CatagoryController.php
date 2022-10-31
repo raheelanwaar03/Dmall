@@ -17,7 +17,7 @@ class CatagoryController extends Controller
     public function index()
     {
         $catagorys = Catagory::paginate(10);
-        return view('Admin.Catagory.allCatagories',compact('catagorys'));
+        return view('Admin.Catagory.allCatagories', compact('catagorys'));
     }
 
     /**
@@ -45,15 +45,15 @@ class CatagoryController extends Controller
         ]);
 
         $image = $validated['catagory_img'];
-        $imageName = rand(111111,999999). '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('images'),$imageName);
+        $imageName = rand(111111, 999999) . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('images'), $imageName);
 
         $catagory = new Catagory();
         $catagory->catagory_name = $validated['catagory_name'];
         $catagory->catagory_des = $validated['catagory_des'];
         $catagory->catagory_img = $imageName;
         $catagory->save();
-        return redirect()->back()->with('success','New Catagory Added Succssfuly');
+        return redirect()->back()->with('success', 'New Catagory Added Succssfuly');
     }
 
     /**
@@ -65,7 +65,7 @@ class CatagoryController extends Controller
     public function show($id)
     {
         $catagory = Catagory::find($id);
-        return view('Admin.Catagory.showCatagory',compact('catagory'));
+        return view('Admin.Catagory.showCatagory', compact('catagory'));
     }
 
     /**
@@ -76,7 +76,8 @@ class CatagoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $catagory = Catagory::find($id);
+        return view('Admin.Catagory.editCatagory', compact('catagory'));
     }
 
     /**
@@ -88,7 +89,24 @@ class CatagoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $catagory = Catagory::find($id);
+
+        if ($request->catagory_img) {
+            $image = $request->catagory_img;
+            $imageName = rand(11111, 999999) . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $imageName);
+
+            $catagory->catagory_name = $request->catagory_name;
+            $catagory->catagory_des = $request->catagory_des;
+            $catagory->catagory_img = $imageName;
+            $catagory->save();
+            return redirect()->back()->with('success', 'Catagory Updated Succssfuly');
+        } else {
+            $catagory->catagory_name = $request->catagory_name;
+            $catagory->catagory_des = $request->catagory_des;
+            $catagory->save();
+            return redirect()->back()->with('success', 'Catagory Updated Succssfuly');
+        }
     }
 
     /**
@@ -101,6 +119,6 @@ class CatagoryController extends Controller
     {
         $catagory = Catagory::find($id);
         $catagory->delete();
-        return redirect()->back()->with('success','Product Deleted Successfuly');
+        return redirect()->back()->with('success', 'Product Deleted Successfuly');
     }
 }

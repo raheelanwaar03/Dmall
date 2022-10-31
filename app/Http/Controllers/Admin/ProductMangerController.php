@@ -17,7 +17,7 @@ class ProductMangerController extends Controller
     public function index()
     {
         $products = ProductManger::all();
-        return view('Admin.Product.allProduct',compact('products'));
+        return view('Admin.Product.allProduct', compact('products'));
     }
 
     /**
@@ -28,7 +28,7 @@ class ProductMangerController extends Controller
     public function create()
     {
         $catagorys = Catagory::all();
-        return view('Admin.Product.addProduct',compact('catagorys'));
+        return view('Admin.Product.addProduct', compact('catagorys'));
     }
 
     /**
@@ -40,26 +40,24 @@ class ProductMangerController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'product_name'=>'required',
-            'product_catagory'=>'required',
-            'product_description'=>'required',
-            'product_price'=>'required',
-            'product_qty'=>'required',
-            'product_img'=>'required',
+            'product_name' => 'required',
+            'product_catagory' => 'required',
+            'product_description' => 'required',
+            'product_price' => 'required',
+            'product_qty' => 'required',
+            'product_img' => 'required',
 
         ]);
-        if ($request->product_id)
-        {
+        if ($request->product_id) {
             $productID = $request->product_id;
-        }
-        else{
+        } else {
             $productID = productId();
         }
 
 
         $file = $request->file('product_img');
-        $fileName = rand('111111','9999999') . '.' . $file->getClientOriginalExtension();
-        $file->move(public_path('images'),$fileName);
+        $fileName = rand('111111', '9999999') . '.' . $file->getClientOriginalExtension();
+        $file->move(public_path('images'), $fileName);
 
 
         $product = new ProductManger();
@@ -84,7 +82,7 @@ class ProductMangerController extends Controller
     public function show($id)
     {
         $product = ProductManger::find($id);
-        return view('Admin.Product.showProduct',compact('product'));
+        return view('Admin.Product.showProduct', compact('product'));
     }
 
     /**
@@ -95,8 +93,9 @@ class ProductMangerController extends Controller
      */
     public function edit($id)
     {
+        $catagorys = Catagory::all();
         $product = ProductManger::find($id);
-        return view('Admin.Product.editProduct',compact('product'));
+        return view('Admin.Product.editProduct', compact('product','catagorys'));
     }
 
     /**
@@ -108,18 +107,45 @@ class ProductMangerController extends Controller
      */
     public function update(Request $request, ProductManger $product)
     {
-        if ($request->hasFile('product_img')) {
-            $file = $request->file('product_img');
+        return 'product Updated';
+        $product = ProductManger::find($product->id);
+
+        if ($request->product_id) {
+            $productID = $request->product_id;
+        } else {
+            $productID = productId();
+        }
+        // if admin update Image
+         if ($request->product_img)
+        {
+
+            $file = $request->product_img;
             $fileName = rand('111111', '999999') . '.' .  $file->getClientOriginalExtension();
             $file->move(public_path('images'), $fileName);
-            $product->product_img = $fileName;
-        }
 
+        }
         $product->product_name = $request->product_name;
-        $product->product_price = $request->product_price;
+        $product->product_id = $productID;
+        $product->product_discount = $request->product_discount;
+        $product->product_catagory = $request->product_catagory;
         $product->product_description = $request->product_description;
+        $product->product_price = $request->product_price;
+        $product->product_qty = $request->product_qty;
+        $product->product_img = $fileName;
         $product->save();
-        return redirect()->back()->with('success','Product Updated Successfuly');
+        return redirect()->back()->with('success', 'Product Updated Successfuly');
+        // else{
+        // $product->product_name = $request->product_name;
+        // $product->product_id = $productID;
+        // $product->product_discount = $request->product_discount;
+        // $product->product_catagory = $request->product_catagory;
+        // $product->product_description = $request->product_description;
+        // $product->product_price = $request->product_price;
+        // $product->product_qty = $request->product_qty;
+        // $product->save();
+        // return redirect()->back()->with('success', 'Product Updated Successfuly');
+        // }
+
     }
 
     /**
@@ -132,6 +158,6 @@ class ProductMangerController extends Controller
     {
         $product = ProductManger::find($id);
         $product->delete();
-        return redirect()->back()->with('success','Product Deleted successfuly');
+        return redirect()->back()->with('success', 'Product Deleted successfuly');
     }
 }

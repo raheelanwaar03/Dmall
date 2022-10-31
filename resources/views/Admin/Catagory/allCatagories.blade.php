@@ -48,18 +48,19 @@
                                             <td>
                                                 <a href="{{ route('Catagory.show', $catagory->id) }}"
                                                     class="btn btn-primary">show</a>
-                                                {{-- <a href="{{ route('catagory.edit',['catagory'=> $catagory->id]) }}"
-                                                    class="btn btn-info">Edit</a>--}}
+                                                <a href="{{ route('Catagory.edit', ['Catagory' => $catagory->id]) }}"
+                                                    class="btn btn-info">Edit</a>
                                                 <form action="{{ route('Catagory.destroy', $catagory->id) }}" method="POST"
                                                     style="display: inline-block;">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" onclick="return confirm('Are you sure?')"  class="btn btn-danger">Delete</button>
+                                                    <button type="submit" onclick="return confirm('Are you sure?')"
+                                                        class="btn btn-danger">Delete</button>
                                                 </form>
                                             </td>
                                         </tr>
-                                        @endforeach
-                                        {{ $catagorys->withQueryString()->links('pagination::bootstrap-4') }}
+                                    @endforeach
+                                    {{ $catagorys->withQueryString()->links('pagination::bootstrap-4') }}
                                 </tbody>
                             </table>
                         </div>
