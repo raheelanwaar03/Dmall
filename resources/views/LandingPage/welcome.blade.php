@@ -69,7 +69,7 @@
                                 </div>
                                 <div class="info-box-content ps-3">
                                     <h6 class="mb-0 fw-bold">FREE SHIPPING &amp; RETURN</h6>
-                                    <p class="mb-0">Free shipping on all orders over $49</p>
+                                    <p class="mb-0">Free shipping on all orders over pkr:49</p>
                                 </div>
                             </div>
                         </div>
@@ -148,7 +148,7 @@
                                     <div class="col">
                                         <div class="card-body">
                                             <h5 class="card-title text-uppercase fw-bold">Kids Wear</h5>
-                                            <p class="card-text text-uppercase">Starting at $9</p><a
+                                            <p class="card-text text-uppercase">Starting at pkr:200</p><a
                                                 href="{{ route('welcome.Products') }}"
                                                 class="btn btn-outline-dark btn-ecomm">SHOP
                                                 NOW</a>
@@ -217,11 +217,11 @@
                                     <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
 
                                         @if ($product->product_discount !== null)
-                                            <div class="h6 fw-bold">${{ $product->product_discount }}</div>
+                                            <div class="h6 fw-bold">pkr:{{ $product->product_discount }}</div>
                                             <div style="text-decoration: line-through" class="h6 fw-bold">
-                                                ${{ $product->product_price }}</div>
+                                                pkr:{{ $product->product_price }}</div>
                                         @else
-                                            <div class="h6 fw-bold">${{ $product->product_price }}</div>
+                                            <div class="h6 fw-bold">pkr:{{ $product->product_price }}</div>
                                         @endif
                                     </div>
                                 </div>
@@ -1555,7 +1555,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
                                 </p>
                             </div>
                         </div>
@@ -1575,7 +1575,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
                                 </p>
                             </div>
                         </div>
@@ -1595,7 +1595,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
                                 </p>
                             </div>
                         </div>
@@ -1615,7 +1615,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
                                 </p>
                             </div>
                         </div>
@@ -1640,7 +1640,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
                                 </p>
                             </div>
                         </div>
@@ -1660,7 +1660,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
                                 </p>
                             </div>
                         </div>
@@ -1680,7 +1680,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
                                 </p>
                             </div>
                         </div>
@@ -1700,7 +1700,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
                                 </p>
                             </div>
                         </div>
@@ -1725,7 +1725,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
                                 </p>
                             </div>
                         </div>
@@ -1745,7 +1745,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
                                 </p>
                             </div>
                         </div>
@@ -1765,7 +1765,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
                                 </p>
                             </div>
                         </div>
@@ -1785,7 +1785,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
                                 </p>
                             </div>
                         </div>
