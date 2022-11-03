@@ -228,7 +228,10 @@
                         </div>
                     </div>
                 @empty
-                    {{-- <div class="col">
+                <h5>
+                    Admin have not Enter any Product yet.
+                </h5>
+                {{-- <div class="col">
                                 <div class="card">
                                     <div class="position-relative overflow-hidden">
                                         <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
@@ -251,21 +254,21 @@
                                               <a href="javascript:;"><i class="bx bx-heart"></i></a>
                                           </div>
                                       </div>
-                                      {{-- <div class="cursor-pointer rating mt-2">
+                                      <div class="cursor-pointer rating mt-2">
                                           <i class="bx bxs-star text-warning"></i>
                                           <i class="bx bxs-star text-warning"></i>
                                           <i class="bx bxs-star text-warning"></i>
                                           <i class="bx bxs-star text-warning"></i>
                                           <i class="bx bxs-star text-warning"></i>
-                                      </div> --}}
+                                      </div>
                     <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                         <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">$59.00
                         </div>
                         <div class="h6 fw-bold">$48.00</div>
                     </div>
-                </div>
+                </div> --}}
         </div>
-    </div>
+    {{-- </div>
     <div class="col">
         <div class="card">
             <div class="position-relative overflow-hidden">
@@ -273,7 +276,7 @@
                     <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
                 </div>
                 <div class="quick-view position-absolute start-0 bottom-0 end-0">
-                    <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewProduct">Quick
+                    <a href="{{ route('welcome.Products') }}">Quick
                         View</a>
                 </div>
                 <a href="javascript:;">
@@ -311,7 +314,7 @@
                     <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
                 </div>
                 <div class="quick-view position-absolute start-0 bottom-0 end-0">
-                    <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewProduct">Quick
+                    <a href="{{ route('welcome.Products') }}">Quick
                         View</a>
                 </div>
                 <a href="javascript:;">
@@ -349,7 +352,7 @@
                     <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
                 </div>
                 <div class="quick-view position-absolute start-0 bottom-0 end-0">
-                    <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewProduct">Quick
+                    <a href="{{ route('welcome.Products') }}">Quick
                         View</a>
                 </div>
                 <a href="javascript:;">
@@ -387,7 +390,7 @@
                     <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
                 </div>
                 <div class="quick-view position-absolute start-0 bottom-0 end-0">
-                    <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewProduct">Quick
+                    <a href="{{ route('welcome.Products') }}">Quick
                         View</a>
                 </div>
                 <a href="javascript:;">
@@ -425,7 +428,7 @@
                     <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
                 </div>
                 <div class="quick-view position-absolute start-0 bottom-0 end-0">
-                    <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewProduct">Quick
+                    <a href="{{ route('welcome.Products') }}">Quick
                         View</a>
                 </div>
                 <a href="javascript:;">
@@ -463,7 +466,7 @@
                     <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
                 </div>
                 <div class="quick-view position-absolute start-0 bottom-0 end-0">
-                    <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewProduct">Quick
+                    <a href="{{ route('welcome.Products') }}">Quick
                         View</a>
                 </div>
                 <a href="javascript:;">
@@ -501,7 +504,7 @@
                     <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
                 </div>
                 <div class="quick-view position-absolute start-0 bottom-0 end-0">
-                    <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewProduct">Quick
+                    <a href="{{ route('welcome.Products') }}">Quick
                         View</a>
                 </div>
                 <a href="javascript:;">
@@ -539,7 +542,7 @@
                     <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
                 </div>
                 <div class="quick-view position-absolute start-0 bottom-0 end-0">
-                    <a href="" data-bs-toggle="modal" data-bs-target="#QuickViewProduct">Quick
+                    <a href="{{ route('welcome.Products') }}">Quick
                         View</a>
                 </div>
                 <a href="javascript:;">
@@ -577,7 +580,7 @@
                     <a href="javascript:;"><i class='bx bx-cart-add'></i></a>
                 </div>
                 <div class="quick-view position-absolute start-0 bottom-0 end-0">
-                    <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewProduct">Quick
+                    <a href="{{ route('welcome.Products') }}">Quick
                         View</a>
                 </div>
                 <a href="javascript:;">
@@ -608,7 +611,7 @@
             </div>
         </div>
     </div>
-    </div>
+    </div> --}}
     @endforelse
     <div>
         {{ $products->withQueryString()->links('pagination::bootstrap-5') }}
