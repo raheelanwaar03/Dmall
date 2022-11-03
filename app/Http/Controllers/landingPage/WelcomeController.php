@@ -26,11 +26,13 @@ class WelcomeController extends Controller
 
     public function aboutUs()
     {
-        return view('LandingPage.aboutUs');
+        $catagorys = Catagory::all();
+        return view('LandingPage.aboutUs',compact('catagorys'));
     }
 
     public function contactUs()
     {
-        return view('LandingPage.contactUs');
+        $catagorys = Catagory::all();
+        return view('LandingPage.contactUs',compact('catagorys'));
     }
 }
