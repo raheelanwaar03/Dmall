@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\admin\Transcation\WidthrawLimit;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -39,16 +40,18 @@ class RegisteredUserController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
+        return $request;
 
-        $referSecurity = User::where('username',$request->username)->first();
-        return $referSecurity;
+        $referSecurity = User::where('referal',$request->username)->first();
         if ($referSecurity == '') {
             $refer = 'default';
             $referal_bouns = 0;
             // return $referal_bouns;
         } else {
             $refer = $request->refer;
-            $referal_bouns = 50;
+            $referal_bouns_admin = WidthrawLimit::first();
+            $referal_bouns_admin = $referal_bouns_admin->referal_bouns;
+            $referal_bouns = $referal_bouns_admin;
         }
 
         $user = User::create([

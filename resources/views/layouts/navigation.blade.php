@@ -18,6 +18,8 @@
     <title>Dmall - eCommerce HTML Template</title>
 </head>
 
+{{-- This website is developed by Raheel Anwaar. Whatsapp (03167007156) --}}
+
 <body>
     <div class="wrapper">
         <div class="header-wrapper">

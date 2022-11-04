@@ -3,7 +3,11 @@
 
 // create a random product Id
 
+use App\Models\admin\Transcation\WidthrawLimit;
+use App\Models\Transctions\WidthrawlAmount;
+use App\Models\User;
 use App\Models\User\AddToCart;
+use App\Models\user\Order;
 
 function  productId()
 {
@@ -35,4 +39,21 @@ function consign_num()
 {
     $consign_num = rand(111111,99999);
     return $consign_num;
+}
+
+function referalCommissionOnShoping()
+{
+    $shoping_check = Order::where('user_id',auth()->user()->id)->sum('order_price');
+
+    if ($shoping_check >= '10000' )
+    {
+        $check_referal_default = User::where('referal',auth()->user()->username)->first();
+        // checking the commission that in admin is giving
+        $referal_bouns_admin = WidthrawLimit::first();
+        $referal_bouns_admin = $referal_bouns_admin->referal_bouns;
+        // giving the bouns to the user who refer this user.
+        // $user->referal_bouns = $referal_bouns_admin;
+        // $user->save();
+    }
+
 }
