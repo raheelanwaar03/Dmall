@@ -54,10 +54,10 @@
                         </div>
                         <div class="form-group">
                             <label for="">Product Image</label>
-                            <input type="file" name="product_img" class="form-control">
+                            <input type="file" name="product_img" value="{{ $product->product_img }}" class="form-control">
                         </div>
                         <div class="my-3">
-                            <img src="{{ asset('images/'.$product->product_img) }}" alt="catagory img" width="200px" height="200px">
+                            <img src="{{ asset('images/'. $product->product_img) }}" alt="product img" width="200px" height="200px">
                         </div>
                         <div class="d-flex justify-content-end">
                             <button type="submit" class="btn btn-primary">Update Product</button>

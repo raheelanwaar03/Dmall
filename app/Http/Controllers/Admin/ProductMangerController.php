@@ -95,7 +95,7 @@ class ProductMangerController extends Controller
     {
         $catagorys = Catagory::all();
         $product = ProductManger::find($id);
-        return view('Admin.Product.editProduct', compact('product','catagorys'));
+        return view('Admin.Product.editProduct', compact('product', 'catagorys'));
     }
 
     /**
@@ -105,25 +105,35 @@ class ProductMangerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ProductManger $product)
+    public function update(Request $request, $id)
     {
-        return 'product Updated';
-        $product = ProductManger::find($product->id);
+        $product = ProductManger::find($id);
 
+        // if user updating product id
         if ($request->product_id) {
             $productID = $request->product_id;
         } else {
             $productID = productId();
         }
-        // if admin update Image
-         if ($request->product_img)
-        {
 
+        if ($request->product_img) {
             $file = $request->product_img;
-            $fileName = rand('111111', '999999') . '.' .  $file->getClientOriginalExtension();
+            $fileName = rand(111111, 99999) . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('images'), $fileName);
+            // $image->move(public_path('images'), $imageName);
 
+            $product->product_name = $request->product_name;
+            $product->product_id = $productID;
+            $product->product_discount = $request->product_discount;
+            $product->product_catagory = $request->product_catagory;
+            $product->product_description = $request->product_description;
+            $product->product_price = $request->product_price;
+            $product->product_qty = $request->product_qty;
+            $product->product_img = $fileName;
+            $product->save();
+            return redirect()->back()->with('success','Product details and Image updated');
         }
+
         $product->product_name = $request->product_name;
         $product->product_id = $productID;
         $product->product_discount = $request->product_discount;
@@ -131,21 +141,8 @@ class ProductMangerController extends Controller
         $product->product_description = $request->product_description;
         $product->product_price = $request->product_price;
         $product->product_qty = $request->product_qty;
-        $product->product_img = $fileName;
         $product->save();
-        return redirect()->back()->with('success', 'Product Updated Successfuly');
-        // else{
-        // $product->product_name = $request->product_name;
-        // $product->product_id = $productID;
-        // $product->product_discount = $request->product_discount;
-        // $product->product_catagory = $request->product_catagory;
-        // $product->product_description = $request->product_description;
-        // $product->product_price = $request->product_price;
-        // $product->product_qty = $request->product_qty;
-        // $product->save();
-        // return redirect()->back()->with('success', 'Product Updated Successfuly');
-        // }
-
+        return redirect()->route('Product.index')->with('success','Product details Updated successfuly');
     }
 
     /**
