@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('user_email');
             $table->string('consign_num')->unique();
             $table->string('product_name');
@@ -26,6 +26,7 @@ return new class extends Migration
             $table->integer('order_price');
             $table->string('payment_method');
             $table->string('status')->default('Processing');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
