@@ -11,7 +11,7 @@ class UserAddressController extends Controller
 {
     public function userAddress()
     {
-        $catagorys = Catagory::all();
+        $catagorys = Catagory::first();
         return view('User.Account.addAddress',compact('catagorys'));
     }
 
@@ -56,14 +56,15 @@ class UserAddressController extends Controller
         return view('User.Account.edit',compact('catagorys','userAddress'));
     }
 
-    public function update(Request $request,UserAddress $userAddress)
+    public function update(Request $request,$id)
     {
+        $userAddress = UserAddress::find($id);
         $userAddress->user_id = auth()->user()->id;
         $userAddress->user_city = $request->user_city;
         $userAddress->user_area = $request->user_area;
         $userAddress->user_street = $request->user_street;
         $userAddress->user_zip = $request->user_zip;
         $userAddress->save();
-        return redirect()->back()->with('success','Address Updated Succfully');
+        return redirect()->route('User.Address.index')->with('success','Address Updated Succfully');
     }
 }
