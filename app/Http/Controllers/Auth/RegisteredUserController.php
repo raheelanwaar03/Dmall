@@ -19,9 +19,9 @@ class RegisteredUserController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create()
+    public function create($referal = "default")
     {
-        return view('auth.register');
+        return view('auth.register',compact('referal'));
     }
 
     /**
@@ -40,26 +40,23 @@ class RegisteredUserController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
-        return $request;
 
-        $referSecurity = User::where('referal',$request->username)->first();
-        if ($referSecurity == '') {
-            $refer = 'default';
-            $referal_bouns = 0;
-            // return $referal_bouns;
-        } else {
-            $refer = $request->refer;
-            $referal_bouns_admin = WidthrawLimit::first();
-            $referal_bouns_admin = $referal_bouns_admin->referal_bouns;
-            $referal_bouns = $referal_bouns_admin;
+        $user = User::where('username',$request->referal)->first();
+        if ($user !== "") {
+
+        //    if user creating accont by referal link
+
+        $referal_bouns_admin = WidthrawLimit::first();
+        $referal_bouns_admin = $referal_bouns_admin->referal_bouns;
+        $user->referal_bouns = $referal_bouns_admin;
+        $user->save();
         }
 
         $user = User::create([
             'name' => $request->name,
             'username' => $request->username,
             'email' => $request->email,
-            'referal' => $refer,
-            'referal_bouns' => $referal_bouns,
+            'referal' => $request->referal,
             'password' => Hash::make($request->password),
         ]);
 

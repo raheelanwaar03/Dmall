@@ -49,6 +49,9 @@
                                                         <input type="text" name="username" class="form-control"
                                                             placeholder="Jhon">
                                                     </div>
+                                                    <div class="col-sm-12">
+                                                        <input type="hidden" name="referal" value="{{ $referal }}">
+                                                    </div>
                                                     <div class="col-12">
                                                         <label for="inputEmailAddress" class="form-label">Email
                                                             Address</label>
