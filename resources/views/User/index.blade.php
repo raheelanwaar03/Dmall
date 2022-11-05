@@ -1,32 +1,37 @@
 @extends('User.layout.app')
 
 @section('content')
-            <section class="py-4">
-                <div class="container">
-                    <h3 class="d-none">Dashboard</h3>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                               @include('User.layout.sidebar')
-                                <div class="col-lg-8">
-                                    <div class="card shadow-none mb-0">
+    <section class="py-4">
+        <div class="container">
+            <h3 class="d-none">Dashboard</h3>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        @include('User.layout.sidebar')
+                        <div class="col-lg-8">
+                            <div class="card shadow-none mb-0">
 
-                                        {{-- Write yor main content here --}}
+                                {{-- Write yor main content here --}}
 
-                                        <div class="card-body">
-                                            <p>Hello <strong>{{ auth()->user()->username }}</strong>
-                                            <p>From your account dashboard you can view your Recent Orders,<br> manage your
-                                                shipping and billing addesses.</p>
-                                                <a href="{{ route('welcome') }}" class="btn btn-dark btn-ecomm">Continue Shoping</a>
-                                        </div>
-                                    </div>
+                                <div class="card-body">
+                                    <p>Hello <strong>{{ auth()->user()->username }}</strong>
+                                    <p>From your account dashboard you can view your Recent Orders,<br> manage your
+                                        shipping and billing addesses.</p>
+                                    <br>
+                                    <p>
+                                        Your Dmall Account Blance is ( {{ referalBouns() }} ).Shop from Dmall then you get a unique referal link and
+                                        you can invite your friends and get bouns from Admin.You also get 20% commission of your referal purchasing
+                                    </p>
+                                    <a href="{{ route('welcome') }}" class="btn btn-dark btn-ecomm">Continue Shoping</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
+    </section>
+    </div>
     </div>
 @endsection
 @section('pageName')

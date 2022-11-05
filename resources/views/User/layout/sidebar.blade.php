@@ -14,8 +14,12 @@
                 <a href="{{ route('User.Address.index') }}"
                     class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Addresses
                     <i class='bx bx-home-smile fs-5'></i></a>
+                {{-- <a href="#"
+                    class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Addresses
+                    <i class='bx bx-home-smile fs-5'></i></a> --}}
                 <a href="{{ route('User.Refer') }}"
-                    class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Referal Link
+                    class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Referal
+                    Link
                     <i class='bx bx-link-external'></i></a>
             </div>
         </div>

@@ -48,7 +48,7 @@ class RegisteredUserController extends Controller
 
         $referal_bouns_admin = WidthrawLimit::first();
         $referal_bouns_admin = $referal_bouns_admin->referal_bouns;
-        $user->referal_bouns = $referal_bouns_admin;
+        $user->referal_bouns += $referal_bouns_admin;
         $user->save();
         }
 

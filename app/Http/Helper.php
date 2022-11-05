@@ -41,6 +41,15 @@ function consign_num()
     return $consign_num;
 }
 
+// check User Referal commission
+
+function referalBouns()
+{
+    $user = User::where('id',auth()->user()->id)->first();
+    $bouns = $user->referal_bouns;
+    return $bouns;
+}
+
 function referalCommissionOnShoping()
 {
     $shoping_check = Order::where('user_id',auth()->user()->id)->sum('order_price');
@@ -57,3 +66,5 @@ function referalCommissionOnShoping()
     }
 
 }
+
+
