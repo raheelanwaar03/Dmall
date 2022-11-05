@@ -185,9 +185,9 @@
                                                     <a href="{{ route('User.Product.Show', ['id' => $product->id]) }}">View
                                                         Product</a>
                                                 </div>
-                                                <a href="javascript:;">
+                                                <a href="{{ route('User.Product.Show',['id'=>$product->id]) }}" title="View Product Details">
                                                     <img src="{{ asset('images/' . $product->product_img) }}"
-                                                        class="img-fluid" alt="...">
+                                                        height="200px" width="250px" alt="...">
                                                 </a>
                                             </div>
                                             <div class="card-body px-0">
