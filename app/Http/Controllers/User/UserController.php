@@ -25,13 +25,15 @@ class UserController extends Controller
 
     public function approvedTranscation()
     {
+        $catagorys = Catagory::all();
         $widthrawals = WidthrawlAmount::where('status','approved')->where('user_id',auth()->user()->id)->get();
-        return view('User.Transcations.approvedTranscation',compact('widthrawals'));
+        return view('User.Transcations.approvedTranscation',compact('widthrawals','catagorys'));
     }
 
     public function rejectTranscation()
     {
+        $catagorys = Catagory::all();
         $widthrawals = WidthrawlAmount::where('status','rejected')->where('user_id',auth()->user()->id)->get();
-        return view('User.Transcations.rejectedTransaction',compact('widthrawals'));
+        return view('User.Transcations.rejectedTransaction',compact('widthrawals','catagorys'));
     }
 }

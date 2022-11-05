@@ -14,13 +14,17 @@
                 <a href="{{ route('User.Address.index') }}"
                     class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Addresses
                     <i class='bx bx-home-smile fs-5'></i></a>
-                {{-- <a href="#"
-                    class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Addresses
-                    <i class='bx bx-home-smile fs-5'></i></a> --}}
-                <a href="{{ route('User.Refer') }}"
+
+                    @if (referalCommissionOnShoping() >= '10000')
+                    <a href="{{ route('User.Refer') }}"
                     class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Referal
                     Link
                     <i class='bx bx-link-external'></i></a>
+                    @endif
+
+                    <a href="{{ route('User.WidthrawalReq.view') }}"
+                        class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Widthraw Balance
+                        <i class='bx bx-printer fs-5'></i></a>
             </div>
         </div>
     </div>

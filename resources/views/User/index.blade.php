@@ -19,7 +19,7 @@
                                         shipping and billing addesses.</p>
                                     <br>
                                     <p>
-                                        Your Dmall Account Blance is ( {{ referalBouns() }} ).Shop from Dmall then you get a unique referal link and
+                                        Your Dmall Account Blance is ({{ referalBouns() }}).Shop from Dmall then you get a unique referal link and
                                         you can invite your friends and get bouns from Admin.You also get 20% commission of your referal purchasing
                                     </p>
                                     <a href="{{ route('welcome') }}" class="btn btn-dark btn-ecomm">Continue Shoping</a>
