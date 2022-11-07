@@ -21,11 +21,15 @@
                         @csrf
                         <div class="form-group">
                             <label for="">Widthraw Limit{Min}</label>
-                            <input type="text" name="widthraw_min" value="{{ $widthrawLimit->widthraw_min }}"  placeholder="Product Name" class="form-control">
+                            <input type="text" name="widthraw_min" value="{{ $widthrawLimit->widthraw_min }}"  placeholder="Widthraw Limit{Min}" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="">Widthraw Limit{Max}</label>
-                            <input type="text" name="widthraw_max" value="{{ $widthrawLimit->widthraw_max }}" placeholder="Product Name" class="form-control">
+                            <input type="text" name="widthraw_max" value="{{ $widthrawLimit->widthraw_max }}" placeholder="Widthraw Limit{Max}" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Rerferal Link Limit</label>
+                            <input type="text" name="refer_limit" value="{{ $widthrawLimit->widthraw_max }}" placeholder="Rerferal Link Limit" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="">Commission</label>

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('widthraw_min')->nullable();
             $table->integer('widthraw_max')->nullable();
+            $table->integer('refer_limit')->nullable();
             $table->integer('referal_bouns')->nullable();
             $table->string('limit')->default(0);
             $table->timestamps();
