@@ -217,11 +217,11 @@
                                     <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
 
                                         @if ($product->product_discount !== null)
-                                            <div class="h6 fw-bold">pkr:{{ $product->product_discount }}</div>
+                                            <div class="h6 fw-bold">Pkr:{{ $product->product_discount }}</div>
                                             <div style="text-decoration: line-through" class="h6 fw-bold">
-                                                pkr:{{ $product->product_price }}</div>
+                                                Pkr:{{ $product->product_price }}</div>
                                         @else
-                                            <div class="h6 fw-bold">pkr:{{ $product->product_price }}</div>
+                                            <div class="h6 fw-bold">Pkr:{{ $product->product_price }}</div>
                                         @endif
                                     </div>
                                 </div>

@@ -88,6 +88,14 @@ function allOrders()
 function pendingOrders()
 {
     $pendingOrder = Order::where('status','pending')->get();
-    return $pendingOrder;
+    return $pendingOrder->count();
+}
+
+// Total Delivered Orders
+
+function deliveredOrder()
+{
+    $deliveredOrder = Order::where('status','delivered')->get();
+    return $deliveredOrder->count();
 }
 

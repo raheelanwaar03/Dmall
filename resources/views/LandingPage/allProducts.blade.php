@@ -35,7 +35,7 @@
                                             @csrf
                                             <a href="{{ route('User.Product.Show',['id'=>$product->id]) }}">
                                                 <img src="{{ asset('images/' . $product->product_img) }}"
-                                                    class="card-img-top" alt="...">
+                                                height="200px" width="310px" alt="{{ $product->product_name }}">
                                             </a>
                                                 <input class="w-25" type="hidden" min="1" name="cart_qty" value="1">
                                             <div class="card-body">
@@ -51,13 +51,13 @@
                                                     <div class="d-flex align-items-center">
                                                         <div class="mb-1 product-price">
                                                             @if ($product->product_discount !== null)
-                                                                <div class="h6 fw-bold">${{ $product->product_discount }}
+                                                                <div class="h6 fw-bold">Pkr:{{ $product->product_discount }}
                                                                 </div>
                                                                 <div style="text-decoration: line-through"
                                                                     class="h6 fw-bold">
-                                                                    ${{ $product->product_price }}</div>
+                                                                    Pkr:{{ $product->product_price }}</div>
                                                             @else
-                                                                <div class="h6 fw-bold">${{ $product->product_price }}</div>
+                                                                <div class="h6 fw-bold">Pkr:{{ $product->product_price }}</div>
                                                             @endif
                                                         </div>
                                                         <div class="cursor-pointer ms-auto"> <i
