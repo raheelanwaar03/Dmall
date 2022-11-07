@@ -7,7 +7,7 @@ use App\Models\admin\Transcation\WidthrawLimit;
 use App\Models\Transctions\WidthrawlAmount;
 use App\Models\User;
 use App\Models\User\AddToCart;
-use App\Models\user\Order;
+use App\Models\User\Order;
 
 function  productId()
 {
