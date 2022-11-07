@@ -116,7 +116,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('Limit.index') }}">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Set Widthraw Limit</span></a>
+                    <span>Set Limit's Setting</span></a>
             </li>
         </ul>
         <div id="content-wrapper" class="d-flex flex-column">

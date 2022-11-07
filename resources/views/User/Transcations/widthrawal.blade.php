@@ -16,6 +16,7 @@
                                 <div class="card">
                                     <div class="card-title">
                                         <h1 class="text-center mt-3">Widthraw Your Referal Commission!</h1>
+                                        <p class="text-center mt-4">Your Account balance is {{ $user->referal_bouns }}</p>
                                     </div>
                                     <div class="card-body">
                                         <form action="{{ route('User.Widthrawal.Amount.store') }}" method="POST">

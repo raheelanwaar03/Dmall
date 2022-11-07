@@ -14,7 +14,8 @@ class WidthrawalReqController extends Controller
     public function widthrawalReqView()
     {
         $catagorys = Catagory::all();
-        return view('User.Transcations.widthrawal',compact('catagorys'));
+        $user = User::where('id',auth()->user()->id)->first();
+        return view('User.Transcations.widthrawal',compact('catagorys','user'));
     }
 
     public function storeWidthrawalAmount(Request $request)

@@ -74,7 +74,7 @@
                                 <tr>
                                     <td>{{ $widthrawLimit->widthraw_min }}</td>
                                     <td>{{ $widthrawLimit->widthraw_max }}</td>
-                                    <td>{{ $widthrawLimit->refer_link }}</td>
+                                    <td>{{ $widthrawLimit->refer_limit }}</td>
                                     <td>{{ $widthrawLimit->referal_bouns }}</td>
                                     <td>{{ $widthrawLimit->created_at }}</td>
                                     <td>

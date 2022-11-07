@@ -50,6 +50,15 @@ function referalBouns()
     return $bouns;
 }
 
+// checking user purchasing
+
+function purchasingCheck()
+{
+    $purchasingCheck = Order::where('user_id',auth()->user()->id)->sum('order_price');
+    return $purchasingCheck;
+}
+
+
 function referalCommissionOnShoping()
 {
     $shoping_check = Order::where('user_id',auth()->user()->id)->sum('order_price');
@@ -58,9 +67,15 @@ function referalCommissionOnShoping()
     // finding the User
     $user = auth()->user();
     $referalUser = $user->referal;
-    $user = User::where('username',$referalUser)->first();
-    $user->referal_bouns += $referal_shop_bouns;
-    $user->save();
+    if($referalUser = 'default')
+    {
+
+    }
+    else{
+        $user = User::where('username',$referalUser)->first();
+        $user->referal_bouns =+ $referal_shop_bouns;
+        $user->save();
+    }
 }
 
 // checking all users
@@ -92,5 +107,13 @@ function deliveredOrder()
 {
     $deliveredOrder = Order::where('status','delivered')->get();
     return $deliveredOrder->count();
+}
+
+// checking admin rerferal link condition
+
+function referlinkLimit()
+{
+    $referLinkLimit = WidthrawLimit::where('limit', 1)->first();
+    return $referLinkLimit->refer_limit;
 }
 
