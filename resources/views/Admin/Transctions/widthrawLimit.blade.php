@@ -53,6 +53,7 @@
                                 <tr>
                                     <th>Minimum Amount</th>
                                     <th>Maximum Amount</th>
+                                    <th>Referal Link Limit</th>
                                     <th>Referal Commission</th>
                                     <th>Date</th>
                                     <th>Action</th>
@@ -62,6 +63,7 @@
                                 <tr>
                                     <th>Minimum Amount</th>
                                     <th>Maximum Amount</th>
+                                    <th>Referal Link Limit</th>
                                     <th>Referal Commission</th>
                                     <th>Date</th>
                                     <th>Action</th>
@@ -72,6 +74,7 @@
                                 <tr>
                                     <td>{{ $widthrawLimit->widthraw_min }}</td>
                                     <td>{{ $widthrawLimit->widthraw_max }}</td>
+                                    <td>{{ $widthrawLimit->refer_link }}</td>
                                     <td>{{ $widthrawLimit->referal_bouns }}</td>
                                     <td>{{ $widthrawLimit->created_at }}</td>
                                     <td>
