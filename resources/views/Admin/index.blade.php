@@ -13,7 +13,7 @@
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                     Total User's</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">40,000</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ allUsers() }}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="row no-gutters align-items-center">
                                     <div class="col-auto">
-                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">2</div>
+                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ allOrders() }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -50,7 +50,7 @@
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                     Pending Orders</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ pendingOrders() }}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>

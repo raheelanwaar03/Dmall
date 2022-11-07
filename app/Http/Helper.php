@@ -68,4 +68,26 @@ function referalCommissionOnShoping()
 
 }
 
+// checking all users
+
+function allUsers()
+{
+    $user = User::all();
+    return  $user->count();
+}
+
+// All Orders
+function allOrders()
+{
+    $order = Order::all();
+    return $order->count();
+}
+
+// totla Pending Orders
+
+function pendingOrders()
+{
+    $pendingOrder = Order::where('status','pending')->get();
+    return $pendingOrder;
+}
 
