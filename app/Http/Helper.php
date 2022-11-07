@@ -53,19 +53,14 @@ function referalBouns()
 function referalCommissionOnShoping()
 {
     $shoping_check = Order::where('user_id',auth()->user()->id)->sum('order_price');
-    return $shoping_check;
+    $referal_shop_bouns =  $shoping_check * 20 / 100;
 
-    // if ($shoping_check >= '10000' )
-    // {
-    //     $check_referal_default = User::where('referal',auth()->user()->username)->first();
-    //     // checking the commission that in admin is giving
-    //     $referal_bouns_admin = WidthrawLimit::first();
-    //     $referal_bouns_admin = $referal_bouns_admin->referal_bouns;
-    //     // giving the bouns to the user who refer this user.
-    //     // $user->referal_bouns = $referal_bouns_admin;
-    //     // $user->save();
-    // }
-
+    // finding the User
+    $user = auth()->user();
+    $referalUser = $user->referal;
+    $user = User::where('username',$referalUser)->first();
+    $user->referal_bouns = $referal_shop_bouns;
+    $user->save();
 }
 
 // checking all users

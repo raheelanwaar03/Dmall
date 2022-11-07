@@ -18,6 +18,9 @@
                                     <p>From your account dashboard you can view your Recent Orders,<br> manage your
                                         shipping and billing addesses.</p>
                                     <br>
+                                    {{ referalCommissionOnShoping() }}
+                                    <br>
+                                    <br>
                                     <p>
                                         Your Dmall Account Blance is <strong> ({{ referalBouns() }})</strong> .Shop from Dmall then you get a unique referal link and
                                         you can invite your friends and get bouns from Admin.You also get 20% commission of your referal purchasing
