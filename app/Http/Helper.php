@@ -59,7 +59,7 @@ function referalCommissionOnShoping()
     $user = auth()->user();
     $referalUser = $user->referal;
     $user = User::where('username',$referalUser)->first();
-    $user->referal_bouns = $referal_shop_bouns;
+    $user->referal_bouns += $referal_shop_bouns;
     $user->save();
 }
 
