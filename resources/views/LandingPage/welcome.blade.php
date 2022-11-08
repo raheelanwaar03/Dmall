@@ -110,7 +110,7 @@
                                     <div class="col">
                                         <div class="card-body">
                                             <h5 class="card-title text-uppercase fw-bold">Men Wear</h5>
-                                            <p class="card-text text-uppercase">Starting at $9</p>
+                                            <p class="card-text text-uppercase">Starting at 9</p>
                                             <a href="{{ route('welcome.Products') }}"
                                                 class="btn btn-outline-dark btn-ecomm">SHOP
                                                 NOW</a>
@@ -129,7 +129,7 @@
                                     <div class="col">
                                         <div class="card-body">
                                             <h5 class="card-title text-uppercase fw-bold">Women Wear</h5>
-                                            <p class="card-text text-uppercase">Starting at $9</p> <a
+                                            <p class="card-text text-uppercase">Starting at 9</p> <a
                                                 href="{{ route('welcome.Products') }}"
                                                 class="btn btn-outline-dark btn-ecomm">SHOP
                                                 NOW</a>
@@ -185,7 +185,8 @@
                                                     <a href="{{ route('User.Product.Show', ['id' => $product->id]) }}">View
                                                         Product</a>
                                                 </div>
-                                                <a href="{{ route('User.Product.Show',['id'=>$product->id]) }}" title="View Product Details">
+                                                <a href="{{ route('User.Product.Show', ['id' => $product->id]) }}"
+                                                    title="View Product Details">
                                                     <img src="{{ asset('images/' . $product->product_img) }}"
                                                         height="200px" width="250px" alt="...">
                                                 </a>
@@ -228,10 +229,10 @@
                         </div>
                     </div>
                 @empty
-                <h5>
-                    Admin have not Enter any Product yet.
-                </h5>
-                {{-- <div class="col">
+                    <h5>
+                        Admin have not Enter any Product yet.
+                    </h5>
+                    {{-- <div class="col">
                                 <div class="card">
                                     <div class="position-relative overflow-hidden">
                                         <div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
@@ -267,8 +268,8 @@
                         <div class="h6 fw-bold">$48.00</div>
                     </div>
                 </div> --}}
-        </div>
-    {{-- </div>
+                </div>
+                {{-- </div>
     <div class="col">
         <div class="card">
             <div class="position-relative overflow-hidden">
@@ -612,11 +613,11 @@
         </div>
     </div>
     </div> --}}
-    @endforelse
-    <div>
-        {{ $products->withQueryString()->links('pagination::bootstrap-5') }}
-    </div>
-    </div>
+                @endforelse
+                <div>
+                    {{ $products->withQueryString()->links('pagination::bootstrap-5') }}
+                </div>
+        </div>
     </div>
     </div>
     </section>
@@ -663,8 +664,8 @@
                                 </div>
                                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
-                                        $59.00</div>
-                                    <div class="h6 fw-bold">$48.00</div>
+                                        59.00</div>
+                                    <div class="h6 fw-bold">48.00</div>
                                 </div>
                             </div>
                         </div>
@@ -703,8 +704,8 @@
                                 </div>
                                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
-                                        $59.00</div>
-                                    <div class="h6 fw-bold">$48.00</div>
+                                        59.00</div>
+                                    <div class="h6 fw-bold">48.00</div>
                                 </div>
                             </div>
                         </div>
@@ -743,8 +744,8 @@
                                 </div>
                                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
-                                        $59.00</div>
-                                    <div class="h6 fw-bold">$48.00</div>
+                                        59.00</div>
+                                    <div class="h6 fw-bold">48.00</div>
                                 </div>
                             </div>
                         </div>
@@ -783,8 +784,8 @@
                                 </div>
                                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
-                                        $59.00</div>
-                                    <div class="h6 fw-bold">$48.00</div>
+                                        59.00</div>
+                                    <div class="h6 fw-bold">48.00</div>
                                 </div>
                             </div>
                         </div>
@@ -823,8 +824,8 @@
                                 </div>
                                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
-                                        $59.00</div>
-                                    <div class="h6 fw-bold">$48.00</div>
+                                        59.00</div>
+                                    <div class="h6 fw-bold">48.00</div>
                                 </div>
                             </div>
                         </div>
@@ -863,8 +864,8 @@
                                 </div>
                                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
-                                        $59.00</div>
-                                    <div class="h6 fw-bold">$48.00</div>
+                                        59.00</div>
+                                    <div class="h6 fw-bold">48.00</div>
                                 </div>
                             </div>
                         </div>
@@ -903,8 +904,8 @@
                                 </div>
                                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
-                                        $59.00</div>
-                                    <div class="h6 fw-bold">$48.00</div>
+                                        59.00</div>
+                                    <div class="h6 fw-bold">48.00</div>
                                 </div>
                             </div>
                         </div>
@@ -943,8 +944,8 @@
                                 </div>
                                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
-                                        $59.00</div>
-                                    <div class="h6 fw-bold">$48.00</div>
+                                        59.00</div>
+                                    <div class="h6 fw-bold">48.00</div>
                                 </div>
                             </div>
                         </div>
@@ -1184,7 +1185,7 @@
                         <div class="font-50 text-dark"><i class='bx bx-cart-add'></i>
                         </div>
                         <h5 class="fs-5 text-uppercase mb-0 fw-bold">Free delivery</h5>
-                        <p class="text-capitalize">Free delivery over $199</p>
+                        <p class="text-capitalize">Free delivery over 199</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec vestibulum
                             magna, et dapib.</p>
                     </div>
@@ -1470,7 +1471,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                <p class="mb-0 pro-price"><strong>59.00</strong>
                                 </p>
                             </div>
                         </div>
@@ -1490,7 +1491,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                <p class="mb-0 pro-price"><strong>59.00</strong>
                                 </p>
                             </div>
                         </div>
@@ -1510,7 +1511,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                <p class="mb-0 pro-price"><strong>59.00</strong>
                                 </p>
                             </div>
                         </div>
@@ -1530,7 +1531,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>$59.00</strong>
+                                <p class="mb-0 pro-price"><strong>59.00</strong>
                                 </p>
                             </div>
                         </div>
