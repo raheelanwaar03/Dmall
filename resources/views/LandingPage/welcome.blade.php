@@ -263,12 +263,12 @@
                                           <i class="bx bxs-star text-warning"></i>
                                       </div>
                     <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
-                        <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">$59.00
+                        <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
                         </div>
-                        <div class="h6 fw-bold">$48.00</div>
+                        <div class="h6 fw-bold">$</div>
                     </div>
                 </div> --}}
-                </div>
+                {{-- </div> --}}
                 {{-- </div>
     <div class="col">
         <div class="card">
@@ -302,8 +302,8 @@
                     <i class="bx bxs-star text-warning"></i>
                 </div>
                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
-                    <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">$59.00</div>
-                    <div class="h6 fw-bold">$48.00</div>
+                    <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through"></div>
+                    <div class="h6 fw-bold">$</div>
                 </div>
             </div>
         </div>
@@ -341,7 +341,7 @@
                 </div>
                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">$59.00</div>
-                    <div class="h6 fw-bold">$48.00</div>
+                    <div class="h6 fw-bold">$</div>
                 </div>
             </div>
         </div>
@@ -379,7 +379,7 @@
                 </div>
                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">$59.00</div>
-                    <div class="h6 fw-bold">$48.00</div>
+                    <div class="h6 fw-bold">$</div>
                 </div>
             </div>
         </div>
@@ -417,7 +417,7 @@
                 </div>
                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">$59.00</div>
-                    <div class="h6 fw-bold">$48.00</div>
+                    <div class="h6 fw-bold">$</div>
                 </div>
             </div>
         </div>
@@ -455,7 +455,7 @@
                 </div>
                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">$59.00</div>
-                    <div class="h6 fw-bold">$48.00</div>
+                    <div class="h6 fw-bold">$</div>
                 </div>
             </div>
         </div>
@@ -493,7 +493,7 @@
                 </div>
                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">$59.00</div>
-                    <div class="h6 fw-bold">$48.00</div>
+                    <div class="h6 fw-bold">$</div>
                 </div>
             </div>
         </div>
@@ -531,7 +531,7 @@
                 </div>
                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">$59.00</div>
-                    <div class="h6 fw-bold">$48.00</div>
+                    <div class="h6 fw-bold">$</div>
                 </div>
             </div>
         </div>
@@ -569,7 +569,7 @@
                 </div>
                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">$59.00</div>
-                    <div class="h6 fw-bold">$48.00</div>
+                    <div class="h6 fw-bold">$</div>
                 </div>
             </div>
         </div>
@@ -607,7 +607,7 @@
                 </div>
                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">$59.00</div>
-                    <div class="h6 fw-bold">$48.00</div>
+                    <div class="h6 fw-bold">$</div>
                 </div>
             </div>
         </div>
@@ -664,8 +664,8 @@
                                 </div>
                                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
-                                        59.00</div>
-                                    <div class="h6 fw-bold">48.00</div>
+                                    </div>
+                                    <div class="h6 fw-bold"></div>
                                 </div>
                             </div>
                         </div>
@@ -704,8 +704,8 @@
                                 </div>
                                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
-                                        59.00</div>
-                                    <div class="h6 fw-bold">48.00</div>
+                                    </div>
+                                    <div class="h6 fw-bold"></div>
                                 </div>
                             </div>
                         </div>
@@ -744,8 +744,8 @@
                                 </div>
                                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
-                                        59.00</div>
-                                    <div class="h6 fw-bold">48.00</div>
+                                    </div>
+                                    <div class="h6 fw-bold"></div>
                                 </div>
                             </div>
                         </div>
@@ -784,8 +784,8 @@
                                 </div>
                                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
-                                        59.00</div>
-                                    <div class="h6 fw-bold">48.00</div>
+                                    </div>
+                                    <div class="h6 fw-bold"></div>
                                 </div>
                             </div>
                         </div>
@@ -824,8 +824,8 @@
                                 </div>
                                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
-                                        59.00</div>
-                                    <div class="h6 fw-bold">48.00</div>
+                                    </div>
+                                    <div class="h6 fw-bold"></div>
                                 </div>
                             </div>
                         </div>
@@ -864,8 +864,8 @@
                                 </div>
                                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
-                                        59.00</div>
-                                    <div class="h6 fw-bold">48.00</div>
+                                    </div>
+                                    <div class="h6 fw-bold"></div>
                                 </div>
                             </div>
                         </div>
@@ -904,8 +904,8 @@
                                 </div>
                                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
-                                        59.00</div>
-                                    <div class="h6 fw-bold">48.00</div>
+                                    </div>
+                                    <div class="h6 fw-bold"></div>
                                 </div>
                             </div>
                         </div>
@@ -944,8 +944,8 @@
                                 </div>
                                 <div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
                                     <div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">
-                                        59.00</div>
-                                    <div class="h6 fw-bold">48.00</div>
+                                    </div>
+                                    <div class="h6 fw-bold"></div>
                                 </div>
                             </div>
                         </div>
@@ -1471,7 +1471,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>59.00</strong>
+                                <p class="mb-0 pro-price"><strong</strong>
                                 </p>
                             </div>
                         </div>
@@ -1491,7 +1491,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>59.00</strong>
+                                <p class="mb-0 pro-price"><strong</strong>
                                 </p>
                             </div>
                         </div>
@@ -1511,7 +1511,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>59.00</strong>
+                                <p class="mb-0 pro-price"><strong</strong>
                                 </p>
                             </div>
                         </div>
@@ -1531,7 +1531,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>59.00</strong>
+                                <p class="mb-0 pro-price"><strong</strong>
                                 </p>
                             </div>
                         </div>
@@ -1556,7 +1556,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr</strong>
                                 </p>
                             </div>
                         </div>
@@ -1576,7 +1576,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr</strong>
                                 </p>
                             </div>
                         </div>
@@ -1596,7 +1596,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr</strong>
                                 </p>
                             </div>
                         </div>
@@ -1616,7 +1616,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr</strong>
                                 </p>
                             </div>
                         </div>
@@ -1641,7 +1641,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr</strong>
                                 </p>
                             </div>
                         </div>
@@ -1661,7 +1661,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr</strong>
                                 </p>
                             </div>
                         </div>
@@ -1681,7 +1681,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr</strong>
                                 </p>
                             </div>
                         </div>
@@ -1701,7 +1701,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr</strong>
                                 </p>
                             </div>
                         </div>
@@ -1726,7 +1726,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr</strong>
                                 </p>
                             </div>
                         </div>
@@ -1746,7 +1746,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr</strong>
                                 </p>
                             </div>
                         </div>
@@ -1766,7 +1766,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr</strong>
                                 </p>
                             </div>
                         </div>
@@ -1786,7 +1786,7 @@
                                     <i class="bx bxs-star text-warning"></i>
                                     <i class="bx bxs-star text-warning"></i>
                                 </div>
-                                <p class="mb-0 pro-price"><strong>pkr:59.00</strong>
+                                <p class="mb-0 pro-price"><strong>pkr</strong>
                                 </p>
                             </div>
                         </div>
