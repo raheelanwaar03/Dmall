@@ -14,6 +14,9 @@ Route::get('/Products',[WelcomeController::class,'index'])->name('welcome.Produc
 Route::get('/About-Us',[WelcomeController::class,'aboutUs'])->name('welcome.aboutUs');
 Route::get('/Contact-Us',[WelcomeController::class,'contactUs'])->name('welcome.contactUs');
 
+// search Product
+Route::get('/search/product',[WelcomeController::class,'search'])->name('searchProcuct');
+
 Route::prefix('user')->middleware(['auth','userAuth'])->group(function(){
 
     Route::get('/',[UserController::class, 'index'])->name('User.index');

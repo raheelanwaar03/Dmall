@@ -83,11 +83,11 @@
                                 </div>
                             </div>
                             <div class="col-12 col-xl order-4 order-xl-0">
-                                <div class="input-group flex-nowrap pb-3 pb-xl-0">
+                                <form action="{{ route('searchProcuct') }}" class="input-group flex-nowrap pb-3 pb-xl-0">
                                     <input type="text" class="form-control w-100 border-dark border border-3"
                                         placeholder="Search for Products">
-                                    <button class="btn btn-dark btn-ecomm border-3" type="button">Search</button>
-                                </div>
+                                    <button class="btn btn-dark btn-ecomm border-3" type="submit">Search</button>
+                                </form>
                             </div>
                             <div class="col-auto d-none d-xl-flex">
                                 <div class="d-flex align-items-center gap-3">
@@ -141,11 +141,11 @@
                                 </div>
                             </div>
                             <div class="col-12 col-xl order-4 order-xl-0">
-                                <div class="input-group flex-nowrap pb-3 pb-xl-0">
+                                <form action="{{ route('searchProcuct') }}" class="input-group flex-nowrap pb-3 pb-xl-0">
                                     <input type="text" class="form-control w-100 border-dark border border-3"
                                         placeholder="Search for Products">
-                                    <button class="btn btn-dark btn-ecomm border-3" type="button">Search</button>
-                                </div>
+                                    <button class="btn btn-dark btn-ecomm border-3" type="submit">Search</button>
+                                </form>
                             </div>
                             <div class="col-auto d-none d-xl-flex">
                                 <div class="d-flex align-items-center gap-3">
@@ -160,10 +160,10 @@
                                 <div class="top-cart-icons">
                                     <nav class="navbar navbar-expand">
                                         <ul class="navbar-nav">
-                                            <li class="nav-item"><a href="{{ route('login') }}"
+                                            <li class="nav-item"><a href="#"
                                                     class="nav-link cart-link"><i class='bx bx-user'></i></a>
                                             </li>
-                                            <li class="nav-item"><a href="{{ route('login') }}"
+                                            <li class="nav-item"><a href="#"
                                                     class="nav-link cart-link"><i class='bx bx-heart'></i></a>
                                             </li>
                                             <li class="nav-item">
