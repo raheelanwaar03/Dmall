@@ -17,7 +17,7 @@
                     @if (purchasingCheck() >= referlinkLimit())
                     <a href="{{ route('User.Refer') }}"
                     class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Referal
-                    Link
+                    Link 
                     <i class='bx bx-link-external'></i></a>
                     <a href="{{ route('User.WidthrawalReq.view') }}"
                         class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Widthraw Balance

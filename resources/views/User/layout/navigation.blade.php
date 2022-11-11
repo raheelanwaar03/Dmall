@@ -1,198 +1,105 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="{{ asset('assets/images/favicon-32x32.png') }}" type="image/png" />
-    <link href="{{ asset('assets/plugins/OwlCarousel/css/owl.carousel.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/css/pace.min.css') }}" rel="stylesheet" />
-    <script src="{{ asset('assets/js/pace.min.js') }}"></script>
-    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&amp;display=swap"
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>User Dashboard</title>
+    <link href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-    <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
-    <link href="../../../../unpkg.com/boxicons%402.1.2/css/boxicons.min.css" rel="stylesheet">
-    <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet">
-    <title>Dmall - eCommerce HTML Template</title>
+    <link href="{{ asset('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
 </head>
 
-<body>
-    <div class="wrapper">
-        <div class="header-wrapper">
-            <div class="top-menu">
-                <div class="container">
-                    <nav class="navbar navbar-expand">
-                        @if (auth()->user())
-                            <div class="shiping-title d-none d-sm-flex">Welcome {{ auth()->user()->username }} to our
-                                Shopingo store!</div>
-                        @else
-                            <div class="shiping-title d-none d-sm-flex">Welcome to our Shopingo store!</div>
-                        @endif
-                        <ul class="navbar-nav ms-auto d-none d-lg-flex justify-content-center align-items-center">
-                            <li class="nav-item"><a class="nav-link" href="{{ route('welcome.aboutUs') }}">About</a>
-                            </li>
-                            </li>
-                            <li class="nav-item"><a class="nav-link"
-                                    href="{{ route('welcome.contactUs') }}">Contact</a>
-                            </li>
-                            @if (auth()->user())
-                                <li class="nav-item">
-                                    <form action="{{ route('logout') }}" method="POST">
-                                        @csrf
-                                        <button style=" border-radius:7px" type="submit"
-                                            class="btn btn-sm btn-warning text-light">Logout</button>
-                                    </form>
-                                </li>
-                            @endif
-
-                        </ul>
-                        <ul class="navbar-nav social-link ms-lg-2 ms-auto">
-                            <li class="nav-item"> <a class="nav-link" href="javascript:;"><i
-                                        class='bx bxl-facebook'></i></a>
-                            </li>
-                            <li class="nav-item"> <a class="nav-link" href="javascript:;"><i
-                                        class='bx bxl-twitter'></i></a>
-                            </li>
-                            <li class="nav-item"> <a class="nav-link" href="javascript:;"><i
-                                        class='bx bxl-linkedin'></i></a>
-                            </li>
-                        </ul>
-                    </nav>
+<body id="page-top">
+    <div id="wrapper">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
                 </div>
+                <div class="sidebar-brand-text mx-3">Dmall</div>
+            </a>
+            <hr class="sidebar-divider my-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+            <hr class="sidebar-divider">
+            <div class="sidebar-heading">
+                Interface
             </div>
-            <div class="header-content bg-warning">
-                <div class="container">
-                    <div class="row align-items-center gx-4">
-                        <div class="col-auto">
-                            <div class="d-flex align-items-center gap-3">
-                                <div class="mobile-toggle-menu d-inline d-xl-none" data-bs-toggle="offcanvas"
-                                    data-bs-target="#offcanvasNavbar">
-                                    <i class="bx bx-menu"></i>
-                                </div>
-                                <div class="logo">
-                                    <a href="{{ route('welcome') }}">
-                                        <img src="{{ asset('assets/images/logo-icon.png') }}" class="logo-icon"
-                                            alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-xl order-4 order-xl-0">
-                            <div class="input-group flex-nowrap pb-3 pb-xl-0">
-                                <input type="text" class="form-control w-100 border-dark border border-3"
-                                    placeholder="Search for Products">
-                                <button class="btn btn-dark btn-ecomm border-3" type="button">Search</button>
-                            </div>
-                        </div>
-                        <div class="col-auto d-none d-xl-flex">
-                            <div class="d-flex align-items-center gap-3">
-                                <div class="fs-1 text-content"><i class='bx bx-headphone'></i></div>
-                                <div class="">
-                                    <p class="mb-0 text-content">CALL US NOW</p>
-                                    <h5 class="mb-0">{{ env('APP_Num') }}</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-auto ms-auto">
-                            <div class="top-cart-icons">
-                                <nav class="navbar navbar-expand">
-                                    <ul class="navbar-nav">
-                                        <li class="nav-item"><a href="{{ route('login') }}"
-                                                class="nav-link cart-link"><i class='bx bx-user'></i></a>
-                                        </li>
-                                        <li class="nav-item"><a href="{{ route('login') }}"
-                                                class="nav-link cart-link"><i class='bx bx-heart'></i></a>
-                                        </li>
-                                        <li class="nav-item dropdown dropdown-large">
-                                            <a href="{{ route('User.AddToCart') }}"
-                                                class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative cart-link">
-                                                <span class="alert-count">{{ cartProduct() }}</span>
-                                                <i class='bx bx-shopping-bag'></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Components</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Components:</h6>
+                        <a class="collapse-item" href="buttons.html">Buttons</a>
+                        <a class="collapse-item" href="cards.html">Cards</a>
                     </div>
                 </div>
-            </div>
-            <div class="primary-menu">
-                <nav class="navbar navbar-expand-xl w-100 navbar-dark container mb-0 p-0">
-                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
-                        <div class="offcanvas-header">
-                            <div class="offcanvas-logo"><img src="{{ asset('assets/images/logo-icon.png') }}"
-                                    width="100" alt="">
-                            </div>
-                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body primary-menu">
-                            <ul class="navbar-nav justify-content-start flex-grow-1 gap-1">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('welcome') }}">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('welcome.aboutUs') }}">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('welcome.contactUs') }}">Contact</a>
-                                </li>
-
-                                @if (auth()->user())
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('User.index') }}">Dashboard</a>
-                                </li>
-                                @else
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">Login</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">Register</a>
-                                </li>
-                                @endif
-
-                                {{-- <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"
-                                        data-bs-toggle="dropdown">
-                                        Account
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
-                                        <li><a class="dropdown-item" href="{{ route('register') }}">Register</a>
-                                        <li><a class="dropdown-item" href="{{ route('User.index') }}">Dashboard</a>
-                                        </li>
-                                    </ul>
-                                </li> --}}
-                            </ul>
-                        </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Utilities</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Utilities:</h6>
+                        <a class="collapse-item" href="utilities-color.html">Colors</a>
+                        <a class="collapse-item" href="utilities-border.html">Borders</a>
+                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
+                        <a class="collapse-item" href="utilities-other.html">Other</a>
                     </div>
-                </nav>
+                </div>
+            </li>
+            <hr class="sidebar-divider">
+            <div class="sidebar-heading">
+                Addons
             </div>
-        </div>
-        <div class="page-wrapper">
-            <div class="page-content">
-                <section class="py-3 border-bottom border-top d-none d-md-flex bg-light">
-                    <div class="container">
-                        <div class="page-breadcrumb d-flex align-items-center">
-                            <h3 class="breadcrumb-title pe-3">@yield('pageName')</h3>
-                            <div class="ms-auto">
-                                <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb mb-0 p-0">
-                                        <li class="breadcrumb-item"><a href="{{ route('welcome') }}"><i
-                                                    class="bx bx-home-alt"></i>
-                                                Home</a>
-                                        </li>
-                                        </li>
-                                        <li class="breadcrumb-item active" aria-current="page">@yield('pageName')</li>
-                                    </ol>
-                                </nav>
-                            </div>
-                        </div>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Pages</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Login Screens:</h6>
+                        <a class="collapse-item" href="login.html">Login</a>
+                        <a class="collapse-item" href="register.html">Register</a>
+                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Other Pages:</h6>
+                        <a class="collapse-item" href="404.html">404 Page</a>
+                        <a class="collapse-item" href="blank.html">Blank Page</a>
                     </div>
-                </section>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="charts.html">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Charts</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="tables.html">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Tables</span></a>
+            </li>
+            <hr class="sidebar-divider d-none d-md-block">
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+        </ul>

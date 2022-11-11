@@ -135,7 +135,7 @@
                                     <i class="fas fa-search fa-sm"></i>
                                 </button>
                             </div>
-                        </div>
+                        </div> 
                     </form>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown no-arrow d-sm-none">
