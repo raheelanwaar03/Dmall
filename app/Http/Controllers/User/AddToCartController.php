@@ -14,6 +14,7 @@ class AddToCartController extends Controller
     public function store(Request $request,$id)
     {
         $product = ProductManger::find($id);
+
         $cartProduct = new AddToCart();
         $cartProduct->user_id = auth()->user()->id;
         $cartProduct->item_price = $product->product_price;
