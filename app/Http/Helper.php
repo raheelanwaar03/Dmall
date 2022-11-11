@@ -95,7 +95,7 @@ function allOrders()
 
 // totla Pending Orders
 
-function pendingOrders()
+function pendinOgrders()
 {
     $pendingOrder = Order::where('status','pending')->get();
     return $pendingOrder->count();
@@ -117,3 +117,27 @@ function referlinkLimit()
     return $referLinkLimit->refer_limit;
 }
 
+
+// checking user Delivered order
+
+function userDeliveredOrder()
+{
+    $userDeliveredOrder = order::where('user_id',auth()->user()->id)->where('status','delivered')->count();
+    return $userDeliveredOrder;    
+}
+
+// checking user pending order
+
+function userPendinOgrders()
+{
+    $userPendingOrder = Order::where('user_id',auth()->user()->id)->where('status','pending')->count();
+    return $userPendingOrder;
+}
+
+// user all orders
+
+function userAllOrders()
+{
+    $userAllOrder = Order::where('user_id',auth()->user()->id)->count();
+    return $userAllOrder;
+}
