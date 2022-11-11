@@ -104,7 +104,7 @@
                                     </tr>
                                     @empty
                                     <h5>
-                                        There is not any Delivered order
+                                        There is not any Delivered order in your account!
                                     </h5>
                                     @endforelse
                                 </tbody>

@@ -49,15 +49,22 @@ class WidthrawalReqController extends Controller
             return redirect()->back()->with('error','Your Amount is Greater than Admin limit');
         }
 
-
         $widthrawal = new WidthrawlAmount();
-        $widthrawal->widthrawal_Amount = $validated['widthrawal_Amount'];
         $widthrawal->user_id = auth()->user()->id;
+        $widthrawal->widthrawal_Amount = $validated['widthrawal_Amount'];
         $widthrawal->widthrawal_bank = $validated['widthrawal_bank'];
         $widthrawal->widthrawal_bank_Account = $validated['widthrawal_bank_Account'];
         $widthrawal->user_bank_Name = $validated['user_bank_Name'];
         $widthrawal->widthrawal_Pho_Nubmer = $request->widthrawal_Pho_Nubmer;
         $widthrawal->save();
+        // dedecting amount from wallet
+        $userWallet = User::where('id',auth()->user()->id)->first();
+        $userWallet = $userWallet->referal_bouns;
+        $userWallet = $userWallet - $validated['widthrawal_Amount'];
+        $user = User::where('id',auth()->user()->id)->first();
+        $user->referal_bouns = $userWallet;
+        $user->save();
+
         return redirect()->back()->with('success','You have Succssfuly Reqested for Widthraw.');
 
     }
