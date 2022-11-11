@@ -14,8 +14,8 @@ class WidthrawalReqController extends Controller
     public function widthrawalReqView()
     {
         $catagorys = Catagory::all();
-        $user = User::where('id',auth()->user()->id)->first();
-        return view('User.Transcations.widthrawal',compact('catagorys','user'));
+        $user = User::where('id', auth()->user()->id)->first();
+        return view('User.Transcations.widthrawal', compact('catagorys', 'user'));
     }
 
     public function storeWidthrawalAmount(Request $request)
@@ -27,26 +27,24 @@ class WidthrawalReqController extends Controller
             'user_bank_Name' => 'required',
         ]);
 
-        // checking the user Account blanse
-        $blanceCheck = User::where('id',auth()->user()->id)->sum('referal_bouns');
-        if($blanceCheck < 50)
-        {
-            return redirect()->back()->with('error','Your account blance is less than 50 your request could not procced');
-        }
-
         $userWidthrawAmount = $validated['widthrawal_Amount'];
         $query = WidthrawLimit::first();
         $adminMinLimit = $query->widthraw_min;
         $adminMaxLimit = $query->widthraw_max;
 
-        if ($userWidthrawAmount < $adminMinLimit)
-        {
-            return redirect()->back()->with('error','Your Amount is less than Admin limit');
+        // checking the user Account blanse
+        $blanceCheck = User::where('id', auth()->user()->id)->sum('referal_bouns');
+        // checking admin min widthraw limit
+        if ($blanceCheck < 0) {
+            return redirect()->back()->with('error', 'Your account blance is less 0 your request could not procced');
         }
 
-        if ($userWidthrawAmount > $adminMaxLimit)
-        {
-            return redirect()->back()->with('error','Your Amount is Greater than Admin limit');
+        if ($userWidthrawAmount < $adminMinLimit) {
+            return redirect()->back()->with('error', 'Your Amount is less than Admin limit');
+        }
+
+        if ($userWidthrawAmount > $adminMaxLimit) {
+            return redirect()->back()->with('error', 'Your Amount is Greater than Admin limit');
         }
 
         $widthrawal = new WidthrawlAmount();
@@ -58,21 +56,20 @@ class WidthrawalReqController extends Controller
         $widthrawal->widthrawal_Pho_Nubmer = $request->widthrawal_Pho_Nubmer;
         $widthrawal->save();
         // dedecting amount from wallet
-        $userWallet = User::where('id',auth()->user()->id)->first();
+        $userWallet = User::where('id', auth()->user()->id)->first();
         $userWallet = $userWallet->referal_bouns;
         $userWallet = $userWallet - $validated['widthrawal_Amount'];
-        $user = User::where('id',auth()->user()->id)->first();
+        $user = User::where('id', auth()->user()->id)->first();
         $user->referal_bouns = $userWallet;
         $user->save();
 
-        return redirect()->back()->with('success','You have Succssfuly Reqested for Widthraw.');
-
+        return redirect()->back()->with('success', 'You have Succssfuly Reqested for Widthraw.');
     }
 
     public function transcationDetails()
     {
         $catagorys = Catagory::all();
-        $widthrawals = WidthrawlAmount::where('user_id',auth()->user()->id)->get();
-        return view('User.Transcations.transcationDetails',compact('widthrawals','catagorys'));
+        $widthrawals = WidthrawlAmount::where('user_id', auth()->user()->id)->get();
+        return view('User.Transcations.transcationDetails', compact('widthrawals', 'catagorys'));
     }
 }

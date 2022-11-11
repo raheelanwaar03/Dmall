@@ -71,6 +71,11 @@
                     <span>Widthraw Balance</span></a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{ route('User.Widthrawal.Transcation.Details') }}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>All Transaction</span></a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{ route('User.Refer') }}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Referal Link</span></a>

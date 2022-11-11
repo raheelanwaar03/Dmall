@@ -123,7 +123,7 @@ function referlinkLimit()
 function userDeliveredOrder()
 {
     $userDeliveredOrder = order::where('user_id',auth()->user()->id)->where('status','delivered')->count();
-    return $userDeliveredOrder;    
+    return $userDeliveredOrder;
 }
 
 // checking user pending order
