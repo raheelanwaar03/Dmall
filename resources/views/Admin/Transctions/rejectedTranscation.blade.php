@@ -21,7 +21,7 @@
                                         <th>Bank Account</th>
                                         <th>Bank Username</th>
                                         <th>Status</th>
-                                        <th>Date</th>
+                                        <th>Reason</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -32,7 +32,7 @@
                                         <th>Bank Account</th>
                                         <th>Bank Username</th>
                                         <th>Status</th>
-                                        <th>Date</th>
+                                        <th>Reason</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>
@@ -46,7 +46,7 @@
                                             <td>{{ $widthrawal->status }}</td>
                                             <td>{{ $widthrawal->created_at }}</td>
                                             <td>
-                                                <a href="{{ route('Admin.Make.Request.Approve',['id'=>$widthrawal->id]) }}" class="btn btn-danger">approved</a>
+                                                <a href="{{ route('Admin.Make.Request.Approve',['id'=>$widthrawal->id]) }}" class="btn btn-success">approved</a>
                                             </td>
                                         </tr>
                                     @endforeach

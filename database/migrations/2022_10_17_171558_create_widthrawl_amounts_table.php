@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('widthrawl_amounts', function (Blueprint $table) {
             $table->id();
+            $table->string('user_id');
             $table->integer('widthrawal_Amount');
             $table->string('widthrawal_bank');
-            $table->string('user_id');
             $table->string('status')->default('pending');
             $table->string('widthrawal_bank_Account');
             $table->string('user_bank_Name');
+            $table->string('tid_reason');
             $table->string('widthrawal_Pho_Nubmer');
             $table->timestamps();
         });

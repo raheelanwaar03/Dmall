@@ -117,6 +117,14 @@ function referlinkLimit()
     return $referLinkLimit->refer_limit;
 }
 
+// checking pending orders for admin
+
+function pendingOrders()
+{
+    $adminPendingOrder = Order::where('status','pending')->count();
+    return $adminPendingOrder;
+}
+
 
 // checking user Delivered order
 

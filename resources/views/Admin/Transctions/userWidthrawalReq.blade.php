@@ -21,7 +21,7 @@
                                         <th>Bank Account</th>
                                         <th>Bank Username</th>
                                         <th>Status</th>
-                                        <th>Date</th>
+                                        <th>Tid or Reason</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -32,7 +32,7 @@
                                         <th>Bank Account</th>
                                         <th>Bank Username</th>
                                         <th>Status</th>
-                                        <th>Date</th>
+                                        <th>Tid or Reason</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>
@@ -44,7 +44,13 @@
                                             <td>{{ $widthrawal->widthrawal_bank_Account }}</td>
                                             <td>{{ $widthrawal->user_bank_Name }}</td>
                                             <td>{{ $widthrawal->status }}</td>
-                                            <td>{{ $widthrawal->created_at }}</td>
+                                            <td>
+                                                <form action="#">
+                                                    @csrf
+                                                    <input type="text" name="tid_reason" placeholder="enter tid or reject reason" required>
+                                                    <button type="submit" class="btn btn-sm btn-primary"><i class="fa-solid fa-check"></i></button>
+                                                </form>
+                                            </td>
                                             <td>
                                                 <a href="{{ route('Admin.Make.Request.Approve',['id'=>$widthrawal->id]) }}" class="btn btn-success">approved</a>
                                                 <a href="{{ route('Admin.Make.Request.Reject',['id'=>$widthrawal->id]) }}" class="btn btn-danger">reject</a>

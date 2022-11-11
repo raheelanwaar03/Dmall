@@ -19,7 +19,7 @@ class UserAddressController extends Controller
     {
         if(auth()->user()->user_id)
 
-        $request->validate([
+       $validated =  $request->validate([
             'user_city' => 'required',
             'user_area' => 'required',
             'user_street' => 'required',
@@ -34,9 +34,9 @@ class UserAddressController extends Controller
 
         $userAddress = new UserAddress();
         $userAddress->user_id = auth()->user()->id;
-        $userAddress->user_city = $request->user_city;
-        $userAddress->user_area = $request->user_area;
-        $userAddress->user_street = $request->user_street;
+        $userAddress->user_city = $validated['user_city'];
+        $userAddress->user_area = $validated['user_area'];
+        $userAddress->user_street = $validated['user_street'];
         $userAddress->user_zip = $request->user_zip;
         $userAddress->save();
         return redirect()->back()->with('success','Your Address Saved Successfuly');
