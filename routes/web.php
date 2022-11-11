@@ -45,7 +45,6 @@ Route::prefix('user')->middleware(['auth','userAuth'])->group(function(){
     Route::get('/Order',[OrderController::class,'index'])->name('User.Order.Index');
     Route::post('/Order/store',[OrderController::class,'store'])->name('User.Order.Store');
 
-
 });
 
 
