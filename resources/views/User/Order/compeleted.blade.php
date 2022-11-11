@@ -61,29 +61,54 @@
             </ul>
         </nav>
         <div class="container-fluid">
-            <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-            </div>
-            {{-- Write your main content here --}}
-            <div class="card-body">
-                <p>Hello <strong>{{ auth()->user()->username }}</strong></p>
-                <p>Here is you Referal Link to Invite Your Friends and Earn Money!</p>
-
-                <div class="row">
-                    <div class="col-lg-6 mb-4">
-                        <div class="card shadow bordered-primary mb-4">
-                            <div>
-                                <input type="text" style="width: 91%;border:none"
-                                    value="{{ route('register', ['referal' => Auth::user()->username]) }}"
-                                    id="myInput">
-                                <button onclick="myFunction()"
-                                    class="btn btn-secondary px-2">copy</button>
-                            </div>
+             {{-- Write yor main content here --}}
+             <div class="col-lg-12">
+                <div class="card shadow-none mb-0">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Order</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Item Price</th>
+                                        <th>Order Price</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @forelse ($orderProduct as $product)
+                                    <tr>
+                                        <td>{{ $product->consign_num }}</td>
+                                        <td>{{ $product->created_at }}</td>
+                                        <td>
+                                            @if($product->status == 'Processing')
+                                            <div class="bg-primary text-light">
+                                                <p style="text-align: center">{{ $product->status }}</p>
+                                            </div>
+                                            @endif
+                                            @if($product->status == 'Delivered')
+                                            <div class="bg-success text-light">
+                                                <p style="text-align: center">{{ $product->status }}</p>
+                                            </div>
+                                            @endif
+                                        </td>
+                                        <td>{{ $product->item_price }} for 1 item</td>
+                                        <td>{{ $product->order_price }}</td>
+                                        <td>
+                                            <div class="d-flex gap-2"> <a href="javascript:;"
+                                                    class="btn btn-dark btn-sm rounded-0">View</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    @empty
+                                        <h5>You have not Placed any Order yet</h5>
+                                    @endforelse
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                </div>
-                <div class="">
-                    <a href="{{ route('welcome') }}" class="btn btn-dark btn-ecomm">Continue Shoping</a>
                 </div>
             </div>
         </div>

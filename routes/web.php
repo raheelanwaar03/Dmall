@@ -43,6 +43,7 @@ Route::prefix('user')->middleware(['auth','userAuth'])->group(function(){
 
     // Order Product
     Route::get('/Order',[OrderController::class,'index'])->name('User.Order.Index');
+    Route::get('/Order/compeleted',[OrderController::class,'compeleted'])->name('User.Order.compeleted');
     Route::post('/Order/store',[OrderController::class,'store'])->name('User.Order.Store');
 
 });

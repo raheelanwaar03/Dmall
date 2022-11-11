@@ -51,7 +51,11 @@ class OrderController extends Controller
         }
         return redirect()->back()->with('success','You Placed the order Admin will contact you soon!');
 
+    }
 
-
+    public function compeleted()
+    {
+        $orderProduct = Order::where('status','Delivered')->get();
+        return view('User.Order.compeleted',compact('orderProduct'));
     }
 }

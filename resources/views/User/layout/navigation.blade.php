@@ -50,7 +50,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Orders:</h6>
                         <a class="collapse-item" href="{{ route('User.Order.Index') }}">All Orders</a>
-                        <a class="collapse-item" href="cards.html">Delivered Orders</a>
+                        <a class="collapse-item" href="{{ route('User.Order.compeleted') }}">Delivered Orders</a>
                     </div>
                 </div>
             </li>
