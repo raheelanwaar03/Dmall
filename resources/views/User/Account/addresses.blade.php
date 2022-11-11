@@ -65,7 +65,7 @@
                 <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
             </div>
             {{-- Write your main content here --}}
-            <div class="card-body">
+            <div class="card-body border shadow-lg">
                 <h6 class="mb-4">The following addresses will be used on the checkuot page by default.
                 </h6>
                 <div class="row">
