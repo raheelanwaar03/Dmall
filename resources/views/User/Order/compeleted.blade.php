@@ -103,7 +103,9 @@
                                         </td>
                                     </tr>
                                     @empty
-                                        <h5>You have not Placed any Order yet</h5>
+                                    <h5>
+                                        There is not any Delivered order
+                                    </h5>
                                     @endforelse
                                 </tbody>
                             </table>
