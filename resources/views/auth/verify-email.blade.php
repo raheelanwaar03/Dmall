@@ -1,39 +1,54 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<!DOCTYPE html>
+<html lang="en">
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Verify Email</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+</head>
 
-        @if (session('status') == 'verification-link-sent')
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ __('A new verification link has been sent to the email address you provided during registration.') }}
-            </div>
-        @endif
+<body class="bg-warning">
+    <div class="container">
+        <div class="row justify-content-center align-items-center min-vh-100">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-title">
+                        <h1 class="text-center text-warning">Verify Email</h1>
+                    </div>
+                    <div class="card-body">
+                        {{-- <div class="text-center">
+                            <img src="{{ asset('assets/images/logo-icon.png') }}" height="200px" width="200px" alt="Logo">
+                        </div> --}}
+                        <hr>
+                        <div class="text-center" style="font-size:26px">
+                            Hello User, Pleas click on the link we just emailed to you to verify your email address. If
+                            you
+                            didn't receive the email, we will gladly send you another.
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <form method="POST" action="{{ route('verification.send') }}">
+                                @csrf
+                                <div>
+                                    <button class="btn btn-dark">Resend Now</button>
+                                </div>
+                            </form>
 
-        <div class="mt-4 flex items-center justify-between">
-            <form method="POST" action="{{ route('verification.send') }}">
-                @csrf
+                            <form method="POST" action="{{ route('logout') }}" class="m-3">
+                                @csrf
 
-                <div>
-                    <x-primary-button>
-                        {{ __('Resend Verification Email') }}
-                    </x-primary-button>
+                                <button class="btn-danger" type="submit"
+                                    class="underline text-sm text-gray-600 hover:text-gray-900">
+                                    {{ __('Log Out') }}
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </form>
-
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-
-                <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900">
-                    {{ __('Log Out') }}
-                </button>
-            </form>
+            </div>
         </div>
-    </x-auth-card>
-</x-guest-layout>
+    </div>
+</body>
+
+</html>

@@ -17,7 +17,7 @@ Route::get('/Contact-Us',[WelcomeController::class,'contactUs'])->name('welcome.
 // search Product
 Route::get('/search/product',[WelcomeController::class,'search'])->name('searchProcuct');
 
-Route::prefix('user')->middleware(['auth','userAuth'])->group(function(){
+Route::prefix('user')->middleware(['auth','userAuth','verified'])->group(function(){
 
     Route::get('/',[UserController::class, 'index'])->name('User.index');
     Route::get('/Refer',[UserController::class, 'refer'])->name('User.Refer');
