@@ -45,7 +45,7 @@
                                             <td>{{ $widthrawal->user_bank_Name }}</td>
                                             <td>{{ $widthrawal->status }}</td>
                                             <td>
-                                                <form action="#">
+                                                <form action="{{ route('User.Trasaction.TidorReason',['id'=>$widthrawal->id]) }}" method="POST">
                                                     @csrf
                                                     <input type="text" name="tid_reason" placeholder="enter tid or reject reason" required>
                                                     <button type="submit" class="btn btn-sm btn-primary"><i class="fa-solid fa-check"></i></button>

@@ -17,7 +17,7 @@ class UserAddressController extends Controller
 
     public function store(Request $request)
     {
-        if(auth()->user()->user_id)
+        // if(auth()->user()->user_id)
 
        $validated =  $request->validate([
             'user_city' => 'required',

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('status')->default('pending');
             $table->string('widthrawal_bank_Account');
             $table->string('user_bank_Name');
-            $table->string('tid_reason');
+            $table->string('tid_reason')->nullable();
             $table->string('widthrawal_Pho_Nubmer');
             $table->timestamps();
         });

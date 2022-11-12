@@ -102,10 +102,10 @@
                                 <div class="top-cart-icons">
                                     <nav class="navbar navbar-expand">
                                         <ul class="navbar-nav">
-                                            <li class="nav-item"><a href="{{ route('login') }}"
+                                            <li class="nav-item"><a href="#"
                                                     class="nav-link cart-link"><i class='bx bx-user'></i></a>
                                             </li>
-                                            <li class="nav-item"><a href="{{ route('login') }}"
+                                            <li class="nav-item"><a href="#"
                                                     class="nav-link cart-link"><i class='bx bx-heart'></i></a>
                                             </li>
                                             <li class="nav-item dropdown dropdown-large">
@@ -207,10 +207,10 @@
                                 </li>
                                 @else
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Login</a>
+                                    <a class="nav-link" href="{{ route('login') }}">Login</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Register</a>
+                                    <a class="nav-link" href="{{ route('register') }}">Register</a>
                                 </li>
                                 @endif
                             </ul>

@@ -27,6 +27,8 @@ class WidthrawalReqController extends Controller
             'user_bank_Name' => 'required',
         ]);
 
+        $requestAmount = $validated['widthrawal_Amount'];
+
         $userWidthrawAmount = $validated['widthrawal_Amount'];
         $query = WidthrawLimit::first();
         $adminMinLimit = $query->widthraw_min;
@@ -34,8 +36,12 @@ class WidthrawalReqController extends Controller
 
         // checking the user Account blanse
         $blanceCheck = User::where('id', auth()->user()->id)->sum('referal_bouns');
+        if($blanceCheck < $requestAmount)
+        {
+            return redirect()->back()->with('error','your account have not much amount');
+        }
         // checking admin min widthraw limit
-        if ($blanceCheck < 0) {
+        if ($blanceCheck == null) {
             return redirect()->back()->with('error', 'Your account blance is less 0 your request could not procced');
         }
 
@@ -72,4 +78,13 @@ class WidthrawalReqController extends Controller
         $widthrawals = WidthrawlAmount::where('user_id', auth()->user()->id)->get();
         return view('User.Transcations.transcationDetails', compact('widthrawals', 'catagorys'));
     }
+
+    public function update(Request $request,$id)
+    {
+        $widthrawal = WidthrawlAmount::find($id);
+        $widthrawal->tid_reason = $request->tid_reason;
+        $widthrawal->save();
+        return redirect()->back();
+    }
+
 }

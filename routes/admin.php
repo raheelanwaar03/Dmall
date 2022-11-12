@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductMangerController;
 use App\Http\Controllers\Admin\Transcation\LimitController;
 use App\Http\Controllers\Admin\Transcation\TranscationDetails;
+use App\Http\Controllers\Transcations\WidthrawalReqController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('Admin')->middleware(['auth','adminAuth'])->group(function(){
@@ -28,6 +29,8 @@ Route::prefix('Admin')->middleware(['auth','adminAuth'])->group(function(){
     Route::get('/user-approved-transctions',[TranscationDetails::class,'approvedTransction'])->name('Admin.User.Transcation.Approved');
     Route::get('/user-pending-transctions',[TranscationDetails::class,'pendingTransction'])->name('Admin.User.Transcation.Pending');
     Route::get('/user-reject-transctions',[TranscationDetails::class,'rejectTransction'])->name('Admin.User.Transcation.Rejected');
+    // tid or reason of trasaction
+    Route::post('/user/trasaction/tid-reason/{id}',[WidthrawalReqController::class,'update'])->name('User.Trasaction.TidorReason');
     //Limit Routes
     Route::resource('/Limit',LimitController::class);
     //Admin Product Manger Routes
