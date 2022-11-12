@@ -28,6 +28,7 @@ Route::prefix('Admin')->middleware(['auth','adminAuth'])->group(function(){
     Route::get('/reject-user-req/{id}',[TranscationDetails::class,'rejectReq'])->name('Admin.Make.Request.Reject');
     Route::get('/user-approved-transctions',[TranscationDetails::class,'approvedTransction'])->name('Admin.User.Transcation.Approved');
     Route::get('/user-pending-transctions',[TranscationDetails::class,'pendingTransction'])->name('Admin.User.Transcation.Pending');
+    Route::get('/user-pending-transctions/{id}',[TranscationDetails::class,'makePending'])->name('Admin.User.Transcation.Make.Pending');
     Route::get('/user-reject-transctions',[TranscationDetails::class,'rejectTransction'])->name('Admin.User.Transcation.Rejected');
     // tid or reason of trasaction
     Route::post('/user/trasaction/tid-reason/{id}',[WidthrawalReqController::class,'update'])->name('User.Trasaction.TidorReason');

@@ -75,7 +75,7 @@ class WidthrawalReqController extends Controller
     public function transcationDetails()
     {
         $catagorys = Catagory::all();
-        $widthrawals = WidthrawlAmount::where('user_id', auth()->user()->id)->get();
+        $widthrawals = WidthrawlAmount::where('user_id', auth()->user()->id)->where('status','pending')->get();
         return view('User.Transcations.transcationDetails', compact('widthrawals', 'catagorys'));
     }
 

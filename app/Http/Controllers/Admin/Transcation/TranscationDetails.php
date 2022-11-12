@@ -48,4 +48,13 @@ class TranscationDetails extends Controller
         return view('Admin.Transctions.rejectedTranscation',compact('userWidthrawalReqs'));
     }
 
+
+    public function makePending($id)
+    {
+        $widthrawal = WidthrawlAmount::find($id);
+        $widthrawal->status = 'pending';
+        $widthrawal->save();
+        return redirect()->back()->with('success','You have make the User Widthrawal Request Pending');
+    }
+
 }

@@ -60,7 +60,7 @@
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
                     <div class="d-flex justify-content-center align-items-center">
-                        <a href="{{ route('User.Widthrawal.Transcation.Details') }}" class="btn btn-primary mx-2">All Transaction</a>
+                        <a href="{{ route('User.Widthrawal.Transcation.Details') }}" class="btn btn-primary mx-2">Pending Transaction</a>
                         <a href="{{ route('User.Transcation.Approved') }}" class="btn btn-success mx-2">Approved Transaction</a>
                     </div>
                 </div>
@@ -101,8 +101,12 @@
                                                     <td>{{ $widthrawal->widthrawal_bank }}</td>
                                                     <td>{{ $widthrawal->widthrawal_bank_Account }}</td>
                                                     <td>{{ $widthrawal->user_bank_Name }}</td>
-                                                    <td>{{ $widthrawal->status }}</td>
-                                                    <td>{{ $widthrawal->created_at }}</td>
+                                                    <td>
+                                                        <p class="bg-danger p-2 text-light text-center">
+                                                            {{ $widthrawal->status }}
+                                                        </p>
+                                                    </td>
+                                                    <td>{{ $widthrawal->tid_reason }}</td>
                                                 </tr>
                                             @endforeach
                                         </tbody>

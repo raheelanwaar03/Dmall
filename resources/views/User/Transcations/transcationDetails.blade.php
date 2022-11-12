@@ -105,7 +105,11 @@
                                                 <td>{{ $widthrawal->widthrawal_bank }}</td>
                                                 <td>{{ $widthrawal->widthrawal_bank_Account }}</td>
                                                 <td>{{ $widthrawal->user_bank_Name }}</td>
-                                                <td>{{ $widthrawal->status }}</td>
+                                                <td>
+                                                    <p class="bg-primary p-2 text-light text-center">
+                                                        {{ $widthrawal->status }}
+                                                    </p>
+                                                </td>
                                                 <td>{{ $widthrawal->created_at }}</td>
                                             </tr>
                                         @endforeach

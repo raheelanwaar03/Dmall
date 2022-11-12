@@ -70,8 +70,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">User Transcation:</h6>
-                        <a class="collapse-item" href="{{ route('Admin.Widthrawal.User.Request') }}">User All
-                            Transcation</a>
+                        {{-- <a class="collapse-item" href="{{ route('Admin.Widthrawal.User.Request') }}">User All
+                            Transcation</a> --}}
                         <a class="collapse-item" href="{{ route('Admin.User.Transcation.Pending') }}">Pending
                             Transcations</a>
                         <a class="collapse-item" href="{{ route('Admin.User.Transcation.Approved') }}">Approved
@@ -135,7 +135,7 @@
                                     <i class="fas fa-search fa-sm"></i>
                                 </button>
                             </div>
-                        </div> 
+                        </div>
                     </form>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown no-arrow d-sm-none">

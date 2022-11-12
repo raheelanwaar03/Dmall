@@ -21,7 +21,7 @@
                                         <th>Bank Account</th>
                                         <th>Bank Username</th>
                                         <th>Status</th>
-                                        <th>Date</th>
+                                        <th>Tid or Reason</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -32,7 +32,7 @@
                                         <th>Bank Account</th>
                                         <th>Bank Username</th>
                                         <th>Status</th>
-                                        <th>Date</th>
+                                        <th>Tid or Reason</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>
@@ -43,10 +43,21 @@
                                             <td>{{ $widthrawal->widthrawal_bank }}</td>
                                             <td>{{ $widthrawal->widthrawal_bank_Account }}</td>
                                             <td>{{ $widthrawal->user_bank_Name }}</td>
-                                            <td>{{ $widthrawal->status }}</td>
-                                            <td>{{ $widthrawal->created_at }}</td>
                                             <td>
-                                                <a href="{{ route('Admin.Make.Request.Pending',['id'=>$widthrawal->id]) }}" class="btn btn-danger">pending</a>
+                                                <p class="bg-success p-2 text-light text-center">
+                                                    {{ $widthrawal->status }}
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <form action="{{ route('User.Trasaction.TidorReason',['id'=>$widthrawal->id]) }}" method="POST">
+                                                    @csrf
+                                                    <input type="text" name="tid_reason" placeholder="enter tid or reject reason" required>
+                                                    <button type="submit" class="btn btn-sm btn-primary">ok</button>
+                                                </form>
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('Admin.User.Transcation.Make.Pending',['id'=>$widthrawal->id]) }}" class="btn btn-primary">pending</a>
+                                                <a href="{{ route('Admin.Make.Request.Reject',['id'=>$widthrawal->id]) }}" class="btn btn-danger">reject</a>
                                             </td>
                                         </tr>
                                     @endforeach
