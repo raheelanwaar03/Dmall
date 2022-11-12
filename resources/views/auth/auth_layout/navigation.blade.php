@@ -83,19 +83,13 @@
                             <div class="top-cart-icons">
                                 <nav class="navbar navbar-expand">
                                     <ul class="navbar-nav">
-                                        <li class="nav-item"><a href="{{ route('login') }}"
-                                                class="nav-link cart-link"><i class='bx bx-user'></i></a>
-                                        </li>
-                                        <li class="nav-item"><a href="{{ route('login') }}"
-                                                class="nav-link cart-link"><i class='bx bx-heart'></i></a>
-                                        </li>
                                         <li class="nav-item dropdown dropdown-large">
                                             <a href="{{ route('login') }}"
                                                 class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative cart-link"
                                                 data-bs-toggle="dropdown"> <span class="alert-count">0</span>
                                                 <i class='bx bx-shopping-bag'></i>
                                             </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
+                                            {{-- <div class="dropdown-menu dropdown-menu-end">
                                                 <a href="javascript:;">
                                                     <div class="cart-header">
                                                         <p class="cart-header-title mb-0">8 ITEMS</p>
@@ -249,7 +243,7 @@
                                                 <div class="d-grid p-3 border-top"> <a href="javascript:;"
                                                         class="btn btn-dark btn-ecomm">CHECKOUT</a>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </li>
                                     </ul>
                                 </nav>

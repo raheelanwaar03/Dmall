@@ -102,12 +102,12 @@
                                 <div class="top-cart-icons">
                                     <nav class="navbar navbar-expand">
                                         <ul class="navbar-nav">
-                                            <li class="nav-item"><a href="#"
+                                            {{-- <li class="nav-item"><a href="#"
                                                     class="nav-link cart-link"><i class='bx bx-user'></i></a>
                                             </li>
                                             <li class="nav-item"><a href="#"
                                                     class="nav-link cart-link"><i class='bx bx-heart'></i></a>
-                                            </li>
+                                            </li> --}}
                                             <li class="nav-item dropdown dropdown-large">
                                                 <a href="{{ route('User.AddToCart') }}"
                                                     class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative cart-link">
@@ -152,7 +152,7 @@
                                     <div class="fs-1 text-content"><i class='bx bx-headphone'></i></div>
                                     <div class="">
                                         <p class="mb-0 text-content">CALL US NOW</p>
-                                        <h5 class="mb-0"></h5>
+                                        <h5 class="mb-0">{{ env('APP_Num') }}</h5>
                                     </div>
                                 </div>
                             </div>
@@ -160,15 +160,16 @@
                                 <div class="top-cart-icons">
                                     <nav class="navbar navbar-expand">
                                         <ul class="navbar-nav">
-                                            <li class="nav-item"><a href="#"
+                                            {{-- <li class="nav-item"><a href="#"
                                                     class="nav-link cart-link"><i class='bx bx-user'></i></a>
                                             </li>
                                             <li class="nav-item"><a href="#"
                                                     class="nav-link cart-link"><i class='bx bx-heart'></i></a>
-                                            </li>
+                                            </li> --}}
                                             <li class="nav-item">
                                                 <a href="{{ route('User.AddToCart') }}"
                                                     class="nav-link position-relative cart-link">
+                                                    <span class="alert-count">0</span>
                                                     <i class='bx bx-shopping-bag'></i>
                                                 </a>
                                             </li>
