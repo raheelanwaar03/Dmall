@@ -61,8 +61,12 @@ function purchasingCheck()
 
 function referalCommissionOnShoping()
 {
+    // geting admin shoping commission
+    $adminShopCommission = WidthrawLimit::first();
+    $adminShopCommission = $adminShopCommission->commission_limit;
+
     $shoping_check = Order::where('user_id',auth()->user()->id)->sum('order_price');
-    $referal_shop_bouns =  $shoping_check * 20 / 100;
+    $referal_shop_bouns =  $shoping_check * $adminShopCommission / 100;
 
     // finding the User
     $user = auth()->user();
