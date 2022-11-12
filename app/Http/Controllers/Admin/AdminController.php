@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\admin\ProductManger;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -46,4 +47,16 @@ class AdminController extends Controller
         $uesrs = User::where('account_type','banned')->get();
         return view('Admin.User.bannedUser');
     }
+
+    public function adminSearch(Request $request)
+    {
+        $searchText = $request->search;
+
+        $products = ProductManger::where('product_name','LIKE','%'.$searchText.'%')
+        ->orWhere('product_price','LIKE','%'.$searchText.'%')
+        ->orWhere('product_catagory','LIKE','%'.$searchText.'%')->get();
+
+        return view('Admin.search',compact('products'));
+    }
+
 }

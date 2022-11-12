@@ -30,6 +30,8 @@ Route::prefix('Admin')->middleware(['auth','adminAuth'])->group(function(){
     Route::get('/user-pending-transctions',[TranscationDetails::class,'pendingTransction'])->name('Admin.User.Transcation.Pending');
     Route::get('/user-pending-transctions/{id}',[TranscationDetails::class,'makePending'])->name('Admin.User.Transcation.Make.Pending');
     Route::get('/user-reject-transctions',[TranscationDetails::class,'rejectTransction'])->name('Admin.User.Transcation.Rejected');
+    // admin can search product,catagories and transaction,
+    Route::get('/search/items',[AdminController::class, 'adminSearch'])->name('Admin.Search');
     // tid or reason of trasaction
     Route::post('/user/trasaction/tid-reason/{id}',[WidthrawalReqController::class,'update'])->name('User.Trasaction.TidorReason');
     //Limit Routes
