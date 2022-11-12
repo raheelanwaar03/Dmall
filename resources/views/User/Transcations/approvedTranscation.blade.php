@@ -106,7 +106,7 @@
                                                             {{ $widthrawal->status }}
                                                         </p>
                                                     </td>
-                                                    <td>{{ $widthrawal->created_at }}</td>
+                                                    <td>{{ $widthrawal->tid_reason }}</td>
                                                 </tr>
                                             @endforeach
                                         </tbody>

@@ -81,7 +81,7 @@
                                                 <th>Bank Account</th>
                                                 <th>Bank Username</th>
                                                 <th>Status</th>
-                                                <th>Tid</th>
+                                                <th>Reason</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -91,7 +91,7 @@
                                                 <th>Bank Account</th>
                                                 <th>Bank Username</th>
                                                 <th>Status</th>
-                                                <th>Tid</th>
+                                                <th>Reason</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
