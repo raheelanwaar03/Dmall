@@ -31,8 +31,12 @@
                             <input type="text" name="refer_limit" placeholder="Enter Referal Link Limit" class="form-control">
                         </div>
                         <div class="form-group">
+                            <label for="">Shoping Commission</label>
+                            <input type="text" name="commission_limit" placeholder="user will get commission on referal's shoping in %" class="form-control">
+                        </div>
+                        <div class="form-group">
                             <label for="">Commission</label>
-                            <input type="text" name="referal_bouns" placeholder="Product Name" class="form-control">
+                            <input type="text" name="referal_bouns" placeholder="referal commission" class="form-control">
                         </div>
                         <button type="submit" class="btn btn-primary">Set Settings</button>
                     </form>
@@ -55,6 +59,7 @@
                                     <th>Maximum Amount</th>
                                     <th>Referal Link Limit</th>
                                     <th>Referal Commission</th>
+                                    <th>Shoping Commission</th>
                                     <th>Date</th>
                                     <th>Action</th>
                                 </tr>
@@ -65,6 +70,7 @@
                                     <th>Maximum Amount</th>
                                     <th>Referal Link Limit</th>
                                     <th>Referal Commission</th>
+                                    <th>Shoping Commission</th>
                                     <th>Date</th>
                                     <th>Action</th>
                                 </tr>
@@ -76,6 +82,7 @@
                                     <td>{{ $widthrawLimit->widthraw_max }}</td>
                                     <td>{{ $widthrawLimit->refer_limit }}</td>
                                     <td>{{ $widthrawLimit->referal_bouns }}</td>
+                                    <td>{{ $widthrawLimit->commission_limit }}</td>
                                     <td>{{ $widthrawLimit->created_at }}</td>
                                     <td>
                                         <a href="{{ route('Limit.edit',['Limit'=>$widthrawLimit->id]) }}" class="btn btn-primary">Change Settings</a>

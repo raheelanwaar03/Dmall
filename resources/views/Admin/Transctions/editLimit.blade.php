@@ -32,8 +32,12 @@
                             <input type="text" name="refer_limit" value="{{ $widthrawLimit->widthraw_max }}" placeholder="Rerferal Link Limit" class="form-control">
                         </div>
                         <div class="form-group">
+                            <label for="">Shoping Commission</label>
+                            <input type="text" name="commission_limit" value="{{ $widthrawLimit->commission_limit }}" placeholder="user will get commission on referal's shoping in %" class="form-control">
+                        </div>
+                        <div class="form-group">
                             <label for="">Commission</label>
-                            <input type="text" name="referal_bouns" value="{{ $widthrawLimit->referal_bouns }}" placeholder="Product Name" class="form-control">
+                            <input type="text" name="referal_bouns" value="{{ $widthrawLimit->referal_bouns }}" placeholder="referal commission" class="form-control">
                         </div>
                         <button type="submit" class="btn btn-primary">Update Settings</button>
                     </form>

@@ -43,12 +43,14 @@ class LimitController extends Controller
                 'widthraw_max' => 'required',
                 'referal_bouns' => 'required',
                 'refer_limit' => 'required',
+                'commission_limit' => 'required',
             ]);
 
             $widthrawLimit = new WidthrawLimit();
             $widthrawLimit->widthraw_min = $validated['widthraw_min'];
             $widthrawLimit->widthraw_max = $validated['widthraw_max'];
             $widthrawLimit->referal_bouns = $validated['referal_bouns'];
+            $widthrawLimit->commission_limit = $validated['commission_limit'];
             $widthrawLimit->refer_limit = $validated['refer_limit'];
             $widthrawLimit->save();
             return redirect()->back()->with('success','Widthraw limits Applied');
@@ -84,11 +86,13 @@ class LimitController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, WidthrawLimit  $widthrawLimit)
+    public function update(Request $request, WidthrawLimit  $widthrawLimit,$id)
     {
+        $widthrawLimit = WidthrawLimit::find($id);
         $widthrawLimit->widthraw_min = $request->widthraw_min;
         $widthrawLimit->widthraw_max = $request->widthraw_max;
         $widthrawLimit->referal_bouns = $request->referal_bouns;
+        $widthrawLimit->commission_limit = $request->commission_limit;
         $widthrawLimit->refer_limit = $request->refer_limit;
         $widthrawLimit->save();
         return redirect()->back()->with('success', 'Limit Updated');

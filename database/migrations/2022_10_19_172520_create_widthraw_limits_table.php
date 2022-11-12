@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('widthraw_max')->nullable();
             $table->integer('refer_limit')->nullable();
             $table->integer('referal_bouns')->nullable();
+            $table->integer('commission_limit')->nullable();
             $table->string('limit')->default(0);
             $table->timestamps();
         });
