@@ -39,13 +39,13 @@ class AdminController extends Controller
     public function registeredUser()
     {
         $users = User::where('account_type','registerd')->get();
-        return view('Admin.User.registeredUser');
+        return view('Admin.User.registeredUser',compact('users'));
     }
 
     public function bannedUser()
     {
-        $uesrs = User::where('account_type','banned')->get();
-        return view('Admin.User.bannedUser');
+        $users = User::where('account_type','banned')->get();
+        return view('Admin.User.bannedUser',compact('users'));
     }
 
     public function adminSearch(Request $request)
