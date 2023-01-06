@@ -153,3 +153,11 @@ function userAllOrders()
     $userAllOrder = Order::where('user_id',auth()->user()->id)->count();
     return $userAllOrder;
 }
+
+// check user total withdraw
+
+function totalWithdraw()
+{
+    $totalWithdraw = WidthrawlAmount::where('user_id',auth()->user()->id)->where('status','approved')->sum('widthrawal_Amount');
+    return $totalWithdraw;
+}

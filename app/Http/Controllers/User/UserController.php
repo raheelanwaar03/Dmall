@@ -23,6 +23,12 @@ class UserController extends Controller
         return view('User.Account.referFriend',compact('catagorys'));
     }
 
+    public function allRefer()
+    {
+        $allReferFriends = User::where('username','refer')->get();
+        return view('User.Account.allReferFriends',compact('allReferFriends'));
+    }
+
     public function approvedTranscation()
     {
         $catagorys = Catagory::all();

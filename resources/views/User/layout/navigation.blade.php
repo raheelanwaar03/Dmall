@@ -64,7 +64,7 @@
                     <span>Address</span>
                 </a>
             </li>
-            @if (purchasingCheck() >= referlinkLimit())
+            {{-- @if (purchasingCheck() >= referlinkLimit()) --}}
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('User.WidthrawalReq.view') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
@@ -80,7 +80,12 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>Referal Link</span></a>
             </li>
-            @endif
+            {{-- @endif --}}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('User.AllRefer') }}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>All Refered Friends</span></a>
+            </li>
             <hr class="sidebar-divider d-none d-md-block">
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
