@@ -66,7 +66,7 @@
                     <div class="col-sm-12">
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">User Details</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Referl User Details</h6>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -74,12 +74,14 @@
                                         <thead>
                                             <tr>
                                                 <th>Username</th>
+                                                <th>Bouns</th>
                                                 <th>Date</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
                                                 <th>Username</th>
+                                                <th>Bouns</th>
                                                 <th>Date</th>
                                             </tr>
                                         </tfoot>
@@ -87,6 +89,7 @@
                                             @foreach ($allReferFriends as $allReferFriend)
                                                 <tr>
                                                     <td>{{ $allReferFriend->username }}</td>
+                                                    <td>{{ referalBouns() }}</td>
                                                     <td>{{ $allReferFriend->created_at }}</td>
                                                 </tr>
                                             @endforeach

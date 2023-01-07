@@ -25,7 +25,7 @@ class UserController extends Controller
 
     public function allRefer()
     {
-        $allReferFriends = User::where('username','refer')->get();
+        $allReferFriends = User::where('referal',auth()->user()->username)->get();
         return view('User.Account.allReferFriends',compact('allReferFriends'));
     }
 
