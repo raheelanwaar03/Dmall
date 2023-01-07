@@ -38,7 +38,7 @@
                                         </div>
                                         <div class="form-group mt-2">
                                             <button style="border-radiun:5px" type="submit"
-                                                class="btn btn-warning text-light">Update</button>
+                                                class="btn btn-primary text-light">Update</button>
                                         </div>
                                     </form>
                                 </div>
