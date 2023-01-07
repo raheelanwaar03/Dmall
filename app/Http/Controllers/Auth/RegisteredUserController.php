@@ -41,19 +41,16 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        if ($request->referal = "default")
-        {
 
-        }
-        else
-        {
-            $user = User::where('username',$request->referal)->first();
-            //    if user creating accont by referal link
-            $referal_bouns_admin = WidthrawLimit::first();
-            $referal_bouns_admin = $referal_bouns_admin->referal_bouns;
-            return $referal_bouns_admin;
-            $user->referal_bouns =+ $referal_bouns_admin;
-            $user->save();
+        $user = User::where('username',$request->referal)->first();
+        if ($user !== "") {
+
+        //    if user creating accont by referal link
+
+        $referal_bouns_admin = WidthrawLimit::first();
+        $referal_bouns_admin = $referal_bouns_admin->referal_bouns;
+        $user->referal_bouns = $referal_bouns_admin;
+        $user->save();
         }
 
         $user = User::create([
