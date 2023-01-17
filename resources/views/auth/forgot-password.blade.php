@@ -47,7 +47,7 @@
                                                             class="form-control" placeholder="Please give us your email">
                                                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                                     </div>
-                                                    <button type="submit" class="btn btn-warning btn-block mt-3">Email
+                                                    <button type="submit" style="color: white;font-size:20px" class="btn btn-warning btn-block mt-3">Email
                                                         Password Reset Link</button>
                                                 </form>
                                             </div>
