@@ -57,6 +57,7 @@
                                                         <div class="d-grid">
                                                             <button type="submit" class="btn btn-dark"><i
                                                                     class="bx bxs-lock-open"></i>Sign in</button>
+                                                                    <a href="{{ route('password.request') }}" class="btn btn-warning mt-2">Forgot Password?</a>
                                                         </div>
                                                     </div>
                                                 </form>
