@@ -42,15 +42,15 @@ class WidthrawalReqController extends Controller
         }
         // checking admin min widthraw limit
         if ($blanceCheck == null) {
-            return redirect()->back()->with('error', 'Your account blance is less 0 your request could not procced');
+            return redirect()->back()->with('error', 'Your account blance is 0 your request could not procced');
         }
 
         if ($userWidthrawAmount < $adminMinLimit) {
-            return redirect()->back()->with('error', 'Your Amount is less than Admin limit');
+            return redirect()->back()->with('error', 'Your Amount is less than Admin Daily limit');
         }
 
         if ($userWidthrawAmount > $adminMaxLimit) {
-            return redirect()->back()->with('error', 'Your Amount is Greater than Admin limit');
+            return redirect()->back()->with('error', 'Your Amount is Greater than Admin Daily limit');
         }
 
         $widthrawal = new WidthrawlAmount();
