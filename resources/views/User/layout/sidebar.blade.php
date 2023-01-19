@@ -14,7 +14,7 @@
                 <a href="{{ route('User.Address.index') }}"
                     class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Addresses
                     <i class='bx bx-home-smile fs-5'></i></a>
-                    @if (purchasingCheck() >= referlinkLimit())
+                    @if (purchasingCheck() = referlinkLimit())
                     <a href="{{ route('User.Refer') }}"
                     class="list-group-item d-flex justify-content-between align-items-center bg-transparent">Referal
                     Link 
