@@ -44,7 +44,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Product Description</label>
-                                <textarea name="product_description" class="form-control" cols="15" rows="6"></textarea>
+                                <textarea name="product_description" id="textEditor" class="form-control" cols="15" rows="6"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="">Product Quantity</label>
@@ -64,4 +64,15 @@
 
     </div>
     </div>
+@endsection
+
+
+@section('editor')
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#textEditor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 @endsection

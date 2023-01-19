@@ -24,7 +24,7 @@
                         </div>
                         <div class="form-group">
                             <label for="">Catagory Description</label>
-                            <textarea name="catagory_des" class="form-control" cols="10" rows="6"></textarea>
+                            <textarea name="catagory_des" id="textEditor" class="form-control" cols="10" rows="6"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="">Catagory Image</label>
@@ -40,4 +40,15 @@
 </div>
 </div>
 
+@endsection
+
+
+@section('editor')
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#textEditor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 @endsection
