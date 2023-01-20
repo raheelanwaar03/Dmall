@@ -15,7 +15,7 @@
     <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
     <link href="../../../../unpkg.com/boxicons%402.1.2/css/boxicons.min.css" rel="stylesheet">
     <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet">
-    <title>Dmall - eCommerce HTML Template</title>
+    <title>Dmall is a merging platform where you can find your daily routine used items</title>
 </head>
 
 {{-- This website is developed by Raheel Anwaar. Whatsapp (03167007156) --}}
