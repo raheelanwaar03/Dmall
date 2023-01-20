@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('product_id');
             $table->integer('product_qty');
             $table->string('product_img');
-            $table->integer('order_price');
+            $table->integer('order_price')->nullable();
             $table->string('payment_method');
             $table->string('status')->default('Processing');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

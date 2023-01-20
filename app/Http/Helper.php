@@ -11,7 +11,7 @@ use App\Models\User\Order;
 
 function  productId()
 {
-    $productId = rand(1111,9999999);
+    $productId = rand(1111, 9999999);
     return $productId;
     // storing in session
     session()->put('Product_id', $productId);
@@ -19,25 +19,25 @@ function  productId()
 
 function cartProduct()
 {
-        $cartProduct = AddToCart::where('user_id',auth()->user()->id)->count();
-        return $cartProduct;
+    $cartProduct = AddToCart::where('user_id', auth()->user()->id)->count();
+    return $cartProduct;
 }
 
 function cartProductQuantity()
 {
-    $orderProduct = AddToCart::where('user_id',auth()->user()->id)->sum('cart_product_qty');
+    $orderProduct = AddToCart::where('user_id', auth()->user()->id)->sum('cart_product_qty');
     return $orderProduct;
 }
 
 function orderTotalPrice()
 {
-    $cartProductPrice = AddToCart::where('user_id',auth()->user()->id)->sum('product_price');
+    $cartProductPrice = AddToCart::where('user_id', auth()->user()->id)->sum('product_price');
     return $cartProductPrice;
 }
 
 function consign_num()
 {
-    $consign_num = rand(111111,99999);
+    $consign_num = rand(111111, 99999);
     return $consign_num;
 }
 
@@ -45,7 +45,7 @@ function consign_num()
 
 function referalBouns()
 {
-    $user = User::where('id',auth()->user()->id)->first();
+    $user = User::where('id', auth()->user()->id)->first();
     $bouns = $user->referal_bouns;
     return $bouns;
 }
@@ -54,7 +54,7 @@ function referalBouns()
 
 function purchasingCheck()
 {
-    $purchasingCheck = Order::where('user_id',auth()->user()->id)->sum('order_price');
+    $purchasingCheck = Order::where('user_id', auth()->user()->id)->where('status','Delivered')->sum('order_price');
     return $purchasingCheck;
 }
 
@@ -65,20 +65,20 @@ function referalCommissionOnShoping()
     $adminShopCommission = WidthrawLimit::first();
     $adminShopCommission = $adminShopCommission->commission_limit;
 
-    $shoping_check = Order::where('user_id',auth()->user()->id)->sum('order_price');
-    $referal_shop_bouns =  $shoping_check * $adminShopCommission / 100;
-
-    // finding the User
-    $user = auth()->user();
-    $referalUser = $user->referal;
-    if($referalUser = 'default')
+    $shoping_check = Order::where('user_id', auth()->user()->id)->where('status','Delivered')->latest()->first();
+    if ($shoping_check != '')
     {
+        $shoping_check = $shoping_check->order_price;
+        $referal_shop_bouns =  $shoping_check * $adminShopCommission / 100;
 
-    }
-    else{
-        $user = User::where('username',$referalUser)->first();
-        $user->referal_bouns =+ $referal_shop_bouns;
-        $user->save();
+        // finding the User
+        $user = auth()->user();
+        $referalUser = $user->referal;
+        if ($referalUser != 'default') {
+            $user = User::where('username', $referalUser)->first();
+            $user->referal_bouns += $referal_shop_bouns;
+            $user->save();
+        }
     }
 }
 
@@ -101,7 +101,7 @@ function allOrders()
 
 function pendinOgrders()
 {
-    $pendingOrder = Order::where('status','pending')->get();
+    $pendingOrder = Order::where('status', 'pending')->get();
     return $pendingOrder->count();
 }
 
@@ -109,7 +109,7 @@ function pendinOgrders()
 
 function deliveredOrder()
 {
-    $deliveredOrder = Order::where('status','delivered')->get();
+    $deliveredOrder = Order::where('status', 'delivered')->get();
     return $deliveredOrder->count();
 }
 
@@ -125,7 +125,7 @@ function referlinkLimit()
 
 function pendingOrders()
 {
-    $adminPendingOrder = Order::where('status','pending')->count();
+    $adminPendingOrder = Order::where('status', 'pending')->count();
     return $adminPendingOrder;
 }
 
@@ -134,7 +134,7 @@ function pendingOrders()
 
 function userDeliveredOrder()
 {
-    $userDeliveredOrder = order::where('user_id',auth()->user()->id)->where('status','delivered')->count();
+    $userDeliveredOrder = order::where('user_id', auth()->user()->id)->where('status', 'delivered')->count();
     return $userDeliveredOrder;
 }
 
@@ -142,7 +142,7 @@ function userDeliveredOrder()
 
 function userPendinOgrders()
 {
-    $userPendingOrder = Order::where('user_id',auth()->user()->id)->where('status','pending')->count();
+    $userPendingOrder = Order::where('user_id', auth()->user()->id)->where('status', 'pending')->count();
     return $userPendingOrder;
 }
 
@@ -150,7 +150,7 @@ function userPendinOgrders()
 
 function userAllOrders()
 {
-    $userAllOrder = Order::where('user_id',auth()->user()->id)->count();
+    $userAllOrder = Order::where('user_id', auth()->user()->id)->count();
     return $userAllOrder;
 }
 
@@ -158,6 +158,32 @@ function userAllOrders()
 
 function totalWithdraw()
 {
-    $totalWithdraw = WidthrawlAmount::where('user_id',auth()->user()->id)->where('status','approved')->sum('widthrawal_Amount');
+    $totalWithdraw = WidthrawlAmount::where('user_id', auth()->user()->id)->where('status', 'approved')->sum('widthrawal_Amount');
     return $totalWithdraw;
+}
+
+// giving indirect commission
+
+function indirectCommission()
+{
+    // indirect user commission
+
+    $adminShopCommission = WidthrawLimit::first();
+    $adminShopCommission = $adminShopCommission->commission_limit;
+
+    $shoping_check = Order::where('user_id', auth()->user()->id)->sum('order_price');
+    $firstReferalCommission =  $shoping_check * $adminShopCommission / 100;
+    return $firstReferalCommission;
+
+    $indirectCommission = $firstReferalCommission / 5;
+
+    $upLiners = User::where('username',auth()->user()->referal)->get();
+
+    foreach ($upLiners as $upLiner)
+    {
+        $user = User::where('username',$upLiner->referal)->first();
+        $user->referal_bouns += $indirectCommission;
+        $user->save();
+    }
+
 }
