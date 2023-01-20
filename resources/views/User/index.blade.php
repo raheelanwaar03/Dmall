@@ -151,7 +151,6 @@
                         </div>
                     </div>
                 </div>
-                {{ referalCommissionOnShoping() }}
             </div>
         </div>
     </div>
