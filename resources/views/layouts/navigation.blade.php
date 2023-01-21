@@ -30,7 +30,7 @@
                             <div class="shiping-title d-none d-sm-flex">Welcome {{ auth()->user()->username }} to our
                                 Shopingo store!</div>
                         @else
-                            <div class="shiping-title d-none d-sm-flex">Welcome to our Shopingo store!</div>
+                            <div class="shiping-title d-none d-sm-flex">Welcome to our Dmall store!</div>
                         @endif
                         <ul class="navbar-nav ms-auto d-none d-lg-flex justify-content-center align-items-center">
                             <li class="nav-item"><a class="nav-link" href="{{ route('welcome.aboutUs') }}">About</a>
